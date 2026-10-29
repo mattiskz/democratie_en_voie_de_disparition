@@ -1,0 +1,218 @@
+<title>Démocratie en voie de disparition</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dossier d'archive — bandeau condensé, index des catégories, barre de filtres collante, fiches cotées groupées par jour sur un rail de dates, vidéos intégrées */
+:root{
+  --bg:#eef0f3; --paper:#ffffff; --ink:#111827; --muted:#5b6474; --line:#d5dae2;
+  --red:#c8102e; --blue:#1d3a8a; --tag:#e6e9f0; --onred:#ffffff; --screen:#0b0e14;
+  --display:"Archivo", "Arial Narrow", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1118; --paper:#161b25; --ink:#e8ebf1; --muted:#9aa3b2; --line:#2a3242;
+  --red:#ff5468; --blue:#8aa6ff; --tag:#222a38; --onred:#0d1118; --screen:#05070b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1118; --paper:#161b25; --ink:#e8ebf1; --muted:#9aa3b2; --line:#2a3242;
+  --red:#ff5468; --blue:#8aa6ff; --tag:#222a38; --onred:#0d1118; --screen:#05070b; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:900px;margin:0 auto;padding-block:40px 64px;display:grid;gap:32px}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,video:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+header{display:grid;gap:14px}
+h1{font-family:var(--display);font-stretch:68%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(44px,10vw,96px);line-height:.88;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h1 span{color:var(--red)}
+.lede{max-width:62ch;display:grid;gap:10px;font-size:18px}
+.lede p{margin:0}
+.lede p:last-child{font-weight:600}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+
+.themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;padding:1px}
+.th{background:var(--paper);border:0;box-shadow:0 0 0 1px var(--line);text-align:left;padding:12px 14px;cursor:pointer;display:grid;gap:2px;color:var(--ink)}
+.th b{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.th span{font-family:var(--display);font-stretch:85%;font-weight:600;font-size:14px;line-height:1.2}
+.th i{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--muted)}
+.th[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.th[aria-pressed="true"] b{color:var(--red)}
+.th[aria-pressed="true"] i{color:var(--paper)}
+
+.filters{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters select,.filters input{font-family:var(--display);font-stretch:85%;font-size:15px;background:var(--paper);color:var(--ink);
+  border:1px solid var(--line);padding:7px 10px;min-width:0}
+.filters input{flex:1 1 200px}
+.filters select{flex:0 1 auto;max-width:100%}
+.reset{font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
+.count{font-family:var(--mono);font-size:13px;color:var(--muted);flex-basis:100%}
+.count:empty{display:none}
+
+.list{display:grid}
+.day{display:grid;grid-template-columns:100px 1fr;gap:20px;border-top:2px solid var(--ink);padding-top:14px;margin-top:26px}
+.day:first-child{margin-top:0}
+.dlabel{font-family:var(--display);font-stretch:70%;font-weight:800;text-transform:uppercase;line-height:1;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px)}
+.dlabel b{display:block;font-size:46px;color:var(--red)}
+.dlabel small{display:block;margin-top:4px;font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.04em;text-transform:none}
+.entries{display:grid;gap:10px;min-width:0}
+.card{background:var(--paper);border:1px solid var(--line);padding:14px 18px;display:grid;gap:10px;min-width:0}
+.top{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.cote{color:var(--ink);font-weight:500}
+.type{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+  padding:2px 8px;background:var(--tag);color:var(--ink)}
+.type.VP{background:var(--red);color:var(--onred)}
+.type.PH,.type.ED{background:var(--ink);color:var(--paper)}
+h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:21px;line-height:1.15;margin:0;text-wrap:pretty}
+.card p{margin:0;max-width:65ch;font-size:16px}
+blockquote{margin:0;border-left:3px solid var(--red);padding-left:12px;font-style:italic}
+
+.media{margin:0;background:var(--screen);display:flex;justify-content:center;max-width:100%}
+.media video{display:block;width:100%;height:auto;max-height:min(72vh,620px);object-fit:contain;background:var(--screen)}
+.media.portrait video{width:auto;max-width:100%}
+.offline{background:var(--screen);color:#e8ebf1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;
+  padding:16px 18px;font-family:var(--mono);font-size:13px}
+.offline a{color:#ffd1d7}
+
+.links{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--mono);font-size:13px}
+.src{color:var(--muted)}
+.empty{font-family:var(--mono);color:var(--muted);padding:24px 0}
+
+footer{border-top:2px solid var(--ink);padding-top:18px;display:grid;gap:18px}
+footer h3{font-family:var(--display);font-stretch:75%;font-weight:800;text-transform:uppercase;font-size:20px;margin:0 0 6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.cols ul{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+
+@media (max-width:600px){
+  .day{grid-template-columns:1fr;gap:10px}
+  .dlabel{position:static}
+  .dlabel b{display:inline;font-size:32px;margin-right:6px}
+  .dlabel small{display:inline;margin-left:8px}
+  .card{padding:14px}
+  .th b{font-size:28px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Démocratie en voie <span>de disparition</span></h1>
+    <div class="lede">
+      <p>Depuis le 17 octobre, violences policières, mesures antidémocratiques et déclarations haineuses de la droite, de l'extrême-droite, du gouvernement ou encore du patronat font partie intégrante du débat public.</p>
+      <p>Car il est primordial de ne pas laisser ce flot de contenus être oubliés par le grand public, tous les éléments sont répertoriés et sourcés dans ce document.</p>
+      <p>Alors, soutenez des partis politiques qui ne laissent pas passer ces dangers pour la République et restez informés !</p>
+    </div>
+    <div class="meta"><span>/*RANGE*/</span><span id="total"></span><span>Mis à jour le /*UPDATED*/</span></div>
+  </header>
+
+  <section class="themes" id="themes" aria-label="Catégories"></section>
+
+  <nav class="filters" aria-label="Filtres">
+    <select id="f-folder" aria-label="Média ou parti"></select>
+    <input id="f-q" type="search" placeholder="Rechercher un nom, un lieu, un média…" aria-label="Rechercher">
+    <button class="reset" id="reset" type="button">Tout afficher</button>
+    <div class="count" id="count" aria-live="polite"></div>
+  </nav>
+
+  <main class="list" id="list"></main>
+
+  <footer>
+    <div class="cols">
+      <div>
+        <h3>Bien voter</h3>
+        <ul>
+          <li><a href="http://melenchon2027.fr/" target="_blank" rel="noopener">La France Insoumise</a></li>
+          <li><a href="https://www.lutte-ouvriere.org/" target="_blank" rel="noopener">Lutte Ouvrière</a></li>
+          <li><a href="https://npa-lanticapitaliste.org/" target="_blank" rel="noopener">Nouveau Parti Anticapitaliste</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mieux s'informer</h3>
+        <ul>
+          <li><a href="https://www.humanite.fr/" target="_blank" rel="noopener">L'Humanité</a></li>
+          <li><a href="https://www.blast-info.fr/" target="_blank" rel="noopener">Blast</a></li>
+          <li><a href="https://www.revolutionpermanente.fr/" target="_blank" rel="noopener">Révolution Permanente</a></li>
+          <li><a href="https://www.mediapart.fr/" target="_blank" rel="noopener">Mediapart</a></li>
+          <li><a href="https://linsoumission.fr/" target="_blank" rel="noopener">L'insoumission</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+const ENTRIES = /*DATA*/[];
+const CATS = {RL:"Restrictions de liberté",VP:"Violences policières",PH:"Propos haineux et menaces",AG:"Accusations contre la gauche",
+  RJ:"Répression judiciaire",D:"Désinformation",ED:"Extrême droite",AU:"Autres"};
+const FOLDER_LABEL = f => ({"BFM/RMC":"BFM / RMC","M6/W9":"M6 / W9","RENAISSANCE (HORS GOUVERNEMENT EN CHARGE)":"Renaissance (hors gouvernement)","RASSEMBLEMENT NATIONAL / UDR":"Rassemblement national / UDR"}[f]
+  || f.toLowerCase().replace(/(^|[\s'’-])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()).replace(/\bEt\b/,"et").replace(/\bTv\b/,"TV").replace(/\bLci\b/,"LCI").replace(/\bCnews\b/,"CNews"));
+const JOURS=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const state = {c:null, folder:"", q:""};
+
+ENTRIES.forEach(e=>{ e.hay = norm([e.t,e.s,e.f,CATS[e.c],e.b||"",e.cote].join(" ")); });
+
+function buildControls(){
+  const counts={}; ENTRIES.forEach(e=>counts[e.c]=(counts[e.c]||0)+1);
+  const th=document.getElementById("themes");
+  Object.keys(CATS).filter(k=>counts[k]).sort((a,b)=>(a==="AU")-(b==="AU")||counts[b]-counts[a]).forEach(k=>{
+    const b=document.createElement("button"); b.type="button"; b.className="th"; b.id="th-"+k;
+    b.setAttribute("aria-pressed","false"); b.innerHTML=`<i>${k}</i><b>${counts[k]}</b><span>${CATS[k]}</span>`;
+    b.onclick=()=>{state.c = state.c===k?null:k; render();}; th.appendChild(b);
+  });
+  const sel=document.getElementById("f-folder");
+  const folders=[...new Set(ENTRIES.map(e=>e.f))].sort((a,b)=>FOLDER_LABEL(a).localeCompare(FOLDER_LABEL(b),"fr"));
+  sel.innerHTML=`<option value="">Tous les médias et partis (${ENTRIES.length})</option>`+
+    folders.map(f=>`<option value="${esc(f)}">${esc(FOLDER_LABEL(f))} (${ENTRIES.filter(e=>e.f===f).length})</option>`).join("");
+  sel.onchange=()=>{state.folder=sel.value; render();};
+  const q=document.getElementById("f-q"); q.oninput=()=>{state.q=norm(q.value.trim()); render();};
+  document.getElementById("reset").onclick=()=>{state.c=null;state.folder="";state.q="";sel.value="";q.value="";render();};
+}
+
+function media(e){
+  if(e.k!=="Vidéo") return "";
+  const drive="https://drive.google.com/file/d/"+e.id+"/view";
+  if(!e.v) return `<div class="offline"><span>Vidéo consultable sur Drive</span><a href="${drive}" target="_blank" rel="noopener">Ouvrir la vidéo ↗</a></div>`;
+  const portrait = e.h>e.w;
+  return `<figure class="media${portrait?" portrait":""}"><video controls preload="none" playsinline width="${e.w}" height="${e.h}" poster="${esc(e.p)}" src="${esc(e.v)}" aria-label="${esc(e.t)}"></video></figure>`;
+}
+
+function card(e){
+  const drive="https://drive.google.com/file/d/"+e.id+"/view";
+  const archive = e.k==="Vidéo" ? "" : `<a href="${drive}" target="_blank" rel="noopener">${e.k==="Capture"?"Capture archivée":"Article archivé (PDF)"} ↗</a>`;
+  return `<article class="card">
+    <div class="top"><span class="cote">${esc(e.cote)}</span><span class="type ${e.c}">${esc(e.c)} · ${esc(CATS[e.c])}</span><span>${esc(FOLDER_LABEL(e.f))}</span></div>
+    <h2>${esc(e.t)}</h2>
+    ${media(e)}
+    ${e.b?`<p>${esc(e.b)}</p>`:""}
+    ${e.q?`<blockquote>« ${esc(e.q)} »</blockquote>`:""}
+    <div class="links"><span class="src">Source : ${esc(e.s)}</span>
+      ${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener">Article ↗</a>`:""}
+      ${archive}</div>
+  </article>`;
+}
+
+function render(){
+  document.querySelectorAll("video").forEach(v=>{ try{v.pause()}catch(_){} });
+  document.querySelectorAll(".th").forEach(b=>b.setAttribute("aria-pressed", b.id==="th-"+state.c));
+  const items=ENTRIES.filter(e=>(!state.c||e.c===state.c)&&(!state.folder||e.f===state.folder)&&(!state.q||e.hay.includes(state.q)));
+  const days=[...new Set(items.map(e=>e.d))].sort((a,b)=>(a||99)-(b||99));
+  document.getElementById("list").innerHTML = days.map(d=>{
+    const its=items.filter(e=>e.d===d);
+    const label = d ? `<b>${d}</b>oct.<small>${JOURS[new Date(2026,9,d).getDay()]} · ${its.length}</small>` : `<b>?</b>date<small>non précisée</small>`;
+    return `<section class="day"><div class="dlabel">${label}</div><div class="entries">${its.map(card).join("")}</div></section>`;
+  }).join("") || `<p class="empty">Aucun élément ne correspond à ces filtres.</p>`;
+  document.getElementById("count").textContent = items.length===ENTRIES.length ? "" :
+    items.length+" élément"+(items.length>1?"s":"")+" sur "+ENTRIES.length;
+}
+
+// Une seule vidéo joue à la fois
+document.addEventListener("play", ev=>{ document.querySelectorAll("video").forEach(v=>{ if(v!==ev.target) v.pause(); }); }, true);
+
+document.getElementById("total").textContent = ENTRIES.length+" éléments sourcés";
+buildControls(); render();
+</script>
