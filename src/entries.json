@@ -60,7 +60,9 @@
 "id": "1sSu6sObrXyIHnxMjZcbiEz4Lp081_KfM",
 "k": "Vidéo",
 "cote": "AUT-05",
-"fn": "LIMOGES_COMMERCANT_MENACE_ÉPÉE"
+"fn": "LIMOGES_COMMERCANT_MENACE_ÉPÉE",
+"w": 854,
+"h": 480
 },
 {
 "f": "AUTRES",
@@ -71,7 +73,9 @@
 "id": "1VmRQiUlq31s10Y289v_rw9L_vgZidjOH",
 "k": "Vidéo",
 "cote": "AUT-06",
-"fn": "LYCÉEN_CONDITIONS_DÉTENTION"
+"fn": "LYCÉEN_CONDITIONS_DÉTENTION",
+"w": 854,
+"h": 478
 },
 {
 "f": "AUTRES",
@@ -238,7 +242,9 @@
 "id": "1pXQG47zVoCPct2sTHb2qTgKw3DwwkUvc",
 "k": "Vidéo",
 "cote": "BFM-06",
-"fn": "ILIES_DJAOUTI_MANIFESTATION_DROIT_FONDAMENTAL"
+"fn": "ILIES_DJAOUTI_MANIFESTATION_DROIT_FONDAMENTAL",
+"w": 854,
+"h": 480
 },
 {
 "f": "BFM/RMC",
@@ -275,7 +281,9 @@
 "id": "1filXVrdfGgAqSWMvCCfVuqaY6pKZaTzE",
 "k": "Vidéo",
 "cote": "BFM-08",
-"fn": "LAURA_WARTON_MARTINEZ_ACCUSATION_LFI_FAKE_NEWS"
+"fn": "LAURA_WARTON_MARTINEZ_ACCUSATION_LFI_FAKE_NEWS",
+"w": 854,
+"h": 480
 },
 {
 "f": "BFM/RMC",
@@ -325,7 +333,9 @@
 "id": "19NF2oPirOjMAmE_rbBb2sQTwSMuSVyxt",
 "k": "Vidéo",
 "cote": "CNW-01",
-"fn": "AXEL_RONDE_DEMANDE_CARTE_BLANCHE_POLICE"
+"fn": "AXEL_RONDE_DEMANDE_CARTE_BLANCHE_POLICE",
+"w": 854,
+"h": 480
 },
 {
 "f": "CNEWS",
@@ -349,7 +359,9 @@
 "id": "1Ybhdw9hZozunpmDUIG4nT6C5ob2rjGqR",
 "k": "Vidéo",
 "cote": "CNW-03",
-"fn": "FAKE_NEWS_DIFFUSION_IMAGES_ALBANIE"
+"fn": "FAKE_NEWS_DIFFUSION_IMAGES_ALBANIE",
+"w": 640,
+"h": 360
 },
 {
 "f": "CNEWS",
@@ -436,7 +448,9 @@
 "id": "1cgGTDPxiJ1szwBcHfan9kgcYrVnim_UV",
 "k": "Vidéo",
 "cote": "FTV-04",
-"fn": "HENRI_VERNET_MENSONGE_CHAMP_RÉPUBLICAIN"
+"fn": "HENRI_VERNET_MENSONGE_CHAMP_RÉPUBLICAIN",
+"w": 854,
+"h": 480
 },
 {
 "f": "FRANCE TV",
@@ -472,7 +486,9 @@
 "cote": "FTV-07",
 "fn": "STÉPHANE_DUPONT_REDIABOLISER_RN",
 "k": "Vidéo",
-"c": "ED"
+"c": "ED",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -561,7 +577,9 @@
 "id": "1KNn34W69J3vTTKufiML8CqpjGOUMI1-L",
 "k": "Vidéo",
 "cote": "GVT-03",
-"fn": "EMMANUEL__MACRON_ACCUSATIONS_ULTRA_GAUCHE_2"
+"fn": "EMMANUEL__MACRON_ACCUSATIONS_ULTRA_GAUCHE_2",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -650,7 +668,9 @@
 "id": "1NoHEboLs2tfeR0eIPw0gfmaratMgxDTv",
 "k": "Vidéo",
 "cote": "GVT-10",
-"fn": "GERALD_DARMANIN_PRIVATION_DROITS_CIVIQUES_RÉSEAUX_SOCIAUX"
+"fn": "GERALD_DARMANIN_PRIVATION_DROITS_CIVIQUES_RÉSEAUX_SOCIAUX",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -713,7 +733,9 @@
 "id": "1bZ8d5g1-FVpTezb8xplOL2mSUZXAaZiW",
 "k": "Vidéo",
 "cote": "GVT-14",
-"fn": "LAURENT_NUNEZ_ACCUSATIONS_ULTRAGAUCHE_1"
+"fn": "LAURENT_NUNEZ_ACCUSATIONS_ULTRAGAUCHE_1",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -737,7 +759,9 @@
 "id": "1IY6DbN30ZHgUmgshQuWm_39HU044xjdy",
 "k": "Vidéo",
 "cote": "GVT-15",
-"fn": "LAURENT_NUNEZ_ARMEMENT"
+"fn": "LAURENT_NUNEZ_ARMEMENT",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -812,7 +836,9 @@
 "id": "1a2dw4JjwdJiqa9wt6zI_JS96rwr83UbO",
 "k": "Vidéo",
 "cote": "GVT-21",
-"fn": "LAURENT_NUNEZ_GARANTIE_LIBERTE_MANIFESTER"
+"fn": "LAURENT_NUNEZ_GARANTIE_LIBERTE_MANIFESTER",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -913,7 +939,9 @@
 "cote": "GVT-46",
 "fn": "MAUD_BREGEON_DÉFENSE_CNEWS",
 "k": "Vidéo",
-"c": "AU"
+"c": "AU",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -950,7 +978,9 @@
 "cote": "GVT-47",
 "fn": "MAUD_BREGEON_DÉNI_VIOLENCES_POLICIÈRES_2",
 "k": "Vidéo",
-"c": "VP"
+"c": "VP",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -974,7 +1004,9 @@
 "id": "18UGralCuspY7w2MDDm3b8L36Z7B5v6JU",
 "k": "Vidéo",
 "cote": "GVT-31",
-"fn": "MAUD_BREGEON_FÉLICITE_ÉTAT_AYANT_EU_LE_DESSUS"
+"fn": "MAUD_BREGEON_FÉLICITE_ÉTAT_AYANT_EU_LE_DESSUS",
+"w": 854,
+"h": 480
 },
 {
 "f": "GOUVERNEMENT",
@@ -1025,7 +1057,9 @@
 "id": "1sMd_AUzvfNdUa_6ezyX9QuGLtBcrfSEW",
 "k": "Vidéo",
 "cote": "GVT-34",
-"fn": "SÉBASTIEN_LECORNU_CONDAMNATION_LFI"
+"fn": "SÉBASTIEN_LECORNU_CONDAMNATION_LFI",
+"w": 640,
+"h": 360
 },
 {
 "f": "GOUVERNEMENT",
@@ -1189,7 +1223,9 @@
 "cote": "LCI-05",
 "fn": "JÉRÔME_FOURQUET_PARTI_RUE_PARTI_ORDRE",
 "k": "Vidéo",
-"c": "AG"
+"c": "AG",
+"w": 854,
+"h": 480
 },
 {
 "f": "LCI",
@@ -1225,7 +1261,9 @@
 "id": "1imAbSb-aaOIfYxCMiFq88yDz9wr6wEbb",
 "k": "Vidéo",
 "cote": "LMD-01",
-"fn": "LYON_NÉONAZIS_MANIFESTATION_ULTRA_DROITE"
+"fn": "LYON_NÉONAZIS_MANIFESTATION_ULTRA_DROITE",
+"w": 480,
+"h": 852
 },
 {
 "f": "LE PARISIEN",
@@ -1236,7 +1274,9 @@
 "id": "1x78eLyI_NqgjBrVb1Y9Vkg6jV3MAKpaT",
 "k": "Vidéo",
 "cote": "PAR-01",
-"fn": "FAKE_NEWS_COUPLE_DÉPOUILLÉ_ÉMEUTIERS"
+"fn": "FAKE_NEWS_COUPLE_DÉPOUILLÉ_ÉMEUTIERS",
+"w": 480,
+"h": 852
 },
 {
 "f": "LE POINT",
@@ -1285,7 +1325,9 @@
 "id": "12FX_0lheNiPdyCXSnvZKwuXARRwUATrl",
 "k": "Vidéo",
 "cote": "LR-03",
-"fn": "BRUNO_RETAILLEAU_ACCUSATIONS_LFI_ÉTAT_URGENCE"
+"fn": "BRUNO_RETAILLEAU_ACCUSATIONS_LFI_ÉTAT_URGENCE",
+"w": 854,
+"h": 480
 },
 {
 "f": "LES RÉPUBLICAINS",
@@ -1296,7 +1338,9 @@
 "id": "1pRo97--zKvxqR0c5wd7DX-MnRi9dcYXM",
 "k": "Vidéo",
 "cote": "LR-04",
-"fn": "BRUNO_RETAILLEAU_DÉNI_VIOLENCES_POLICIÈRES_LYCÉENNE"
+"fn": "BRUNO_RETAILLEAU_DÉNI_VIOLENCES_POLICIÈRES_LYCÉENNE",
+"w": 854,
+"h": 480
 },
 {
 "f": "LES RÉPUBLICAINS",
@@ -1344,7 +1388,9 @@
 "id": "1tsmFHjzqB3VdXT967iZasgV7Nw3WlBnM",
 "k": "Vidéo",
 "cote": "LR-08",
-"fn": "BRUNO_RETAILLEAU_TAPER_PLUS_FORT"
+"fn": "BRUNO_RETAILLEAU_TAPER_PLUS_FORT",
+"w": 854,
+"h": 480
 },
 {
 "f": "LES RÉPUBLICAINS",
@@ -1367,7 +1413,9 @@
 "id": "1TbpqskkIttdJo9ywpZvFHahWUgTYrlJr",
 "k": "Vidéo",
 "cote": "LR-10",
-"fn": "DAVID_LISNARD_ACCUSATIONS_TERRORISME_ULTRAGAUCHE_PLATEAU_MILLEVACHES_MÉLENCHON"
+"fn": "DAVID_LISNARD_ACCUSATIONS_TERRORISME_ULTRAGAUCHE_PLATEAU_MILLEVACHES_MÉLENCHON",
+"w": 854,
+"h": 480
 },
 {
 "f": "LES RÉPUBLICAINS",
@@ -1378,7 +1426,9 @@
 "id": "1FUKU2EOCp_VhCuAl8umP85LGq6Xzm4a2",
 "k": "Vidéo",
 "cote": "LR-11",
-"fn": "FRANCOIS_XAVIER_BELLAMY_METTRE_POUTOU_EN_PRISON"
+"fn": "FRANCOIS_XAVIER_BELLAMY_METTRE_POUTOU_EN_PRISON",
+"w": 640,
+"h": 360
 },
 {
 "f": "LES RÉPUBLICAINS",
@@ -1441,7 +1491,9 @@
 "id": "1Q2d2n4LgImgRn2qaBv07169JbpYsoCD_",
 "k": "Vidéo",
 "cote": "M6-01",
-"fn": "BRUNO_POMART_DÉNI_PROPOS_ISLAMOPHOBES_LCI_17_OCTOBRE"
+"fn": "BRUNO_POMART_DÉNI_PROPOS_ISLAMOPHOBES_LCI_17_OCTOBRE",
+"w": 854,
+"h": 480
 },
 {
 "f": "M6/W9",
@@ -1452,7 +1504,9 @@
 "id": "1QEIkDeoD99Z4MjTR31ocs8SnUz1mqlze",
 "k": "Vidéo",
 "cote": "M6-02",
-"fn": "INCONNUE_SPRAY_POIVRE"
+"fn": "INCONNUE_SPRAY_POIVRE",
+"w": 854,
+"h": 480
 },
 {
 "f": "PARTI SOCIALISTE",
@@ -1501,7 +1555,9 @@
 "id": "18MUY0_Q1W_62BkyfmT_7UkGYl7094ml1",
 "k": "Vidéo",
 "cote": "PAT-02",
-"fn": "FRANK_CHAUMÈS_MENACE_BATTE_BASEBALL"
+"fn": "FRANK_CHAUMÈS_MENACE_BATTE_BASEBALL",
+"w": 578,
+"h": 360
 },
 {
 "f": "PATRONAT",
@@ -1538,7 +1594,9 @@
 "cote": "PAT-06",
 "fn": "STÉPHANE_CHOISEZ_TAXE_ÉMEUTES",
 "k": "Vidéo",
-"c": "AU"
+"c": "AU",
+"w": 854,
+"h": 480
 },
 {
 "f": "PATRONAT",
@@ -1549,7 +1607,9 @@
 "cote": "PAT-07",
 "fn": "THIERRY_VERON_PLAINTE_PÉRIODE_DIFFICILE_NOËL",
 "k": "Vidéo",
-"c": "AU"
+"c": "AU",
+"w": 640,
+"h": 360
 },
 {
 "f": "POLICE ET PRÉFECTURES",
@@ -1937,7 +1997,9 @@
 "id": "1R0IzZ2htzsHCtwRCiphr9u61KF_VO10N",
 "k": "Vidéo",
 "cote": "POL-28",
-"fn": "PARIS_POLICE_BLOQUE_MANIFESTATION_LÉGALE"
+"fn": "PARIS_POLICE_BLOQUE_MANIFESTATION_LÉGALE",
+"w": 854,
+"h": 480
 },
 {
 "f": "POLICE ET PRÉFECTURES",
@@ -2152,7 +2214,9 @@
 "cote": "RN-22",
 "fn": "ÉRIC_MICHOUX_LÉGITIME_LOI_CASSEURS_PAYEURS_BARBARES",
 "k": "Vidéo",
-"c": "PH"
+"c": "PH",
+"w": 854,
+"h": 480
 },
 {
 "f": "RASSEMBLEMENT NATIONAL / UDR",
@@ -2163,7 +2227,9 @@
 "id": "1DU4ziTW1_XuFOPc4mrS8RnfffFE27yop",
 "k": "Vidéo",
 "cote": "RN-07",
-"fn": "GUILHEM_CARAYON_FAUSSES_ACCUSATIONS_LFI"
+"fn": "GUILHEM_CARAYON_FAUSSES_ACCUSATIONS_LFI",
+"w": 854,
+"h": 480
 },
 {
 "f": "RASSEMBLEMENT NATIONAL / UDR",
