@@ -34,6 +34,10 @@ h1 span{color:var(--red)}
 .lede p:last-child{font-weight:600}
 .meta{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
 
+.tocarte{display:grid;gap:2px;justify-self:start;max-width:100%;padding:12px 16px;background:var(--red);color:var(--onred);text-decoration:none}
+.tocarte b{font-family:var(--display);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:20px;line-height:1.1}
+.tocarte span{font-family:var(--mono);font-size:13px}
+.tocarte:hover{background:var(--ink);color:var(--paper)}
 .themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;padding:1px}
 .th{background:var(--paper);border:0;box-shadow:0 0 0 1px var(--line);text-align:left;padding:12px 14px;cursor:pointer;display:grid;gap:2px;color:var(--ink)}
 .th b{font-family:var(--display);font-stretch:70%;font-weight:900;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
@@ -106,6 +110,7 @@ footer h3{font-family:var(--display);font-stretch:75%;font-weight:800;text-trans
       <p>Alors, soutenez des partis politiques qui ne laissent pas passer ces dangers pour la République et restez informés !</p>
     </div>
     <div class="meta"><span>/*RANGE*/</span><span id="total"></span><span>Mis à jour le /*UPDATED*/</span></div>
+    <a class="tocarte" href="/carte/"><b>Voir la carte des violences policières</b><span>Chaque fait filmé placé à la rue où il s'est produit →</span></a>
   </header>
 
   <section class="themes" id="themes" aria-label="Catégories"></section>

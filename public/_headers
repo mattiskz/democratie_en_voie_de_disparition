@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://tile.openstreetmap.org; media-src 'self'; connect-src 'self' https://api-adresse.data.gouv.fr; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -9,4 +9,8 @@
 /v/*
   Cache-Control: public, max-age=604800
 /p/*
+  Cache-Control: public, max-age=604800
+/carte/v/*
+  Cache-Control: public, max-age=604800
+/carte/p/*
   Cache-Control: public, max-age=604800

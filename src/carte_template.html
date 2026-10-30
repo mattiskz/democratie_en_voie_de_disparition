@@ -1,0 +1,324 @@
+<title>Carte des violences policières · Démocratie en voie de disparition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/carte/leaflet.css">
+<style>
+/* Layout: même dossier d'archive que la page principale — bandeau condensé, barre de filtres, carte collante à gauche et registre des cas à droite ; empilés sur téléphone */
+:root{
+  --bg:#eef0f3; --paper:#ffffff; --ink:#111827; --muted:#5b6474; --line:#d5dae2;
+  --red:#c8102e; --blue:#1d3a8a; --tag:#e6e9f0; --onred:#ffffff; --screen:#0b0e14;
+  --display:"Archivo", "Arial Narrow", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1118; --paper:#161b25; --ink:#e8ebf1; --muted:#9aa3b2; --line:#2a3242;
+  --red:#ff5468; --blue:#8aa6ff; --tag:#222a38; --onred:#0d1118; --screen:#05070b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1118; --paper:#161b25; --ink:#e8ebf1; --muted:#9aa3b2; --line:#2a3242;
+  --red:#ff5468; --blue:#8aa6ff; --tag:#222a38; --onred:#0d1118; --screen:#05070b; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:1000;background:var(--bg)}
+[hidden]{display:none!important}
+.wrap{max-width:1280px;margin:0 auto;padding-block:28px 56px;display:grid;gap:20px}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,video:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+.site{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.site a.home{font-family:var(--display);font-stretch:70%;font-weight:900;text-transform:uppercase;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.005em}
+.site a.home span{color:var(--red)}
+.tabs{display:flex;gap:16px;font-family:var(--mono);font-size:13px}
+.tabs a{color:var(--muted);text-decoration:none}
+.tabs a[aria-current="page"]{color:var(--ink);font-weight:500;border-bottom:2px solid var(--red)}
+header{display:grid;gap:12px}
+h1{font-family:var(--display);font-stretch:68%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(38px,7vw,72px);line-height:.9;margin:0;text-wrap:balance}
+h1 span{color:var(--red)}
+.lede{margin:0;max-width:68ch;font-size:17px}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
+.filters select,.filters input{font-family:var(--display);font-stretch:85%;font-size:15px;background:var(--paper);color:var(--ink);
+  border:1px solid var(--line);padding:7px 10px;min-width:0;max-width:100%}
+.filters input{flex:1 1 200px}
+.reset{font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
+.count{font-family:var(--mono);font-size:13px;color:var(--muted);flex-basis:100%}
+.count:empty{display:none}
+
+.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+.mapbox{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);height:calc(100vh - 24px - env(safe-area-inset-top,0px));min-height:420px;max-height:820px;border:1px solid var(--line);background:var(--paper)}
+#map{position:absolute;inset:0}
+.leaflet-container{font-family:var(--body);background:var(--tag)}
+.dark-tiles .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.6)}
+.leaflet-bar a{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--line)!important}
+.leaflet-control-attribution{background:var(--paper)!important;color:var(--muted)!important;font-family:var(--mono)}
+.leaflet-control-attribution a{color:var(--blue)!important}
+.leaflet-tooltip{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:0;box-shadow:none;font-family:var(--body);font-size:14px}
+.leaflet-tooltip-top:before{border-top-color:var(--line)}
+.legend{position:absolute;left:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:500;background:var(--paper);border:1px solid var(--line);padding:6px 10px;font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.legend .exact{background:var(--red)}
+.legend .approx{border:2px dashed var(--red)}
+
+.panel{display:grid;gap:10px;min-width:0}
+.card{background:var(--paper);border:1px solid var(--line);padding:14px 18px;display:grid;gap:8px;min-width:0;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
+.card:hover{border-color:var(--ink)}
+.card[aria-current="true"]{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+.top{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.cote{color:var(--ink);font-weight:500}
+h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;line-height:1.15;margin:0;text-wrap:pretty}
+.addr{font-size:15px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;background:var(--tag);color:var(--ink)}
+.chip.v{background:var(--red);color:var(--onred)}
+.chip.f{background:var(--ink);color:var(--paper)}
+
+.fiche{background:var(--paper);border:1px solid var(--line);padding:16px 18px 20px;display:grid;gap:14px;min-width:0}
+.back{justify-self:start;font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline;padding:0}
+.fiche h2{font-size:26px}
+.rows{display:grid;gap:12px}
+.row{display:grid;gap:4px}
+.lab{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.inf{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:15px}
+.inf li{border-left:3px solid var(--red);padding-left:10px}
+.inf small{display:block;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.presume{font-size:13px;color:var(--muted);margin:0}
+.media{margin:0;background:var(--screen);display:flex;justify-content:center;max-width:100%}
+.media video{display:block;width:100%;height:auto;max-height:min(62vh,560px);object-fit:contain;background:var(--screen)}
+.media.portrait video{width:auto;max-width:100%}
+.offline{background:var(--screen);color:#e8ebf1;padding:14px 16px;font-family:var(--mono);font-size:13px}
+.fiche p{margin:0;max-width:65ch;font-size:16px}
+.note{font-size:13px!important;color:var(--muted);border-left:2px solid var(--line);padding-left:10px}
+.links{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--mono);font-size:13px}
+.src{color:var(--muted)}
+.empty{font-family:var(--mono);color:var(--muted);padding:20px 0;display:grid;gap:8px}
+.empty strong{font-family:var(--display);font-stretch:80%;font-size:20px;color:var(--ink)}
+
+footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);display:grid;gap:6px}
+
+@media (max-width:860px){
+  .split{grid-template-columns:1fr}
+  .mapbox{position:relative;top:0;height:58vh;min-height:320px}
+  .card,.fiche{padding:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <nav class="site" aria-label="Site">
+    <a class="home" href="/">Démocratie en voie <span>de disparition</span></a>
+    <div class="tabs"><a href="/">Le dossier</a><a href="/carte/" aria-current="page">La carte</a></div>
+  </nav>
+
+  <header>
+    <h1>Carte des violences <span>policières</span></h1>
+    <p class="lede">Chaque point est un fait filmé depuis le 17 octobre, placé à la rue où il s'est produit. Cliquez sur un point ou dans la liste pour voir la vidéo, le type de violence, les forces de l'ordre en cause et les infractions présumées.</p>
+    <div class="meta"><span id="total"></span><span>Mis à jour le /*UPDATED*/</span><span>Visages des personnes autres que les agents floutés</span></div>
+  </header>
+
+  <nav class="filters" aria-label="Filtres">
+    <select id="f-ville" aria-label="Ville"></select>
+    <select id="f-violence" aria-label="Type de violence"></select>
+    <select id="f-force" aria-label="Force de l'ordre"></select>
+    <input id="f-q" type="search" placeholder="Rechercher une rue, une ville…" aria-label="Rechercher">
+    <button class="reset" id="reset" type="button">Tout afficher</button>
+    <div class="count" id="count" aria-live="polite"></div>
+  </nav>
+
+  <div class="split">
+    <div class="mapbox"><div id="map" role="region" aria-label="Carte des faits"></div>
+      <div class="legend"><span><i class="exact"></i>Adresse localisée</span><span><i class="approx"></i>Emplacement approximatif</span></div>
+    </div>
+    <section class="panel" id="panel" aria-live="polite"></section>
+  </div>
+
+  <footer>
+    <span>Les infractions sont présumées : elles décrivent ce que montrent les images au regard du Code pénal, sans préjuger d'une décision de justice. Les agents ne sont pas nommés.</span>
+    <span>Fond de carte © contributeurs OpenStreetMap · Adresses : Base Adresse Nationale.</span>
+  </footer>
+</div>
+
+<script src="/carte/leaflet.js"></script>
+<script>
+const CAS = /*DATA*/[];
+
+/* Infractions présumées : code → libellé + article */
+const INFRACTIONS = {
+  "222-13":  ["Violences volontaires par personne dépositaire de l'autorité publique", "art. 222-13 du Code pénal"],
+  "222-12":  ["Violences volontaires par personne dépositaire de l'autorité publique ayant entraîné une ITT de plus de 8 jours", "art. 222-12 du Code pénal"],
+  "222-10":  ["Violences par personne dépositaire de l'autorité publique ayant entraîné une mutilation ou une infirmité permanente", "art. 222-10 du Code pénal"],
+  "222-8":   ["Violences par personne dépositaire de l'autorité publique ayant entraîné la mort sans intention de la donner", "art. 222-8 du Code pénal"],
+  "221-6":   ["Homicide involontaire", "art. 221-6 du Code pénal"],
+  "223-1":   ["Mise en danger délibérée de la vie d'autrui", "art. 223-1 du Code pénal"],
+  "432-4":   ["Atteinte arbitraire à la liberté individuelle par personne dépositaire de l'autorité publique", "art. 432-4 du Code pénal"],
+  "431-1":   ["Entrave à la liberté de manifestation ou d'expression", "art. 431-1 du Code pénal"],
+  "222-17":  ["Menaces", "art. 222-17 du Code pénal"],
+  "injure":  ["Injure publique", "art. 33 de la loi du 29 juillet 1881"],
+  "432-7":   ["Discrimination par personne dépositaire de l'autorité publique", "art. 432-7 du Code pénal"],
+  "441-4":   ["Faux en écriture publique", "art. 441-4 du Code pénal"]
+};
+const CENTRES = {
+  "Paris":[48.8566,2.3522],"Lyon":[45.7640,4.8357],"Marseille":[43.2965,5.3698],"Strasbourg":[48.5839,7.7455],
+  "Nantes":[47.2184,-1.5536],"Besançon":[47.2378,6.0241],"Dijon":[47.3216,5.0415],"Grenoble":[45.1868,5.7356],
+  "Le Mans":[48.0061,0.1996],"Montpellier":[43.6108,3.8767],"Mulhouse":[47.7508,7.3359],"Nice":[43.7031,7.2661],
+  "Saint-Denis":[48.9362,2.3574],"Saint-Étienne":[45.4397,4.3872],"Toulouse":[43.6045,1.4440],"Bordeaux":[44.8378,-0.5792],
+  "Lille":[50.6292,3.0573],"Rennes":[48.1173,-1.6778],"Rouen":[49.4432,1.0999],"Amiens":[49.8941,2.2958],"Belfort":[47.6380,6.8628]
+};
+const JOURS=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const dateTxt = c => c.d ? `${JOURS[new Date(2026,9,c.d).getDay()]} ${c.d} oct.${c.h?" · "+esc(c.h):""}` : "Date à préciser";
+const lieuTxt = c => [c.adresse, c.ville].filter(Boolean).join(", ") || "Lieu à préciser";
+const surCarte = c => Number.isFinite(c.lat) && Number.isFinite(c.lng);
+const state = {ville:"", violence:"", force:"", q:"", ouvert:null};
+
+CAS.forEach(c=>{ c.violences=c.violences||[]; c.forces=c.forces||[]; c.infractions=c.infractions||[];
+  c.hay=norm([c.cote,c.t,c.adresse,c.ville,c.b,c.violences.join(" "),c.forces.join(" ")].join(" ")); });
+
+/* ---------- Carte ---------- */
+const map = L.map("map",{zoomSnap:.5,minZoom:5,maxZoom:19}).fitBounds([[42.2,-4.8],[51.1,8.3]]);
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+const sombre=()=>{const t=document.documentElement.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches};
+const teinte=()=>$("map").classList.toggle("dark-tiles",sombre());
+teinte();
+const calque = L.layerGroup().addTo(map);
+
+/* Adresse → coordonnées (Base Adresse Nationale), mémorisées dans le navigateur */
+function lit(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+function ecrit(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+async function geocode(c){
+  const k="ban:"+c.adresse+"|"+c.ville, m=lit(k);
+  if (m){ [c.lat,c.lng,c.approx]=m; return; }
+  try{
+    const r=await fetch("https://api-adresse.data.gouv.fr/search/?limit=5&q="+encodeURIComponent(c.adresse+", "+c.ville));
+    const j=await r.json();
+    const f=(j.features||[]).find(f=>norm(f.properties.city).replace(/\W/g,"").startsWith(norm(c.ville).replace(/\W/g,"")) && f.properties.score>0.45);
+    if (f){ [c.lng,c.lat]=f.geometry.coordinates; c.approx = f.properties.type==="municipality"; ecrit(k,[c.lat,c.lng,c.approx]); return; }
+  }catch(e){}
+  const ctr=CENTRES[c.ville]; if (ctr){ [c.lat,c.lng]=ctr; c.approx=true; }
+}
+
+/* Cas au même endroit : écartés en petit cercle, recalculé au zoom */
+let POS=new Map();
+function positions(liste){
+  const g={}; POS=new Map();
+  for (const c of liste.filter(surCarte)){ const p=map.latLngToLayerPoint([c.lat,c.lng]); const k=Math.round(p.x/8)+","+Math.round(p.y/8); (g[k]=g[k]||[]).push(c); }
+  for (const grp of Object.values(g)){
+    if (grp.length===1){ POS.set(grp[0].cote,[grp[0].lat,grp[0].lng]); continue; }
+    const p0=map.latLngToLayerPoint([grp[0].lat,grp[0].lng]), r=10+grp.length*1.8;
+    grp.forEach((c,i)=>{ const a=2*Math.PI*i/grp.length-Math.PI/2; const ll=map.layerPointToLatLng(L.point(p0.x+r*Math.cos(a),p0.y+r*Math.sin(a))); POS.set(c.cote,[ll.lat,ll.lng]); });
+  }
+}
+function dessine(liste){
+  positions(liste); calque.clearLayers();
+  const rouge=css("--red"), papier=css("--paper");
+  for (const c of liste.filter(surCarte)){
+    const sel=c.cote===state.ouvert;
+    const m=L.circleMarker(POS.get(c.cote),{radius:sel?11:7,weight:c.approx?2.5:2,color:c.approx?rouge:papier,dashArray:c.approx?"3 3":null,
+      fillColor:c.approx?papier:rouge,fillOpacity:1});
+    m.bindTooltip(`<b>${esc(c.t)}</b><br>${esc(lieuTxt(c))}`,{direction:"top",offset:[0,-6]});
+    m.on("click",()=>ouvrir(c.cote));
+    calque.addLayer(m);
+  }
+}
+map.on("zoomend",()=>dessine(filtres()));
+
+/* ---------- Filtres ---------- */
+function options(id, tous, valeurs){
+  const cpt={}; valeurs.forEach(v=>cpt[v]=(cpt[v]||0)+1);
+  $(id).innerHTML=`<option value="">${tous}</option>`+Object.keys(cpt).sort((a,b)=>a.localeCompare(b,"fr"))
+    .map(v=>`<option value="${esc(v)}">${esc(v)} (${cpt[v]})</option>`).join("");
+}
+options("f-ville","Toutes les villes",CAS.map(c=>c.ville).filter(Boolean));
+options("f-violence","Tous les types de violence",CAS.flatMap(c=>[...new Set(c.violences)]));
+options("f-force","Toutes les forces de l'ordre",CAS.flatMap(c=>[...new Set(c.forces)]));
+$("f-ville").onchange=e=>{state.ville=e.target.value;state.ouvert=null;render(true);};
+$("f-violence").onchange=e=>{state.violence=e.target.value;state.ouvert=null;render(true);};
+$("f-force").onchange=e=>{state.force=e.target.value;state.ouvert=null;render(true);};
+$("f-q").oninput=e=>{state.q=norm(e.target.value.trim());state.ouvert=null;render();};
+$("reset").onclick=()=>{Object.assign(state,{ville:"",violence:"",force:"",q:"",ouvert:null});
+  ["f-ville","f-violence","f-force","f-q"].forEach(i=>$(i).value=""); render(true);};
+
+function filtres(){
+  return CAS.filter(c=>(!state.ville||c.ville===state.ville)&&(!state.violence||c.violences.includes(state.violence))
+    &&(!state.force||c.forces.includes(state.force))&&(!state.q||c.hay.includes(state.q)))
+    .sort((a,b)=>(b.d||0)-(a.d||0)||String(a.ville).localeCompare(String(b.ville),"fr")||String(a.cote).localeCompare(String(b.cote)));
+}
+
+/* ---------- Rendu ---------- */
+function carte(c){
+  return `<button class="card" type="button" data-cote="${esc(c.cote)}" aria-current="${c.cote===state.ouvert}">
+    <span class="top"><span class="cote">${esc(c.cote)}</span><span>${dateTxt(c)}</span><span>${esc(c.ville||"")}</span></span>
+    <h2>${esc(c.t)}</h2>
+    <span class="addr">${esc(c.adresse||"Lieu à préciser")}</span>
+    <span class="chips">${c.violences.map(v=>`<span class="chip v">${esc(v)}</span>`).join("")}${c.forces.map(f=>`<span class="chip f">${esc(f)}</span>`).join("")}</span>
+  </button>`;
+}
+function media(c){
+  if (c.v) return `<figure class="media${c.vh>c.vw?" portrait":""}"><video controls preload="metadata" playsinline width="${c.vw}" height="${c.vh}" poster="${esc(c.p)}" src="${esc(c.v)}" aria-label="${esc(c.t)}"></video></figure>`;
+  if (c.k==="Vidéo") return `<div class="offline">Vidéo en cours de traitement (floutage des visages)</div>`;
+  return "";
+}
+function fiche(c){
+  const inf=c.infractions.map(k=>INFRACTIONS[k]||[k,""]);
+  return `<article class="fiche">
+    <button class="back" type="button" id="retour">← Tous les faits</button>
+    <div class="top"><span class="cote">${esc(c.cote)}</span><span>${dateTxt(c)}</span></div>
+    <h2>${esc(c.t)}</h2>
+    ${media(c)}
+    <div class="rows">
+      <div class="row"><span class="lab">Lieu</span><span>${esc(lieuTxt(c))}</span></div>
+      ${c.violences.length?`<div class="row"><span class="lab">Type de violence</span><span class="chips">${c.violences.map(v=>`<span class="chip v">${esc(v)}</span>`).join("")}</span></div>`:""}
+      ${c.forces.length?`<div class="row"><span class="lab">Forces de l'ordre</span><span class="chips">${c.forces.map(f=>`<span class="chip f">${esc(f)}</span>`).join("")}</span></div>`:""}
+      ${inf.length?`<div class="row"><span class="lab">Infractions présumées</span><ul class="inf">${inf.map(([l,a])=>`<li>${esc(l)}${a?`<small>${esc(a)}</small>`:""}</li>`).join("")}</ul>
+        <p class="presume">Qualifications possibles au vu des images, sans préjuger d'une décision de justice.</p></div>`:""}
+    </div>
+    ${c.b?`<p>${esc(c.b)}</p>`:""}
+    ${c.approx?`<p class="note">Emplacement approximatif : l'adresse exacte n'a pas pu être localisée.</p>`:""}
+    <div class="links">${c.s?`<span class="src">Source : ${esc(c.s)}</span>`:""}${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">Article ↗</a>`:""}</div>
+  </article>`;
+}
+function render(recadre){
+  document.querySelectorAll("video").forEach(v=>{try{v.pause()}catch(_){}});
+  const liste=filtres();
+  dessine(liste);
+  const p=$("panel"), c=CAS.find(x=>x.cote===state.ouvert);
+  if (!CAS.length){
+    p.innerHTML=`<div class="empty"><strong>Les premiers faits arrivent.</strong><span>Chaque point placé sur la carte ouvrira ici sa vidéo floutée, le type de violence, les forces de l'ordre en cause et les infractions présumées.</span></div>`;
+  } else if (c){
+    p.innerHTML=fiche(c); $("retour").onclick=()=>{state.ouvert=null;render();};
+    if (innerWidth<=860) p.scrollIntoView({block:"start"});
+  } else {
+    p.innerHTML = liste.length ? liste.map(carte).join("") : `<p class="empty">Aucun fait ne correspond à ces filtres.</p>`;
+    p.querySelectorAll(".card").forEach(b=>b.onclick=()=>ouvrir(b.dataset.cote));
+  }
+  $("count").textContent = liste.length===CAS.length ? "" : liste.length+" fait"+(liste.length>1?"s":"")+" sur "+CAS.length;
+  if (recadre){
+    const pts=liste.filter(surCarte).map(c=>[c.lat,c.lng]);
+    if (pts.length) map.fitBounds(pts,{padding:[40,40],maxZoom:15});
+  }
+}
+function ouvrir(cote){
+  state.ouvert=cote; render();
+  const pos=POS.get(cote);
+  if (pos) map.flyTo(pos,Math.max(map.getZoom(),16),{duration:matchMedia("(prefers-reduced-motion: reduce)").matches?0:.7});
+}
+
+document.addEventListener("play",ev=>{document.querySelectorAll("video").forEach(v=>{if(v!==ev.target)v.pause();});},true);
+const retheme=()=>{teinte();render();};
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",retheme);
+new MutationObserver(retheme).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+
+$("total").textContent = CAS.length+" fait"+(CAS.length>1?"s":"")+" recensé"+(CAS.length>1?"s":"");
+render();
+Promise.all(CAS.filter(c=>!surCarte(c)&&c.adresse&&c.ville).map(geocode)).then(()=>render(true));
+CAS.filter(c=>!surCarte(c)&&!c.adresse&&CENTRES[c.ville]).forEach(c=>{[c.lat,c.lng]=CENTRES[c.ville];c.approx=true;});
+render(true);
+</script>
