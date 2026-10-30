@@ -59,6 +59,11 @@ h1 span{color:var(--red)}
 .leaflet-control-attribution a{color:var(--blue)!important}
 .leaflet-tooltip{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:0;box-shadow:none;font-family:var(--body);font-size:14px}
 .leaflet-tooltip-top:before{border-top-color:var(--line)}
+.bulle{background:none;border:0}
+.bulle span{display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--red) 78%,transparent);color:var(--onred);
+  box-shadow:0 0 0 2px var(--paper);font-family:var(--mono);font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;cursor:pointer}
+.bulle span:hover{background:var(--red)}
+.legend .groupe{background:color-mix(in srgb,var(--red) 78%,transparent);width:16px;height:16px}
 .legend{position:absolute;left:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:500;background:var(--paper);border:1px solid var(--line);padding:6px 10px;font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 .legend .exact{background:var(--red)}
@@ -76,6 +81,7 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
 .chip{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;background:var(--tag);color:var(--ink)}
 .chip.v{background:var(--red);color:var(--onred)}
 .chip.f{background:var(--ink);color:var(--paper)}
+.chip.f.np{background:var(--tag);color:var(--muted)}
 
 .fiche{background:var(--paper);border:1px solid var(--line);padding:16px 18px 20px;display:grid;gap:14px;min-width:0}
 .back{justify-self:start;font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline;padding:0}
@@ -131,7 +137,7 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     <select id="f-sem" aria-label="Semaine"></select>
     <select id="f-ville" aria-label="Ville"></select>
     <select id="f-violence" aria-label="Type de violence"></select>
-    <select id="f-force" aria-label="Force de l'ordre" hidden></select>
+    <select id="f-force" aria-label="Force de l'ordre"></select>
     <input id="f-q" type="search" placeholder="Rechercher une rue, une ville…" aria-label="Rechercher">
     <button class="reset" id="reset" type="button">Tout afficher</button>
     <div class="count" id="count" aria-live="polite"></div>
@@ -139,7 +145,7 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
 
   <div class="split">
     <div class="mapbox"><div id="map" role="region" aria-label="Carte des faits"></div>
-      <div class="legend"><span><i class="exact"></i>Adresse localisée</span><span><i class="approx"></i>Emplacement approximatif</span></div>
+      <div class="legend"><span><i class="groupe"></i>Plusieurs faits : cliquer pour zoomer</span><span><i class="exact"></i>Fait localisé</span><span><i class="approx"></i>Emplacement approximatif</span></div>
     </div>
     <section class="panel" id="panel" aria-live="polite"></section>
   </div>
@@ -211,7 +217,7 @@ const lieuTxt = c => [c.adresse, c.ville].filter(Boolean).join(", ") || "Lieu à
 const surCarte = c => Number.isFinite(c.lat) && Number.isFinite(c.lng);
 const state = {sem:"", ville:"", violence:"", force:"", q:"", ouvert:null, vus:new Set()};
 
-CAS.forEach(c=>{ c.violences=c.violences||[]; c.forces=c.forces||[]; c.infractions=c.infractions||[]; c.regles=c.regles||[];
+CAS.forEach(c=>{ c.violences=c.violences||[]; c.forces=(c.forces&&c.forces.length)?c.forces:["Non précisée"]; c.infractions=c.infractions||[]; c.regles=c.regles||[];
   c.hay=norm([c.cote,c.t,c.adresse,c.ville,c.b,c.violences.join(" "),c.forces.join(" ")].join(" ")); });
 
 /* ---------- Carte ---------- */
@@ -249,15 +255,49 @@ function positions(liste){
     grp.forEach((c,i)=>{ const a=2*Math.PI*i/grp.length-Math.PI/2; const ll=map.layerPointToLatLng(L.point(p0.x+r*Math.cos(a),p0.y+r*Math.sin(a))); POS.set(c.cote,[ll.lat,ll.lng]); });
   }
 }
+/* Vue d'ensemble : les faits proches sont regroupés en une bulle dont la taille suit leur nombre.
+   À partir du zoom 15, chaque fait a son propre point. */
+const ZOOM_DETAIL=15;
 function dessine(liste){
-  positions(liste); calque.clearLayers();
-  const rouge=css("--red"), papier=css("--paper");
-  for (const c of liste.filter(surCarte)){
-    const sel=c.cote===state.ouvert;
-    const m=L.circleMarker(POS.get(c.cote),{radius:sel?11:7,weight:c.approx?2.5:2,color:c.approx?rouge:papier,dashArray:c.approx?"3 3":null,
-      fillColor:c.approx?papier:rouge,fillOpacity:1});
-    m.bindTooltip(`<b>${esc(c.t)}</b><br>${esc(lieuTxt(c))}`,{direction:"top",offset:[0,-6]});
-    m.on("click",()=>ouvrir(c.cote));
+  calque.clearLayers();
+  const pts=liste.filter(surCarte), rouge=css("--red"), papier=css("--paper");
+  if (map.getZoom()>=ZOOM_DETAIL){
+    positions(liste);
+    for (const c of pts){
+      const sel=c.cote===state.ouvert;
+      const m=L.circleMarker(POS.get(c.cote),{radius:sel?10:6,weight:c.approx?2:1.5,color:c.approx?rouge:papier,dashArray:c.approx?"3 3":null,
+        fillColor:c.approx?papier:rouge,fillOpacity:1});
+      m.bindTooltip(`<b>${esc(c.t)}</b><br>${esc(lieuTxt(c))}`,{direction:"top",offset:[0,-6]});
+      m.on("click",()=>ouvrir(c.cote));
+      calque.addLayer(m);
+    }
+    return;
+  }
+  const groupes=[];
+  for (const c of pts){
+    const p=map.latLngToLayerPoint([c.lat,c.lng]);
+    let g=groupes.find(g=>Math.hypot(g.x-p.x,g.y-p.y)<44);
+    if (!g){ g={x:p.x,y:p.y,cas:[]}; groupes.push(g); }
+    g.cas.push(c); g.x+=(p.x-g.x)/g.cas.length; g.y+=(p.y-g.y)/g.cas.length;
+  }
+  for (const g of groupes){
+    const n=g.cas.length, ll=map.layerPointToLatLng(L.point(g.x,g.y));
+    if (n===1){
+      const c=g.cas[0];
+      const m=L.circleMarker(ll,{radius:6,weight:c.approx?2:1.5,color:c.approx?rouge:papier,dashArray:c.approx?"3 3":null,fillColor:c.approx?papier:rouge,fillOpacity:1});
+      m.bindTooltip(`<b>${esc(c.t)}</b><br>${esc(lieuTxt(c))}`,{direction:"top",offset:[0,-6]});
+      m.on("click",()=>ouvrir(c.cote)); calque.addLayer(m); continue;
+    }
+    const d=Math.round(Math.min(64,20+7*Math.sqrt(n)));
+    const villes=[...new Set(g.cas.map(c=>c.ville))];
+    const m=L.marker(ll,{icon:L.divIcon({className:"bulle",html:`<span style="width:${d}px;height:${d}px">${n}</span>`,iconSize:[d,d],iconAnchor:[d/2,d/2]}),
+      keyboard:true,title:`${n} faits`});
+    m.bindTooltip(`<b>${n} faits</b><br>${esc(villes.slice(0,3).join(", "))}${villes.length>3?"…":""}`,{direction:"top",offset:[0,-d/2]});
+    m.on("click",()=>{
+      const b=L.latLngBounds(g.cas.map(c=>[c.lat,c.lng]));
+      if (b.getNorthEast().distanceTo(b.getSouthWest())<60) map.flyTo(b.getCenter(),ZOOM_DETAIL+1,{duration:.6});
+      else map.flyToBounds(b,{padding:[50,50],maxZoom:ZOOM_DETAIL+1,duration:.6});
+    });
     calque.addLayer(m);
   }
 }
@@ -274,7 +314,6 @@ $("f-sem").onchange=e=>{state.sem=e.target.value;state.ouvert=null;render(true);
 options("f-ville","Toutes les villes",CAS.map(c=>c.ville).filter(Boolean));
 options("f-violence","Tous les types de violence",CAS.flatMap(c=>[...new Set(c.violences)]));
 options("f-force","Toutes les forces de l'ordre",CAS.flatMap(c=>[...new Set(c.forces)]));
-if (CAS.some(c=>c.forces.length)) $("f-force").hidden=false;
 $("f-ville").onchange=e=>{state.ville=e.target.value;state.ouvert=null;render(true);};
 $("f-violence").onchange=e=>{state.violence=e.target.value;state.ouvert=null;render(true);};
 $("f-force").onchange=e=>{state.force=e.target.value;state.ouvert=null;render(true);};
@@ -294,7 +333,7 @@ function carte(c){
     <span class="top"><span class="cote">${esc(c.cote)}</span><span>${dateTxt(c)}</span><span>${esc(c.ville||"")}</span></span>
     <h2>${esc(c.t)}</h2>
     <span class="addr">${esc(c.adresse||(c.ville?"Lieu exact à préciser":"Ville inconnue"))}</span>
-    <span class="chips">${c.tw?`<span class="chip tw-c">Images choquantes</span>`:""}${c.violences.map(v=>`<span class="chip v">${esc(v)}</span>`).join("")}${c.forces.map(f=>`<span class="chip f">${esc(f)}</span>`).join("")}</span>
+    <span class="chips">${c.tw?`<span class="chip tw-c">Images choquantes</span>`:""}${c.violences.map(v=>`<span class="chip v">${esc(v)}</span>`).join("")}${c.forces.filter(f=>f!=="Non précisée").map(f=>`<span class="chip f">${esc(f)}</span>`).join("")}</span>
   </button>`;
 }
 function media(c){
@@ -316,7 +355,7 @@ function fiche(c){
     <div class="rows">
       <div class="row"><span class="lab">Lieu</span><span>${esc(lieuTxt(c))}</span></div>
       ${c.violences.length?`<div class="row"><span class="lab">Type de violence</span><span class="chips">${c.violences.map(v=>`<span class="chip v">${esc(v)}</span>`).join("")}</span></div>`:""}
-      ${c.forces.length?`<div class="row"><span class="lab">Forces de l'ordre</span><span class="chips">${c.forces.map(f=>`<span class="chip f">${esc(f)}</span>`).join("")}</span></div>`:""}
+      <div class="row"><span class="lab">Forces de l'ordre</span><span class="chips">${c.forces.map(f=>`<span class="chip f${f==="Non précisée"?" np":""}">${esc(f)}</span>`).join("")}</span></div>
       ${inf.length?`<div class="row"><span class="lab">Infractions présumées</span><ul class="inf">${inf.map(([l,a])=>`<li>${esc(l)}${a?`<small>${esc(a)}</small>`:""}</li>`).join("")}</ul>
         <p class="presume">Qualifications possibles au vu des images, sans préjuger d'une décision de justice.</p></div>`:""}
       ${c.regles.length?`<div class="row"><span class="lab">Règles d'intervention en cause</span><ul class="inf reg">${c.regles.map(k=>REGLES[k]||[k,"",""]).map(([l,a,u])=>`<li>${esc(l)}${a?`<small>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(a)} ↗</a>`:esc(a)}</small>`:""}</li>`).join("")}</ul></div>`:""}
@@ -351,8 +390,8 @@ function render(recadre){
 }
 function ouvrir(cote){
   state.ouvert=cote; render();
-  const pos=POS.get(cote);
-  if (pos) map.flyTo(pos,Math.max(map.getZoom(),16),{duration:matchMedia("(prefers-reduced-motion: reduce)").matches?0:.7});
+  const c=CAS.find(x=>x.cote===cote);
+  if (c&&surCarte(c)) map.flyTo([c.lat,c.lng],Math.max(map.getZoom(),ZOOM_DETAIL+1),{duration:matchMedia("(prefers-reduced-motion: reduce)").matches?0:.7});
 }
 
 document.addEventListener("play",ev=>{document.querySelectorAll("video").forEach(v=>{if(v!==ev.target)v.pause();});},true);
