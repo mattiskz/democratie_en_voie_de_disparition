@@ -16,6 +16,13 @@ def un(f):
     if not x or not x['mime'].startswith('video/'): return None
     out = os.path.join(ROOT, 'public', 'carte', 'v', x['id'] + '.mp4')
     if os.path.exists(out): return None
+    verrou = out + '.verrou'
+    try: fd = os.open(verrou, os.O_CREAT | os.O_EXCL)   # une seule tâche par vidéo, même si deux traitements tournent
+    except FileExistsError: return None
+    os.close(fd)
+    try: return traiter(f, x, out)
+    finally: os.remove(verrou)
+def traiter(f, x, out):
     cmd = [sys.executable, os.path.join(ROOT, 'tools', 'flouter.py'), f, out + '.tmp.mp4', '--controle', a.controle]
     if x['fn'] in garder:
         gp = os.path.join(a.controle, x['id'] + '.garder.json'); json.dump(garder[x['fn']], open(gp, 'w')); cmd += ['--garder', gp]
