@@ -7,15 +7,18 @@ import argparse, glob, json, os, subprocess, sys
 from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ap = argparse.ArgumentParser(); ap.add_argument("dl"); ap.add_argument("controle"); ap.add_argument("--travailleurs", type=int, default=2)
+ap.add_argument("--sortie", default=None, help="dossier où déposer les vidéos floutées (par défaut public/carte/v)")
 a = ap.parse_args()
 inv = {x['taille']: x for x in json.load(open(os.path.join(ROOT, 'src', 'carte_drive.json')))}
 garder = json.load(open(os.path.join(ROOT, 'src', 'carte_garder.json'))) if os.path.exists(os.path.join(ROOT, 'src', 'carte_garder.json')) else {}
-os.makedirs(os.path.join(ROOT, 'public', 'carte', 'v'), exist_ok=True)
+PUBV = os.path.join(ROOT, 'public', 'carte', 'v')
+SORTIE = a.sortie or PUBV
+os.makedirs(SORTIE, exist_ok=True)
 def un(f):
     x = inv.get(os.path.getsize(f))
     if not x or not x['mime'].startswith('video/'): return None
-    out = os.path.join(ROOT, 'public', 'carte', 'v', x['id'] + '.mp4')
-    if os.path.exists(out): return None
+    out = os.path.join(SORTIE, x['id'] + '.mp4')
+    if os.path.exists(out) or os.path.exists(os.path.join(PUBV, x['id'] + '.mp4')): return None
     verrou = out + '.verrou'
     try: fd = os.open(verrou, os.O_CREAT | os.O_EXCL)   # une seule tâche par vidéo, même si deux traitements tournent
     except FileExistsError: return None
