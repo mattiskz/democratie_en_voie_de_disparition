@@ -20,6 +20,10 @@ for e in E:
         o['v'] = f"v/{e['id']}.mp4"; o['p'] = f"p/{e['id']}.jpg"
     else:
         o.pop('w', None); o.pop('h', None)
+    if e['k'] != 'Vidéo':
+        for x in ('pdf', 'png', 'jpg'):
+            if os.path.exists(os.path.join(PUB, 'd', f"{e['id']}.{x}")):
+                o['doc'] = f"d/{e['id']}.{x}"; break
     out.append(o)
 if changed:
     json.dump(E, open(os.path.join(SRC, 'entries.json'), 'w'), ensure_ascii=False, indent=0)
