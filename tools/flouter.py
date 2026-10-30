@@ -26,6 +26,7 @@ ap.add_argument("--controle", default=None)
 ap.add_argument("--seuil", type=float, default=0.45)
 ap.add_argument("--crf", type=int, default=26)
 ap.add_argument("--max-mo", type=float, default=24)
+ap.add_argument("--pas", type=int, default=2, help="détecter une image sur N (les pistes couvrent les autres)")
 args = ap.parse_args()
 
 cap = cv2.VideoCapture(args.entree)
@@ -35,7 +36,7 @@ fps = cap.get(cv2.CAP_PROP_FPS) or 25
 n_total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 0
 
 # Les petites vidéos sont agrandies pour la détection : les visages lointains y sont minuscules
-echelle = max(1.0, min(3.0, 960 / max(W, H)))
+echelle = max(0.5, min(2.5, 800 / max(W, H)))
 DW, DH = int(W * echelle), int(H * echelle)
 det = cv2.FaceDetectorYN.create(args.modele, "", (DW, DH), args.seuil, 0.3, 5000)
 
@@ -47,7 +48,7 @@ def a_garder(t, cx, cy):
             return True
     return False
 
-PERSIST = max(4, int(fps * 0.4))   # images pendant lesquelles un visage disparu reste flouté
+PERSIST = max(3, int(fps * 0.4 / max(1, args.pas)) + 1)   # images pendant lesquelles un visage disparu reste flouté
 pistes = []                        # [x, y, w, h, age]
 
 def floute(img, x, y, w, h):
@@ -66,7 +67,7 @@ def floute(img, x, y, w, h):
 
 tmp = args.sortie + ".video.mp4"
 enc = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",
-                        "-r", f"{fps}", "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", str(args.crf),
+                        "-r", f"{fps}", "-i", "-", "-c:v", "libx264", "-preset", "veryfast", "-crf", str(args.crf),
                         "-pix_fmt", "yuv420p", tmp], stdin=subprocess.PIPE)
 controle = []
 i = nb_floutes = 0
@@ -74,9 +75,16 @@ while True:
     ok, img = cap.read()
     if not ok: break
     t = i / fps
+    trouves = []
+    if i % args.pas:
+        # image intermédiaire : on garde les pistes telles quelles
+        for x, y, w, h, _ in pistes:
+            if not a_garder(t, x + w / 2, y + h / 2): floute(img, x, y, w, h); nb_floutes += 1
+        if args.controle and i % max(1, int(fps)) == 0: controle.append((t, img.copy()))
+        enc.stdin.write(img.tobytes()); i += 1
+        continue
     small = cv2.resize(img, (DW, DH)) if echelle != 1 else img
     _, faces = det.detect(small)
-    trouves = []
     if faces is not None:
         for f in faces:
             x, y, w, h = (f[:4] / echelle).tolist()

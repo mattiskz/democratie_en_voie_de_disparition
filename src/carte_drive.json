@@ -1,0 +1,1883 @@
+[
+{
+"id": "1TBVdXHe5jgQcphqC6VaMKJab2zOYts8k",
+"fn": "RUE_GRESSET_MATRAQUE_GAZ",
+"ville": "AMIENS",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 2165316,
+"source": "ici.fr"
+},
+{
+"id": "1-M_jfWmFsbgw15sn3LitjvFkpvCWsDoM",
+"fn": "INCONNU_AGRESSION_SEXUELLE",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 5015998,
+"source": "@FocusMedia_Fr (X)"
+},
+{
+"id": "1YwmVVg7twXXCU0kDZCx-h8qC3KTdOGma",
+"fn": "INCONNU_COUP_DE_TÊTE",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 734370,
+"source": "FRANCE TV (FRANCE 1)"
+},
+{
+"id": "1yds9tLqwvqX2uFMkOuqxnaRd46gIwT4e",
+"fn": "INCONNU_INFILTRATION_POLICE",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3082825,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1yLqlqpusTX1rrJDVRxrdHZqiMkHNxZDz",
+"fn": "INCONNU_INTIMIDATION_1",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6264274,
+"source": "@bane.sio (TIKTOK)"
+},
+{
+"id": "1WzZVvDoOKc6tci_STFwx2MdXE1mRQZRG",
+"fn": "INCONNU_INTIMIDATION_2",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3903625,
+"source": "@FocusMedia_Fr (X)"
+},
+{
+"id": "1ITTMdy9OAknRajRo_bbVbFMv8CPcdEfh",
+"fn": "INCONNU_PLAQUAGE",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1366702,
+"source": "@LeSignal (X)"
+},
+{
+"id": "1K-6lJUg9qGj09L2hwhEI88w9TDH_YlCU",
+"fn": "INCONNU_TRAÎNAGE",
+"ville": "AUTRES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2789542,
+"source": null
+},
+{
+"id": "1fnO2cW6HOLQiAkvObJt9CSyI70HeGs2C",
+"fn": "RUE_BATTANT_PLAQUAGE_COUPS",
+"ville": "BESANÇON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 9687416,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1M15MQYQajGdG56dzN4HG3ODZv444856-",
+"fn": "RUE_GRANGES_MATRAQUE",
+"ville": "BESANÇON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1710165,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1UQK2steGr8am8GwORUqxgxR7seQ5AlqW",
+"fn": "INCONNU_MATRAQUE",
+"ville": "CAEN",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 205940,
+"source": "@emma_frr (X)"
+},
+{
+"id": "1R1tQxWkrULBvoIlqhKOCLZPZwGEG7Uia",
+"fn": "BOULEVARD_CARNOT_COUPS",
+"ville": "DIJON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 7123669,
+"source": "France TV (France 3 Bourgogne-Franche-Comté)"
+},
+{
+"id": "1FKLrKhr2GY9OK4OJzwsgF9yLQqag6MRN",
+"fn": "INCONNU_GRENADE",
+"ville": "DIJON",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 347915,
+"source": "actu.fr"
+},
+{
+"id": "1K-jeGQVgotbKTAothTSUgEhWj7aL_ubV",
+"fn": "BOULEVARD_JEAN_PAIN_GAZ_ABUSIF",
+"ville": "GRENOBLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4661081,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1irziEEQre_GwW567-SquRo2NCu6v0Mtm",
+"fn": "INCONNU_GIFLE",
+"ville": "GRENOBLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 279011,
+"source": "@allanbrunon (X)"
+},
+{
+"id": "19-VLBRv-Rf8UYRd-mS8m8SfQQ-teknn_",
+"fn": "PARVIS_ABBÉ_PIERRE_VÉHICULE",
+"ville": "GRENOBLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1275361,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1qt60MMtIabAfPWgCcCkQFXKoVlyGiHjT",
+"fn": "INCONNU_TRAÎNAGE",
+"ville": "LE MANS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 635902,
+"source": "@MrPropagande (X)"
+},
+{
+"id": "1xmE_VXP0yK2pMlSA0oQVDRkiAVAM6wrl",
+"fn": "PLACE_ANTONIN_PONCET_MATRAQUE_INTIMIDATION",
+"ville": "LYON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 17011896,
+"source": "@adrien_pittore (X)"
+},
+{
+"id": "1FR2hFQQb9kirDqERBmv52yKgSQbhh-Er",
+"fn": "PONT_GUILLOTIÈRE_GRENADE",
+"ville": "LYON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2209038,
+"source": "@streetpress (X)"
+},
+{
+"id": "10mfcvLuvDNdsPCdYbylOHKNC11qqBrBl",
+"fn": "PONT_GUILLOTIÈRE_INTIMIDATION_PRESSE",
+"ville": "LYON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4697658,
+"source": "@loopsider (TIKTOK)"
+},
+{
+"id": "1HyZ6Me9vYjcC72YN3cmiBE0b9Xx2SOFs",
+"fn": "RUE_ÉMILE_ZOLA_ÉTRANGLEMENT_1",
+"ville": "LYON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1389234,
+"source": "@Mioka_Doc (X)"
+},
+{
+"id": "1BGNXvReIzs13YozrAcEXhJAbcRh-Nq36",
+"fn": "RUE_ÉMILE_ZOLA_ÉTRANGLEMENT_2",
+"ville": "LYON",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1931246,
+"source": "@Mioka_Doc (X)"
+},
+{
+"id": "1e-LYDb-LWKkoj5VdkopmPgf3bkibHdL8",
+"fn": "CANEBIÈRE_POUSSETTE_TRAÎNAGE",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2917349,
+"source": "@confrontfr (X)"
+},
+{
+"id": "1ZGpsdCBfFqK71yOAVbcyJqy-x2WsK3g3",
+"fn": "INCONNU_GRENADE",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 607773,
+"source": "@kameliamedia13 (X)"
+},
+{
+"id": "1lxlm6nwc8QXj0DWenmBn75Ga5rOcIbf-",
+"fn": "INCONNU_LBD",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 880895,
+"source": "@TribunePop23 (X)"
+},
+{
+"id": "1F3g6qqz6yBbAeVUXpK7uWADPE2alhJLr",
+"fn": "INCONNU_RISQUE_CHUTE",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2915285,
+"source": "@cpasdeslol_X (X)"
+},
+{
+"id": "1TT28IVmmHLESGQCyWG5pnFyet9ZzF4hu",
+"fn": "RUE_FORBIN_ÉTRANGLEMENT",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 7560283,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1EFdmhMyfAhor3ITX5UIDGmL8YNAoNvWN",
+"fn": "RUE_SAINT_FERREOL_GAZ_POMPIERS",
+"ville": "MARSEILLE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 9868342,
+"source": "@kameliamedia13 (X)"
+},
+{
+"id": "1n_rAqu-8xTySR_9hoCtzpQVgl0s8c8HS",
+"fn": "INCONNU_ATTAQUE",
+"ville": "METZ",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3496606,
+"source": "@gotchu444 (X)"
+},
+{
+"id": "15UO8cJD2bNB7EHXTfzsvzAdxEaWwOswr",
+"fn": "PLACE_ARMES_INFILTRATION_GRENADE",
+"ville": "METZ",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3083596,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1AlfD3XHOFUUGjqSRZS-8cs_Byb678Yix",
+"fn": "PLACE_COMÉDIE_JET_AU_SOL",
+"ville": "MONTPELLIER",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 16271480,
+"source": "@davidhutinphoto (X)"
+},
+{
+"id": "16LVm3Gky5NenQc73z91DTxQPfLhE4JVu",
+"fn": "PLACE_COMÉDIE_MISE_EN_JOUE",
+"ville": "MONTPELLIER",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1405012,
+"source": "@davidhutinphoto (X)"
+},
+{
+"id": "1QMfdXQAvU-WRyIDQ92MdjzagtYea7uxY",
+"fn": "RUE_SAUVAGE_CARTOUCHE_GAZ",
+"ville": "MULHOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 78618194,
+"source": "FRANCE TV (FRANCE 2)"
+},
+{
+"id": "1J9NAm0Ca_Gecr3ZR2DQ3Dy5QtU1Iv_7Y",
+"fn": "RUE_AFFRE_TIR_TENDU",
+"ville": "NANTES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2329366,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1N7gOwEXwVBICBfNtdUBdpiuJzjsrB9S6",
+"fn": "RUE_COUËDIC_MATRAQUE",
+"ville": "NANTES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1829754,
+"source": "@MrPropagande (X)"
+},
+{
+"id": "15HAsTSS8XX3-9w1r82JyV8tA5suqJWDB",
+"fn": "PROMENADE_ANGLAIS_POUSSETTE",
+"ville": "NICE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 518261,
+"source": "@OlivierSalerno (X)"
+},
+{
+"id": "1jx_VZonvY3AENjct-XbU8SuCYGDqzgEG",
+"fn": "AVENUE_CHAMPS_ELYSÉES_TASER",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4284779,
+"source": "@Les_Repliques (X)"
+},
+{
+"id": "1c_4LqBtXkqVr8tVAzgrYackSHjoQhjtm",
+"fn": "AVENUE_CHAMPS_ÉLYSÉES_TABASSAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1428814,
+"source": "@maiza6393 (X)"
+},
+{
+"id": "1mPnH6r9ApDfAi-3FouApsyHtRGZPNixS",
+"fn": "AVENUE_CHAMPS_ÉLYSÉES_TASER_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3818945,
+"source": "@ZakriaAbdelkafi (X)"
+},
+{
+"id": "1oQbYo1YAtnwdvoqM4qukcCSgkJBLKicJ",
+"fn": "AVENUE_PARMENTIER_MAINTIEN_AU_SOL",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 433748,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1mAeYHcPNcVsu7U07j4ebwdMvAflCosbB",
+"fn": "BOULEVARD_BONNE_NOUVELLE_PANCARTE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1571411,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "1P_T_k_siTMq3DEP60pCzNwviqPlkHRLL",
+"fn": "BOULEVARD_MADELEINE_TABASSAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 24484582,
+"source": "@papayaparadox (TIKTOK)"
+},
+{
+"id": "1MKc294B3bhWhzFi-o0gAsI1zxHAlE9ho",
+"fn": "INCONNU_INTIMIDATION",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 349340,
+"source": "@kameliamedia13 (X)"
+},
+{
+"id": "1Pt0pOE5tWO1Pey_rg0KFtTipRcWWa_wp",
+"fn": "INCONNU_MATRAQUE_1",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3008798,
+"source": "@GeRDN7 (X)"
+},
+{
+"id": "1fU8-erXG4nTGO2NgHxAZbXO1FFp3oozx",
+"fn": "INCONNU_MATRAQUE_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3974863,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "1O_5PcbdBcCkNMY04jUNdlN1cItcEYRnB",
+"fn": "INCONNU_MATRAQUE_3",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1981683,
+"source": "@kulturlesite (TIKTOK)"
+},
+{
+"id": "1EUSe0v7k-C3d5xIoyJYe5-FLL3OBhd-c",
+"fn": "INCONNU_PLAQUAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4872582,
+"source": "BRUT"
+},
+{
+"id": "1U93qssOO8x8OJnPUAKewcLfTFho1Rddc",
+"fn": "INCONNU_PLAQUAGE_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 5672765,
+"source": "@quentinataf (INSTAGRAM)"
+},
+{
+"id": "1lisI4FIe6UMv6RtwCzM_24GKcF0u_mu-",
+"fn": "METRO_SAINT_PHILIPPE_DU_ROULE_GAZ",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1126241,
+"source": "@maiza6393 (X)"
+},
+{
+"id": "1dAcESkN_obT5i1Y4H8WBxt5R4MCD3hPq",
+"fn": "PASSAGE_SAINT_ROCH_COUPS_INTIMIDATION",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6740027,
+"source": "@hom3r3 (X)"
+},
+{
+"id": "1syWLxg8xiG1K5oOJrCHvPPYstu8r1AAo",
+"fn": "PLACE_HÔTEL_VILLE_TABASSAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3035418,
+"source": "Shahin_Hazamy (X)"
+},
+{
+"id": "1q49sHTXvWCDMkp-PenEt-d-A1Mcic_UR",
+"fn": "PLACE_MADELEINE_TIR_TENDU_GRENADE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6852226,
+"source": "@streetpress_ (TIKTOK)"
+},
+{
+"id": "1puS1vcNX8nSl153zCkfsQypvECetEZtx",
+"fn": "PLACE_NATION_PLAQUAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1803510,
+"source": "@KayaNsr (X)"
+},
+{
+"id": "14HDZ3FVjvs90o4W0uVCd_NHkHcR4KcJK",
+"fn": "PLACE_RÉPUBLIQUE_CANON_EAU",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6381073,
+"source": "@CLPRESSFR (X)"
+},
+{
+"id": "1CUr_iw3264cTGnTx8t2KuwFgxuZSBSaX",
+"fn": "PLACE_RÉPUBLIQUE_FOUILLE_ABUSIVE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1903310,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "12FkR2Amd_uV2htglkawW9X0ZGSKiOfAS",
+"fn": "PLACE_RÉPUBLIQUE_GAZ",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1950303,
+"source": "MARC VERDENET (BRUT)"
+},
+{
+"id": "1isqDw2JKe-unofBzQGqgrMQ2Xi-eMWV2",
+"fn": "PLACE_RÉPUBLIQUE_GRENADE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1789994,
+"source": "@streetpress (X)"
+},
+{
+"id": "1DAMgHa3GRjrrxvdiId76mDTUTI-I4bbp",
+"fn": "PLACE_RÉPUBLIQUE_GRENADE_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 22017438,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "1JqIoxsnWQZSV-Vm40VLXXjRCkjmu6X_a",
+"fn": "PLACE_RÉPUBLIQUE_MATRAQUE_1",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 24235915,
+"source": "@MrPropagande (X)"
+},
+{
+"id": "1h4f2dVgUNMOCZS6pAKJRgKa9MVlM5EPk",
+"fn": "PLACE_RÉPUBLIQUE_MATRAQUE_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 34698275,
+"source": "@ImpactMediaFR (X)"
+},
+{
+"id": "1qQjiL0zZ9boHOI2Gsl2CPYYtgP9pq6c6",
+"fn": "PLACE_RÉPUBLIQUE_MATRAQUE_3",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1307458,
+"source": "@otherview (X)"
+},
+{
+"id": "1yI5X4cNikVJcnZY_20JBIcNC-5NRF_Sw",
+"fn": "PLACE_RÉPUBLIQUE_MATRAQUE_4",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3881968,
+"source": "@ImpactMediaFR (X)"
+},
+{
+"id": "1JVDfmGqxBPxoWW2iGiF2GznDdK6U7g8D",
+"fn": "PLACE_RÉPUBLIQUE_NASSE_1",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 18938683,
+"source": "@Les_Repliques (X)"
+},
+{
+"id": "1aN9pvpd2TEVOpkqEG0bTSL40nJQZD-kF",
+"fn": "PLACE_RÉPUBLIQUE_NASSE_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 8696461,
+"source": "@thomasmthieu (TIKTOK)"
+},
+{
+"id": "11wIsilIhXHbmqenX06gQZAvRp_VuUMrE",
+"fn": "PORTE_BERGER_TRAÎNAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1079502,
+"source": "@mc_helll (X)"
+},
+{
+"id": "13Sti_lWW7RMg6Tmnne9l7zXIs5EUDySH",
+"fn": "RUE_BEAUREPAIRE_LACRYMOGENE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4496092,
+"source": "@licta.mus (TIKTOK)"
+},
+{
+"id": "1LRduJavi0WNEy8ipVRv9AbR0C9nw_N7M",
+"fn": "RUE_BERGERE_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 8387010,
+"source": "@CLPRESSFR (X)"
+},
+{
+"id": "1MuA-viRIfrc7p9tY-mGOzGoK9uA0QoUL",
+"fn": "RUE_BOURSE_ENFANT_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1243225,
+"source": "@LucAuffret (X)"
+},
+{
+"id": "1CnTtBx6zwXX7rCyAlN7w1RrburNGBaky",
+"fn": "RUE_BOURSE_NASSE_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 17945506,
+"source": "@loopsider (TIKTOK)"
+},
+{
+"id": "17rSsoWxQbGpunyoTg372Nzl2BeCp4Skq",
+"fn": "RUE_CHATEAU_D'EAU_ARRESTATIONS_ABUSIVES",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6275238,
+"source": "@InterfacIDF (X)"
+},
+{
+"id": "13R0UvVqca-jufZcHitlIU5JWgSWgI4e0",
+"fn": "RUE_DAUNOU_GAZ_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2613363,
+"source": null
+},
+{
+"id": "1e7k4vm_AXpx04sLLA9GNGppHWRFNuX2l",
+"fn": "RUE_DIEU_GRENADE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 5744786,
+"source": "@MrPropagande (X)"
+},
+{
+"id": "1YkbmTnnOEaNOEQZClpIufaGOI1FyaPtN",
+"fn": "RUE_DUPHOT_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 5108200,
+"source": "@galichon_felix (X)"
+},
+{
+"id": "1gAkkh0wbxTWjx0hySuYTDjhxJiIdxabQ",
+"fn": "RUE_DUPHOT_MATRAQUE_COUPS_1",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 47535786,
+"source": "@streetpress (X)"
+},
+{
+"id": "1ruFjF91DnZ844pW4qCq4LHvDipt-E_Um",
+"fn": "RUE_DUPHOT_MATRAQUE_COUPS_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 810771,
+"source": "streetpress.fr"
+},
+{
+"id": "1NINjqwEGItbwaSFXQ1MarSk7VSbjW-mx",
+"fn": "RUE_FAUBOURG_SAINT_DENIS_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 12445710,
+"source": "L’HUMANITÉ"
+},
+{
+"id": "1UXUkR5m7biBozC3pB2KljdCbBdgni8uB",
+"fn": "RUE_FAUBOURG_TEMPLE_INTIMIDATION",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2539994,
+"source": "@redwatch_fr (X)"
+},
+{
+"id": "16HQVuAkuEzHg4IMHBQ8c8SaR1BLybJue",
+"fn": "RUE_FAUBOURG_TEMPLE_MANIFESTANT_INCONSCIENT",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 7924061,
+"source": "@FocusMedia_Fr"
+},
+{
+"id": "1jqstrnW03MlASHX8jXD70hHTLJ5f6BY2",
+"fn": "RUE_LAFAYETTE_PLAQUAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1375408,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "1kuvAY7HtV4A4LRffhSAwCNE4nPM2A3DQ",
+"fn": "RUE_PICARDIE_TRAÎNAGE_COUP",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3577811,
+"source": "@heathrzzz (X)"
+},
+{
+"id": "1EtIIe27Ya4c2ochM8iGsBl2ntBeLmK93",
+"fn": "RUE_PÉPINIÈRE_INTIMIDATION",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1473194,
+"source": "@MelissaGuts (X)"
+},
+{
+"id": "1Bs_rZ-pJmwjSyePDp3oSrFaE8ZuMIua_",
+"fn": "RUE_RAMBUTEAU_PLAQUAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2851031,
+"source": "@kadikadou (X)"
+},
+{
+"id": "1XbF2zfbG45jeGh3JOFMeLINQYbaFirIW",
+"fn": "RUE_RIVOLI_CHARGE_SANS_SOMMATION",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 9432476,
+"source": "@streetpress_ (TIKTOK)"
+},
+{
+"id": "1zvWtD-woUFdeAT5HHeJ2r9_Oyz5yZ7QA",
+"fn": "RUE_RIVOLI_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4639849,
+"source": "@FocusMedia_Fr (X)"
+},
+{
+"id": "13W6o0uowOQq3p9_y2CMeGPbLzgdR0iXB",
+"fn": "RUE_RIVOLI_TABASSAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1096928,
+"source": null
+},
+{
+"id": "1IcY8RMifh_zc9rT7slmljTZh83A6Ayo0",
+"fn": "RUE_ROUGEMONT_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2016513,
+"source": "@FocusMedia_Fr (X)"
+},
+{
+"id": "1TrKVd_as_p7keqR-vQb_BF-o-EfPusk2",
+"fn": "RUE_SAINT_AUGUSTIN_CONTRÔLE_ABUSIF",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1895275,
+"source": "@Masleuu (X)"
+},
+{
+"id": "1ckQyqoJPz5GevSySfvhFW79S5tU4VUEr",
+"fn": "RUE_SAINT_DENIS_DÉCÈS",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2822989,
+"source": "@ImpactMediaFR (X)"
+},
+{
+"id": "1qONTmGk3VdsmlnwpvNQgqaHznDV92b_f",
+"fn": "RUE_SAINT_DENIS_DÉCÈS_2",
+"ville": "PARIS",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 2474291,
+"source": "leparisien.fr"
+},
+{
+"id": "1wBuRBQ5aKu2WE8O6PrTFpqwedZVu3Xap",
+"fn": "RUE_SAINT_HONORÉ_CHARGEMENT_MOTO",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2761327,
+"source": "RÉMY BUISINE (BRUT)"
+},
+{
+"id": "1gVEorIbcEBBxYbvmuKoj5abE7Gp-2Qzh",
+"fn": "RUE_SAINT_LAZARE_CONFISCATION_CONTRÔLE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3033987,
+"source": "@taragui_media (X)"
+},
+{
+"id": "1vGOWSbD6Oy-iQ3PzHCc8zP7nb7S3UhAg",
+"fn": "RUE_TURBIGO_TABASSAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 4578207,
+"source": "@userky__ (TIKTOK)"
+},
+{
+"id": "1mUPYiqh9QlOu9Ss1Ce5thAjt59pfx--n",
+"fn": "RUE_VIEUX_COLOMBIER_MATRAQUE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2721262,
+"source": "@streetpress (X)"
+},
+{
+"id": "1RbdYyavviww3UU6g5ut5y6xJn6bk0nHD",
+"fn": "SCIENCES_PO_PLAQUAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 6042614,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1Ak9cKCV5opYQVVzynK4tGxdJB7YC4EIU",
+"fn": "SCIENCES_PO_TRAÎNAGE",
+"ville": "PARIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2603343,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1vnLzk1YGXidNEVTCceYMzOnBDVknRN9q",
+"fn": "AVENUE_JEAN_JANVIER_INSULTES",
+"ville": "RENNES",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1992124,
+"source": "@streetpress (X)"
+},
+{
+"id": "1zqcPQBVyPrvu5LjiDABdKUvSDRks_XAJ",
+"fn": "PLACE_TILLEULS_GAZ",
+"ville": "SAINT-DENIS",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 502540,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1HY-DAKSWZJqPn8kQajDiSrpkVdz2Pgwk",
+"fn": "INCONNU_GRENADE",
+"ville": "SAINT-ÉTIENNE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1501286,
+"source": "@L’insoumission (X)"
+},
+{
+"id": "1f885xIJzdbF3o3WTrCZ8cKNXPpeG17b5",
+"fn": "INCONNU_LBD",
+"ville": "STRASBOURG",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 1933203,
+"source": "FRANCE TV (FRANCE 3 GRAND EST)"
+},
+{
+"id": "1QKK_5TBE_FQKSIbswAdZ7nxjyliv0iFT",
+"fn": "ALLÉE_PRÉSIDENT_FRANKLIN_ROOSEVELT_COUP_PIED",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 3563749,
+"source": "@geocrises (X)"
+},
+{
+"id": "106fnpG0BulnTPUbWXx9AaEGJnFiM0NIh",
+"fn": "BOULEVARD_STRASBOURG_MATRAQUE",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2149673,
+"source": "@LeSignal (X)"
+},
+{
+"id": "1xwgBCmrqtqJkyIU982T9p8xvDEUgwbnF",
+"fn": "BOULEVARD_STRASBOURG_POUSSETTE_MATRAQUE",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 1987675,
+"source": "@knuck_fx (X)"
+},
+{
+"id": "1qYxQMfnDNmHabJ_0HnVmMWDP9AssZ145",
+"fn": "INCONNU_MATRAQUE",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2381374,
+"source": "@Khadija_Toufik (X)"
+},
+{
+"id": "1IvTs2vNiKtmZWxxOGMjP2_KgHWSowu3E",
+"fn": "INCONNU_TOURISTE_GRENADE",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "application/pdf",
+"taille": 262207,
+"source": "ACTU.FR (TOULOUSE)"
+},
+{
+"id": "1ldkNeyKZmOkmfclfvMjpoTIKUPfs1f3J",
+"fn": "RUE_CUGNAUX_TABASSAGE",
+"ville": "TOULOUSE",
+"periode": 1,
+"mime": "video/mp4",
+"taille": 2963095,
+"source": "@khadija_toufik_reporter (X)"
+},
+{
+"id": "1PH81k6jj74iivz7gTfW2gzotgU7XqCtu",
+"fn": "INCONNU_INTIMIDATION_MENACES",
+"ville": "AUTRES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 7848754,
+"source": "@FocusMedia_Fr (X)"
+},
+{
+"id": "1-daqpIs9fNc7Qo_ATGXcnJevY9rOGYsx",
+"fn": "INCONNU_MATRAQUE_PERSONNE_EN_BÉQUILLES",
+"ville": "AUTRES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1465550,
+"source": "@iamnooraaaoff"
+},
+{
+"id": "1118rnwCe6XdURYzzTk7G_hO4UMPgsqG3",
+"fn": "INCONNU_MENACES_INTIMIDATION",
+"ville": "AUTRES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1625540,
+"source": "@Aarrde (X)"
+},
+{
+"id": "11M_NCmhl1dgNJpjoGlTvjkn6tYDF0Gi2",
+"fn": "INCONNU_GAZ_APPARTEMENT",
+"ville": "BESANÇON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 296970,
+"source": "@sevariable (X)"
+},
+{
+"id": "1kjJhWfIS0FgzL5E67jc1toIWAuZgeNoC",
+"fn": "INCONNU_PLAQUAGE_MAINTIEN_AU_SOL",
+"ville": "BESANÇON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 6169791,
+"source": "@L_insoumission (X)"
+},
+{
+"id": "1BGXpKQawRRQXERvHozQKr-JBXxsTfLvm",
+"fn": "PLACE_BOURSE_GAZ_MASSIF",
+"ville": "BORDEAUX",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 591350,
+"source": "@Ab7Media (X)"
+},
+{
+"id": "1ywsq_RMR0DIz8CL73JJ6mVN07NsQSSkR",
+"fn": "PLACE_BOURSE_MISE_EN_JOUE_IRRÉGULIÈRE",
+"ville": "BORDEAUX",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1776873,
+"source": "@Ab7Media (X)"
+},
+{
+"id": "19ln0GTDm-p27ULVZe6vFS-um3rjhFcU7",
+"fn": "PLACE_BOURSE_POUSSETTE_DANGEREUSE_INTIMIDATION",
+"ville": "BORDEAUX",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2226869,
+"source": "@Ab7Media (X)"
+},
+{
+"id": "1V5gHfYmU6ptj2mpH4slg3w8clKOw0NT-",
+"fn": "PLACE_BOURSE_TABASSAGE",
+"ville": "BORDEAUX",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5005780,
+"source": "@Ab7Media (X)"
+},
+{
+"id": "18gQXdEsH5mLgpg_k9IIcBo2r_Z9ZlKwZ",
+"fn": "QUAI_DOUANE_TIR_TENDU_LBD",
+"ville": "BORDEAUX",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4082224,
+"source": "@Ab7Media (X)"
+},
+{
+"id": "1P_6h68XXbdwc4Ex8U65PWYYSMD1TO-s5",
+"fn": "INCONNU_INSULTES_COUPS",
+"ville": "CHAMBÉRY",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 836446,
+"source": "@BostonG_u (X)"
+},
+{
+"id": "1AK56-s60eBR_AE7O_H2g_28NssxT_gAD",
+"fn": "AVENUE_EDOUARD_MICHELIN_GAZ_SANS_SOMMATION",
+"ville": "CLERMONT FERRAND",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 342771,
+"source": "@Cest__Carre (X)"
+},
+{
+"id": "1TZHKygDos97LmkY7otTVEKA07iJB3ASM",
+"fn": "INCONNU_GRENADES_TENDUES_1",
+"ville": "CLERMONT FERRAND",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1675775,
+"source": "@lamontagne_fr (X)"
+},
+{
+"id": "1G5F6RW0oEDXUJNNKt3ANEk-oEfVj7xao",
+"fn": "INCONNU_GRENADES_TENDUES_2",
+"ville": "CLERMONT FERRAND",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2662444,
+"source": "@General2gauche (X)"
+},
+{
+"id": "1rVfYhvEjMydR69mePoxotlpIaLE0d_oj",
+"fn": "TW_INCONNU_GRENADE_PERTE_MAIN_1",
+"ville": "CLERMONT FERRAND",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1591779,
+"source": "@sls639 (X)"
+},
+{
+"id": "1gilxewwzAotZJKQaeBR8HIyrkd7TS2iM",
+"fn": "TW_INCONNU_GRENADE_PERTE_MAIN_2",
+"ville": "CLERMONT FERRAND",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 215796,
+"source": "@AlertesInfos (X)"
+},
+{
+"id": "1BGVKjrZ4ex31JQ61oK8pKkV7hHpK1cRy",
+"fn": "PLACE_GUSTAVE_RIVET_TABASSAGE",
+"ville": "GRENOBLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1316783,
+"source": "@allanbrunon (X)"
+},
+{
+"id": "16mZzdULfPWjk90Ue5XwRYNmYLC4dKipv",
+"fn": "PLACE_VERDUN_GAZ_MASSIF",
+"ville": "LA ROCHELLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2451153,
+"source": "@INF_LaRochelle (X)"
+},
+{
+"id": "1jA0QBNydHJlxdGam2EWf4-pKaRloVrsV",
+"fn": "PLACE_VERDUN_NASSE_GRENADE",
+"ville": "LA ROCHELLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 3086897,
+"source": "@ValentinBoulay_ (X)"
+},
+{
+"id": "1Ek1VulHNO_Cb1wZEb-fHbEsuq1dOyX7d",
+"fn": "INCONNU_MISE_EN_JOUE_IRRÉGULIÈRE",
+"ville": "LILLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 487909,
+"source": "@wisouche (X)"
+},
+{
+"id": "1NULkGXj-rsXTcj4BgreazzKZ1wJMn26s",
+"fn": "RUE_BAS_JARDIN_MATRAQUE",
+"ville": "LILLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1611547,
+"source": "@alvarosjoy (X)"
+},
+{
+"id": "1P9eyEubwenOl6Bq_GpKITGBTq6XdBVwh",
+"fn": "INCONNU_GAZ_MASSIF",
+"ville": "LIMOGES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4981333,
+"source": "France Info (France TV)"
+},
+{
+"id": "11ZY09yNgyFb6LtHs-rrxNKVoBL-tV0DV",
+"fn": "AVENUE_JEAN_JAURES_GAZ_MASSIF",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 3695646,
+"source": "@Bismuthback"
+},
+{
+"id": "1ZJWX4wWwUxlFdKLQNSJcUHjV8w2wP63F",
+"fn": "INCONNU_BALAYETTE",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1527898,
+"source": "@lyonmag (X)"
+},
+{
+"id": "1nzICSAo2K2LzZhLp637c_Yf52HDgEkhg",
+"fn": "INCONNU_NASSE_GAZ_MASSIF",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4736014,
+"source": "@leprogreslyon (X)"
+},
+{
+"id": "1NvHyaSvSgyREAKehPVEvaEshVsUiKcEX",
+"fn": "PLACE_JEAN_MACÉ_GAZ_MASSIF",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1457072,
+"source": "@lyonmag (X)"
+},
+{
+"id": "1FTWBTAbMvZzqxycc36Elzow2CyxKD7gd",
+"fn": "PLACE_JEAN_MACÉ_GRENADE",
+"ville": "LYON",
+"periode": 2,
+"mime": "application/pdf",
+"taille": 4189916,
+"source": "franceinfo.fr le 28/10"
+},
+{
+"id": "1T9vNwQUyPF4BgZHOQN2CWstCHTDiXnXN",
+"fn": "PLACE_MAZAGRAN_GAZ_MASSIF",
+"ville": "LYON",
+"periode": 2,
+"mime": "image/jpeg",
+"taille": 1029399,
+"source": "@palazzokefka (X)"
+},
+{
+"id": "1YcOYwZQMzwNXFti6XE9rhuxevPgHma4-",
+"fn": "QUAI_CLAUDE_BERNARD_RISQUE_CHUTE_GAZ_ABUSIF",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4874137,
+"source": "hugo_frances (X)"
+},
+{
+"id": "1suE-Ps1k3T_XtRqB8r4Kr1E4qoNVoSV6",
+"fn": "RUE_MADELEINE_GRENADE_DANGEREUSE",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 767609,
+"source": "@mocheTdesIles (X)"
+},
+{
+"id": "1wRox1cWwgc22DZtbpXMY1qm81l-aR-HJ",
+"fn": "RUE_UNIVERSITÉ_TABASSAGES",
+"ville": "LYON",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2165691,
+"source": "@GonesDenBas (X)"
+},
+{
+"id": "1DNIAEpTWuzsfLxYicPQwNeHKEWOJQvBz",
+"fn": "LA_CANEBIÈRE_CANON_EAU_DANGEREUX",
+"ville": "MARSEILLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5285922,
+"source": "@confrontfr (X)"
+},
+{
+"id": "1WjQ-PZAk7m-MU34kb0ZXs4_J_7lU8mlh",
+"fn": "PLACE_JULES_GUESDE_TABASSAGE",
+"ville": "MARSEILLE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4612644,
+"source": "@afpfr (X)"
+},
+{
+"id": "1ALAvHSIFsI0qcCXyl1FVAKb4kOTsp7zN",
+"fn": "PLACE_RÉPUBLIQUE_ÉCRASEMENT_MAINTIEN_AU_SOL",
+"ville": "METZ",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4123514,
+"source": "@iamnooraaaoff"
+},
+{
+"id": "1UgX1_gpHvgNGDpH2DpgYI_NcrWrAS5h5",
+"fn": "ESPLANADE_CHARLES_DE_GAULLE_TABASSAGE_AVEC_MILITANTS_ULTRADROITE_1",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1373864,
+"source": "@Portes_Thomas (X)"
+},
+{
+"id": "1aDGOtTuGCZH0tPzRkP2XhJTqJmi-6XQy",
+"fn": "ESPLANADE_CHARLES_DE_GAULLE_TABASSAGE_AVEC_MILITANTS_ULTRADROITE_2",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 3181613,
+"source": "@davidhutinphoto (X)"
+},
+{
+"id": "18nmdOZwZIN3QWE9sBQJy_nHtkRnho-BD",
+"fn": "INCONNU_GAZ_MASSIF",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 34848260,
+"source": "@BriLitzMedia (X)"
+},
+{
+"id": "1uAsSWVIgY0q1d1Fo2MASiqjq8Z65pQJv",
+"fn": "INCONNU_NON_ASSISTANCE_PERSONNE_EN_DANGER",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1898829,
+"source": "@iamnooraaaoff (X)"
+},
+{
+"id": "1wLKj7KVCWoYm9AEDQ1oMTOueXiuWjPSd",
+"fn": "PONT_JEAN_ZUCCARELLI_BALAYETTE_MATRAQUE",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 113186144,
+"source": "@BriLitzMedia (X)"
+},
+{
+"id": "19ZYqyIC-erD7TFPzRnqncKTcWuuCwTjU",
+"fn": "PONT_JEAN_ZUCCARELLI_TIR_TENDU_LBD",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2471131,
+"source": "@_salmambk (X)"
+},
+{
+"id": "1p7qtIpnQVaZwonHSss-2KBxmtAKY6ZDY",
+"fn": "RUE_LOGE_DÉFENSE_MILITANTS_ULTRADROITE",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5524626,
+"source": "@ImpactMediaFR (X)"
+},
+{
+"id": "12M-rPlmKnH308FgimHbSClIWnHPEhK9H",
+"fn": "RUE_LOGE_MISE_EN_JOUE_IRRÉGULIÈRE",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1340127,
+"source": "@Lailaeren (X)"
+},
+{
+"id": "1ljFrQm-EMF6Qk3HT6r1DjLeFTpECCqDj",
+"fn": "RUE_MAGUELONE_DISSIMULATION_MARTEAU",
+"ville": "MONTPELLIER",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 971873,
+"source": "@adri1312.arbl (TIKTOK)"
+},
+{
+"id": "1EBBfhjP1fMuxPW6Fno6yCK5z62v2TABa",
+"fn": "RUE_GAMBETTA_GAZ_MATRAQUE",
+"ville": "NANCY",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 606910,
+"source": "@thomarxxx (X)"
+},
+{
+"id": "1Y4TN-gAanMVr85w_yqACAh_Zs4TRVm69",
+"fn": "ALLÉE_DUGUAY_TROUIN_POUSSETTE_DANGEREUSE",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2386283,
+"source": "@L_insoumission (X)"
+},
+{
+"id": "1FgKB9E1v8Es-no4xQ-MAoXnxdqreSBvi",
+"fn": "ALLÉE_FLESSELLES_TIR_TENDU_LBD",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1138546,
+"source": "@L_insoumission (X)"
+},
+{
+"id": "1Puxttrpaj0kKQrB6hkSlpBXwW07ZUc0T",
+"fn": "INCONNU_CANON_EAU_GAZ_1",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1093706,
+"source": "@actu_nantes (X)"
+},
+{
+"id": "1nXa9riVwOoC5c9Ve9uLjMLRs7xlNi2n6",
+"fn": "INCONNU_CANON_EAU_GAZ_2",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1541677,
+"source": "@actu_nantes (X)"
+},
+{
+"id": "11703Cav_nV2tukmevpa5vqxlK1r0menc",
+"fn": "INCONNU_CANON_EAU_GAZ_MASSIF",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 836261,
+"source": "@actu_nantes (X)"
+},
+{
+"id": "1_FOStfk5bG77Ec_bTUMLgc5wFZe_uGw_",
+"fn": "INCONNU_ENTRÉE_EN_FORCE_RESTAURANT_COUPS",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 853306,
+"source": "@loutekx (TIKTOK)"
+},
+{
+"id": "15pVg_TgH_crf_IgEJVdTWyKA8loE6Gjg",
+"fn": "INCONNU_ÉTRANGLEMENT",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1919718,
+"source": "@L_insoumission (X)"
+},
+{
+"id": "1Zn0a6fVgPACNH94D-zXB9CujLbCxQaFP",
+"fn": "PLACE_COMMERCE_POUSSETTE_DANGEREUSE_MATRAQUE",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 15049622,
+"source": "CNEWS"
+},
+{
+"id": "1pfviT3jJ2EvYSwRZH7BT2RBQeFusfRMH",
+"fn": "PONT_ARISTIDE_BRIAND_GRENADE",
+"ville": "NANTES",
+"periode": 2,
+"mime": "application/pdf",
+"taille": 2112335,
+"source": "ouest-france.fr"
+},
+{
+"id": "1PwlYk_bq_1WFitZKuVcb9plws2Qybztv",
+"fn": "RUE_JEAN_FONTAINE_MAINTIEN_AU_SOL",
+"ville": "NANTES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 592447,
+"source": "@L_insoumission (X)"
+},
+{
+"id": "1duLCUf5a9JfioYdi-Z1qpdJuAEJ0sYmQ",
+"fn": "AVENUE_JEAN_MÉDECIN_GAZ_MASSIF",
+"ville": "NICE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 10162176,
+"source": "@Nice_Matin (X)"
+},
+{
+"id": "1vf_nujxbFts-aOVre6EvtHU5rv6HbGPo",
+"fn": "INCONNU_INTIMIDATION",
+"ville": "NICE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2398617,
+"source": "@Bdlinder_ (X)"
+},
+{
+"id": "1P1JOdqERfOVYxKFyluI9SKp-rui6DU-J",
+"fn": "INCONNU_EMPÊCHEMENT_LIBRE_CIRCULATION_PRESSE",
+"ville": "ORLÉANS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 30448850,
+"source": "@Cemil (X)"
+},
+{
+"id": "1FKODkTBGDFX3tkdonc-2Ctq42LZr72m8",
+"fn": "AVENUE_ÉMILE_LAURENT_MISE_EN_JOUE_IRRÉGULIÈRE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 9610593,
+"source": "@Masleuu (X)"
+},
+{
+"id": "1ugiyMHO-5nQQYq9YYi-OnnhD4cTpJiCO",
+"fn": "AVENUE_ÉMILE_LAURENT_TABASSAGE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1927550,
+"source": "@Masleuu (X)"
+},
+{
+"id": "1Ckfp5M6iYRQgAmLfBCo9YcxOWMRIJ-gr",
+"fn": "BOULEVARD_CHARONNE_MAINTIEN_AU_SOL_TENTATIVE_DE_DISSIMULATION",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 16176507,
+"source": "@vanitus111 (X)"
+},
+{
+"id": "1dnRXZgu9fwpwgfBn4xCYnl866XGuuG4O",
+"fn": "BOULEVARD_HÔPITAL_INTIMIDATION_COUPS",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 22852922,
+"source": "@nana_rdh9 (TIKTOK)"
+},
+{
+"id": "1esm61DAqKX4hfnWaQ2W_5bhisGvX8jOH",
+"fn": "BOULEVARD_SOULT_ENTRÉE_EN_FORCE_IMMEUBLE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 22249469,
+"source": "@ajplusfrancais (X)"
+},
+{
+"id": "1NeNic0raF8zZvPDxMVHtgSQ4BAnIHGtF",
+"fn": "BOULEVARD_SOULT_ENTRÉE_EN_FORCE_IMMEUBLE_MATRAQUE_1",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 8916505,
+"source": "@Masleuu (X)"
+},
+{
+"id": "1cvqlZjq9vCNTYQAAiKodzM1lwI1WFkks",
+"fn": "BOULEVARD_SOULT_ENTRÉE_EN_FORCE_IMMEUBLE_MATRAQUE_2",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 6825214,
+"source": "@Masleuu (X)"
+},
+{
+"id": "12PYGLsCzXrdrqVZOjgw5cpU3XwZOMon5",
+"fn": "BOULEVARD_SOULT_ENTRÉE_EN_FORCE_IMMEUBLE_MATRAQUE_3",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 24680513,
+"source": "@ShadesFrance (X)"
+},
+{
+"id": "1Wr7CQ-Gm--9T2bIHbHfVcJ0wCOelIwEp",
+"fn": "BOULEVARD_SOULT_EXPULSION_VIOLENTE_BAR",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5840492,
+"source": "@Masleuu (X)"
+},
+{
+"id": "1GP1F6LhSLzWlfrznSuRREV5VovOAuYFk",
+"fn": "COURS_VINCENNES_GAZ_MASSIF_SIT_IN",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5920967,
+"source": "@inessmgn_ (X)"
+},
+{
+"id": "127NSLckUpMZNoxSOF8w5QHJJwCZWOTFj",
+"fn": "COURS_VINCENNES_MAINTIEN_AU_SOL",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1572864,
+"source": "BFMTV"
+},
+{
+"id": "1dLYRZU36ktMQcBuL4Ce2m2SROOqF8sVh",
+"fn": "COURS_VINCENNES_MATRAQUE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 7577857,
+"source": "@ATmediaa (X)"
+},
+{
+"id": "16_kEgGop1HXdy19ZazM56k8cX-UoN0mP",
+"fn": "COURS_VINCENNES_MATRAQUE_POUSSETTE_DANGEREUSE_1",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 9339780,
+"source": "@Masleuu"
+},
+{
+"id": "1Ofwyk4SPebiv8FHWFvsltJtLJaXECF4O",
+"fn": "COURS_VINCENNES_MATRAQUE_POUSSETTE_DANGEREUSE_2",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5293711,
+"source": "@LibreQg"
+},
+{
+"id": "18OGTTLqU_d8Pfc2HKQUEJHprO3Gaso0X",
+"fn": "COURS_VINCENNES_MATRAQUE_PRESSE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4429432,
+"source": "Les_Repliques (X)"
+},
+{
+"id": "1j0iIgPvTm5fQE5W6np1zoil3TyyPKcrx",
+"fn": "COURS_VINCENNES_NASSE_1",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 1077064,
+"source": "@plusfouquetoi75 (X)"
+},
+{
+"id": "1F7jqBkYWjrugGoBAO2pzUTNudmhIqynl",
+"fn": "COURS_VINCENNES_NASSE_2",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 592543,
+"source": "@plusfouquetoi75 (X)"
+},
+{
+"id": "1n8AZsKDrfovnU_3SHvqxSLEUCSlFgBbw",
+"fn": "COURS_VINCENNES_NASSE_MATRAQUE_1",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 17029407,
+"source": "@LucAuffret (X)"
+},
+{
+"id": "1F4dWeuQd-wGPzb9HbqYPiAi1aRHQr45Z",
+"fn": "COURS_VINCENNES_NASSE_MATRAQUE_2",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 6164801,
+"source": "@arthur_duterque (X)"
+},
+{
+"id": "11LKOagfVl6IbJd32b6-_EEnwtQP_n0Ay",
+"fn": "COURS_VINCENNES_PERSONNE_GRAVEMENT_BLESSÉE_CHARGE_POLICIÈRE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 10821893,
+"source": "@Masleuu (X)"
+},
+{
+"id": "187aJOvl4ZmTdYH53iKiGvXl-IWavNOi9",
+"fn": "COURS_VINCENNES_POUSSETTE_DANGEREUSE_ESCALIERS",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4378522,
+"source": "@Dabzox (X)"
+},
+{
+"id": "12It4S_g_KzgJOHcOa95SAneF_F1Pv3sK",
+"fn": "COURS_VINCENNES_POUSSETTE_DANGEREUSE_MATRAQUE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 8773080,
+"source": "@ATmediaa"
+},
+{
+"id": "1T3MPvoD_P9CI23WYIP-g9VaBq0358GV9",
+"fn": "COURS_VINCENNES_TABASSAGE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 10419493,
+"source": "@3janetv (X)"
+},
+{
+"id": "16zJMcXMNX2XuSuS5qEh_b4fe0EN4IZfP",
+"fn": "COURS_VINCENNES_TENTATIVE_ENTRÉE_EN_FORCE_CAFÉ",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4627040,
+"source": "@LeMediaTV"
+},
+{
+"id": "1E1uGnDgv_xcQosvIlu-h2zL6Pgg0oOqr",
+"fn": "COURS_VINCENNES_TRAÎNAGE_ÉTRANGLEMENT",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 59356135,
+"source": "@thenowherephoto (X)"
+},
+{
+"id": "1Me2Yi23L-9897vCMQRpajfg_LI834rjH",
+"fn": "INCONNU_BLESSURE_GRAVE_MATRAQUE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 315011,
+"source": "@tozz3alik (X)"
+},
+{
+"id": "118qWXURzpe2wZ5tP7m9WRzCG-zfL_f6l",
+"fn": "INCONNU_MALAISE_GAZ",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2793571,
+"source": "@tozz3alik (X)"
+},
+{
+"id": "1agmEjh9X9yZDscBdx5xrWX83GxuXTs2Q",
+"fn": "INCONNU_TABASSAGE_1",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 6199874,
+"source": "@ATmediaa (X)"
+},
+{
+"id": "18Ld8O1QiMvVxUEWxk3b1OFgsushxEQsj",
+"fn": "INCONNU_TABASSAGE_2",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 3398760,
+"source": "@ATmediaa (X)"
+},
+{
+"id": "14_NLF0JVC1PYZ4aeLG8iYEfh8OQ-Kr0w",
+"fn": "RUE_FLORÉAL_MATRAQUE_BLESSURE_GRAVE",
+"ville": "PARIS",
+"periode": 2,
+"mime": "application/pdf",
+"taille": 1441846,
+"source": "actu.fr"
+},
+{
+"id": "1d1S_ksatYGYALbseJhNdNnt_-wPc2dlH",
+"fn": "TW_INCONNU_BLESSURE_MAIN_LBD",
+"ville": "PARIS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 138630,
+"source": "@Ilangabet (X)"
+},
+{
+"id": "1sRv5Xq3etdWXQ6dXxH3tV_bZQ3z7t6ET",
+"fn": "INCONNU_COUPS_GRENADE_BLESSURE_GRAVE_OEIL",
+"ville": "POITIERS",
+"periode": 2,
+"mime": "application/pdf",
+"taille": 1113873,
+"source": "ici.fr"
+},
+{
+"id": "1fj8rM2ZksZxeqS82oIvDoLx59cYPOjp9",
+"fn": "RUE_GAMBETTA_GRENADE",
+"ville": "REIMS",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 18143955,
+"source": "@france3grandest (TIKTOK)"
+},
+{
+"id": "14KHze4cI48YioVpTZfAB7nRCx-92HUxF",
+"fn": "BOULEVARD_LIBERTÉ_ARRESTATION_ABUSIVE",
+"ville": "RENNES",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5818694,
+"source": "@Rennes24 (X)"
+},
+{
+"id": "1KxEVFhjzs2nHUHs5wLhGT62CInrmwJtP",
+"fn": "RUE_ALMA_GRENADE_APPARTEMENT",
+"ville": "RENNES",
+"periode": 2,
+"mime": "application/pdf",
+"taille": 3304574,
+"source": "http://france3-regions.franceinfo.fr"
+},
+{
+"id": "1eBojNXcr_3Q7x4ZKjvFvdfbWn6ctk1re",
+"fn": "PLACE_CARMES_GRENADE_ENFANT_1",
+"ville": "ROUEN",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5161275,
+"source": "@Dark_Kitten (X)"
+},
+{
+"id": "1275oO3xofgXG5OVGGZCGY-192UCdlLq7",
+"fn": "PLACE_CARMES_GRENADE_ENFANT_2",
+"ville": "ROUEN",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 764238,
+"source": "@TartaLe (X)"
+},
+{
+"id": "1boM4ggD35bW5YnUnFxv9DgvBevnRGDvo",
+"fn": "RUE_SAINT_LÔ_ARRESTATIONS_ABUSIVES_SOUTIEN_MILITANTS_ULTRADROITE",
+"ville": "ROUEN",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 29893770,
+"source": "@streetpress (X)"
+},
+{
+"id": "1jwLXHD5vdnTyZBZokkngK_EqQfS121ZL",
+"fn": "PASSAGE_SAINTE_CATHERINE_TABASSAGE",
+"ville": "SAINT-ÉTIENNE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 598402,
+"source": "@ismael42jkr (X)"
+},
+{
+"id": "1ampX0k2xsJMGC-aAyg147AV37fvPqdpI",
+"fn": "INCONNU_PLAQUAGE_DANGEREUX",
+"ville": "STRASBOURG",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 604610,
+"source": "@LaSotizerie (X)"
+},
+{
+"id": "19W3faiVnsZ3b6sZcqw41heVWPgWeLN4k",
+"fn": "QUAI_PÊCHEURS_TABASSAGES_DONT_PERSONNE_DÉJÀ_BLESSÉE",
+"ville": "STRASBOURG",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2643499,
+"source": "@ChronoPolo (X)"
+},
+{
+"id": "1HO3lLHBaCCNWtu9BxqGj_CldQcmOT7xW",
+"fn": "QUAI_PÊCHEURS_VÉHICULE",
+"ville": "STRASBOURG",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 4149611,
+"source": "@dederae2 (X)"
+},
+{
+"id": "145mFkADiCk7jT-6FlLyBBihnj-IOk_mT",
+"fn": "RUE_ZURICH_GAZ_APPARTEMENT",
+"ville": "STRASBOURG",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 735512,
+"source": "@bykuroomii (X)"
+},
+{
+"id": "1z0O3N-ArvY_TPEnqAnWgbCYoIwgTvbja",
+"fn": "AVENUE_ÉTIENNE_BILLIÈRES_ARRESTATION_ABUSIVE",
+"ville": "TOULOUSE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 10109592,
+"source": "@Valeur_anar (X)"
+},
+{
+"id": "1VNCaGEQsHV_qMnRLYNwXi3L0b9VTlIUh",
+"fn": "BOULEVARD_LASCROSSES_GRENADES",
+"ville": "TOULOUSE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 5717372,
+"source": "@ImpactMediaFR (X)"
+},
+{
+"id": "1PTxQHLYVucq_WHLimdczcEMpNkSy67eX",
+"fn": "TW_INCONNU_MAIN_ARRACHÉE",
+"ville": "TOULOUSE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 2800602,
+"source": "@nasnastoulouse31 (TIKTOK)"
+},
+{
+"id": "1mOSC8y7Z99T368nbO0-LvOYkjALB7zjP",
+"fn": "TW_PLACE_ÉMILE_MALE_GRENADE_BLESSURE_MAIN",
+"ville": "TOULOUSE",
+"periode": 2,
+"mime": "video/mp4",
+"taille": 3612779,
+"source": "@20Minutes (X)"
+}
+]
