@@ -2,6 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/carte/leaflet.css">
+<link rel="stylesheet" href="/carte/lib/maplibre-gl.css">
 <style>
 /* Layout: même dossier d'archive que la page principale — bandeau condensé, barre de filtres, carte collante à gauche et registre des cas à droite ; empilés sur téléphone */
 :root{
@@ -52,8 +53,10 @@ h1 span{color:var(--red)}
 .split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
 .mapbox{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);height:calc(100vh - 24px - env(safe-area-inset-top,0px));min-height:420px;max-height:820px;border:1px solid var(--line);background:var(--paper)}
 #map{position:absolute;inset:0}
-.leaflet-container{font-family:var(--body);background:var(--tag)}
-.dark-tiles .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.6)}
+.leaflet-container{font-family:var(--body);background:var(--bg)}
+.leaflet-masque-pane{pointer-events:none}
+.fond-raster{filter:grayscale(1) contrast(.92) brightness(1.04)}
+.dark-tiles .fond-raster{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.6)}
 .leaflet-bar a{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--line)!important}
 .leaflet-control-attribution{background:var(--paper)!important;color:var(--muted)!important;font-family:var(--mono)}
 .leaflet-control-attribution a{color:var(--blue)!important}
@@ -157,6 +160,8 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
 </div>
 
 <script src="/carte/leaflet.js"></script>
+<script src="/carte/lib/maplibre-gl-csp.js"></script>
+<script src="/carte/lib/leaflet-maplibre-gl.js"></script>
 <script>
 const CAS = /*DATA*/[];
 
@@ -221,12 +226,75 @@ CAS.forEach(c=>{ c.violences=c.violences||[]; c.forces=(c.forces&&c.forces.lengt
   c.hay=norm([c.cote,c.t,c.adresse,c.ville,c.b,c.violences.join(" "),c.forces.join(" ")].join(" ")); });
 
 /* ---------- Carte ---------- */
-const map = L.map("map",{zoomSnap:.5,minZoom:5,maxZoom:19}).fitBounds([[42.2,-4.8],[51.1,8.3]]);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,
-  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+/* Carte limitée à la France métropolitaine */
+const FRANCE=[[41.2,-5.4],[51.2,9.7]];
+const map = L.map("map",{zoomSnap:.5,minZoom:5,maxZoom:19,maxBounds:[[39.5,-9],[53,13.5]],maxBoundsViscosity:1}).fitBounds(FRANCE);
+map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
 const sombre=()=>{const t=document.documentElement.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches};
-const teinte=()=>$("map").classList.toggle("dark-tiles",sombre());
-teinte();
+
+/* Fond de carte vectoriel (OpenFreeMap) aux couleurs du site */
+function styleCarte(){
+  const nuit=sombre();
+  const C = nuit
+    ? {terre:"#151a22",eau:"#0b0f15",parc:"#17201d",bati:"#1c222c",route:"#2a3242",bord:"#0d1118",grande:"#323b4d",rail:"#2a3242",texte:"#8b94a3",ville:"#e8ebf1",halo:"#0d1118",limite:"#3a4456"}
+    : {terre:"#f4f5f7",eau:"#d3dae4",parc:"#e6ebe4",bati:"#e4e7ec",route:"#ffffff",bord:"#d5dae2",grande:"#ffffff",rail:"#c9ced8",texte:"#5b6474",ville:"#111827",halo:"#f4f5f7",limite:"#9aa3b2"};
+  const nom=["coalesce",["get","name:fr"],["get","name"]];
+  const grandes=["match",["get","class"],["motorway","trunk","primary","secondary","tertiary"],true,false];
+  const petites=["match",["get","class"],["minor","service"],true,false];
+  const z=(...p)=>["interpolate",["exponential",1.5],["zoom"],...p];
+  return {version:8,
+    sources:{omt:{type:"vector",url:"https://tiles.openfreemap.org/planet"}},
+    glyphs:"https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+    layers:[
+      {id:"fond",type:"background",paint:{"background-color":C.terre}},
+      {id:"parcs",type:"fill",source:"omt","source-layer":"park",paint:{"fill-color":C.parc}},
+      {id:"vegetation",type:"fill",source:"omt","source-layer":"landcover",filter:["match",["get","class"],["grass","wood"],true,false],paint:{"fill-color":C.parc,"fill-opacity":.6}},
+      {id:"eau",type:"fill",source:"omt","source-layer":"water",paint:{"fill-color":C.eau}},
+      {id:"cours-eau",type:"line",source:"omt","source-layer":"waterway",minzoom:9,paint:{"line-color":C.eau,"line-width":z(9,.6,16,3)}},
+      {id:"bati",type:"fill",source:"omt","source-layer":"building",minzoom:14,paint:{"fill-color":C.bati}},
+      {id:"rail",type:"line",source:"omt","source-layer":"transportation",minzoom:12,filter:["==",["get","class"],"rail"],paint:{"line-color":C.rail,"line-width":1,"line-dasharray":[3,3]}},
+      {id:"rues-bord",type:"line",source:"omt","source-layer":"transportation",minzoom:13,filter:petites,layout:{"line-cap":"round","line-join":"round"},paint:{"line-color":C.bord,"line-width":z(13,1.5,16,7,19,22)}},
+      {id:"rues",type:"line",source:"omt","source-layer":"transportation",minzoom:12,filter:petites,layout:{"line-cap":"round","line-join":"round"},paint:{"line-color":C.route,"line-width":z(12,.5,16,5,19,19)}},
+      {id:"axes-bord",type:"line",source:"omt","source-layer":"transportation",minzoom:7,filter:grandes,layout:{"line-cap":"round","line-join":"round"},paint:{"line-color":C.bord,"line-width":z(7,.6,12,3,16,11,19,30)}},
+      {id:"axes",type:"line",source:"omt","source-layer":"transportation",minzoom:7,filter:grandes,layout:{"line-cap":"round","line-join":"round"},paint:{"line-color":C.grande,"line-width":z(7,.3,12,2,16,9,19,26)}},
+      {id:"frontieres",type:"line",source:"omt","source-layer":"boundary",filter:["==",["get","admin_level"],2],paint:{"line-color":C.limite,"line-width":1,"line-dasharray":[4,3]}},
+      {id:"noms-rues",type:"symbol",source:"omt","source-layer":"transportation_name",minzoom:14,
+        layout:{"symbol-placement":"line","text-field":nom,"text-font":["Noto Sans Regular"],"text-size":z(14,10,18,14)},
+        paint:{"text-color":C.texte,"text-halo-color":C.halo,"text-halo-width":1.4}},
+      {id:"quartiers",type:"symbol",source:"omt","source-layer":"place",minzoom:12,filter:["match",["get","class"],["suburb","quarter","neighbourhood"],true,false],
+        layout:{"text-field":nom,"text-font":["Noto Sans Regular"],"text-size":12,"text-transform":"uppercase","text-letter-spacing":.08},
+        paint:{"text-color":C.texte,"text-halo-color":C.halo,"text-halo-width":1.4}},
+      {id:"villes",type:"symbol",source:"omt","source-layer":"place",minzoom:5,filter:["match",["get","class"],["city","town"],true,false],
+        layout:{"text-field":nom,"text-font":["Noto Sans Bold"],"text-size":z(5,10,10,14,14,18),"symbol-sort-key":["get","rank"]},
+        paint:{"text-color":C.ville,"text-halo-color":C.halo,"text-halo-width":1.6}}
+    ]};
+}
+let fondGL=null;
+function fondRaster(){   // secours si le fond vectoriel ne peut pas s'afficher
+  if (fondGL){ map.removeLayer(fondGL); fondGL=null; }
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,className:"fond-raster",
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+}
+try{
+  if (!document.createElement("canvas").getContext("webgl")) throw new Error("WebGL indisponible");
+  maplibregl.setWorkerUrl("/carte/lib/maplibre-gl-csp-worker.js");
+  fondGL=L.maplibreGL({style:styleCarte(),attribution:'<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'}).addTo(map);
+  const gl=fondGL.getMaplibreMap(); let charge=false;
+  gl.once("load",()=>{charge=true;});
+  gl.on("error",e=>{ if(!charge) console.warn("Fond de carte :",e&&e.error); });
+  setTimeout(()=>{ if(!charge) fondRaster(); },12000);
+}catch(e){ fondRaster(); }
+const teinte=()=>{
+  $("map").classList.toggle("dark-tiles",sombre());
+  if (fondGL){ try{ fondGL.getMaplibreMap().setStyle(styleCarte()); }catch(_){} }
+};
+$("map").classList.toggle("dark-tiles",sombre());
+
+/* Masque : tout ce qui n'est pas la France est recouvert */
+map.createPane("masque"); map.getPane("masque").style.zIndex=350;
+let masque=null;
+const styleMasque=()=>({pane:"masque",interactive:false,stroke:true,color:css("--muted"),weight:1,opacity:.6,fillColor:css("--bg"),fillOpacity:1});
+fetch("/carte/france-masque.json").then(r=>r.json()).then(g=>{ masque=L.geoJSON(g,{style:styleMasque}).addTo(map); }).catch(()=>{});
 const calque = L.layerGroup().addTo(map);
 
 /* Adresse → coordonnées (Base Adresse Nationale), mémorisées dans le navigateur */
@@ -395,7 +463,7 @@ function ouvrir(cote){
 }
 
 document.addEventListener("play",ev=>{document.querySelectorAll("video").forEach(v=>{if(v!==ev.target)v.pause();});},true);
-const retheme=()=>{teinte();render();};
+const retheme=()=>{teinte(); if(masque) masque.setStyle(styleMasque()); render();};
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",retheme);
 new MutationObserver(retheme).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 
