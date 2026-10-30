@@ -50,6 +50,8 @@ for c in C:
         if not os.path.exists(poster):   # vignette tirée de la vidéo DÉJÀ floutée
             subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-ss', '1', '-i', vid, '-frames:v', '1', '-q:v', '5', poster])
         o['v'] = f"/carte/v/{c['id']}.mp4"; o['p'] = f"/carte/p/{c['id']}.jpg"
+    elif c.get('id') and os.path.exists(os.path.join(PUB, 'carte', 'i', c['id'] + '.jpg')):
+        o['img'] = f"/carte/i/{c['id']}.jpg"
     cout.append(o)
 ct = open(os.path.join(SRC, 'carte_template.html')).read()
 ct = ct.replace('/*DATA*/[]', json.dumps(cout, ensure_ascii=False)).replace('/*UPDATED*/', sys.argv[1] if len(sys.argv) > 1 else '')
