@@ -25,6 +25,7 @@ ap.add_argument("--garder", default=None)
 ap.add_argument("--controle", default=None)
 ap.add_argument("--seuil", type=float, default=0.45)
 ap.add_argument("--crf", type=int, default=26)
+ap.add_argument("--max-mo", type=float, default=24)
 args = ap.parse_args()
 
 cap = cv2.VideoCapture(args.entree)
@@ -100,6 +101,18 @@ enc.stdin.close(); enc.wait()
 subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", tmp, "-i", args.entree, "-map", "0:v:0", "-map", "1:a:0?",
                 "-c:v", "copy", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", "-shortest", args.sortie], check=True)
 os.remove(tmp)
+
+# Cloudflare refuse les fichiers de plus de 25 Mio : on réencode au débit qui tient sous la limite
+MAX = args.max_mo * 1024 * 1024
+if os.path.getsize(args.sortie) > MAX:
+    duree = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", args.sortie],
+                                 capture_output=True, text=True).stdout.strip())
+    debit = int((MAX * 8 * 0.92) / duree) - 96000
+    src = args.sortie + ".gros.mp4"; os.replace(args.sortie, src)
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-c:v", "libx264", "-preset", "medium", "-b:v", str(debit),
+                    "-maxrate", str(int(debit * 1.3)), "-bufsize", str(debit * 2), "-pix_fmt", "yuv420p",
+                    "-c:a", "copy", "-movflags", "+faststart", args.sortie], check=True)
+    os.remove(src)
 
 if args.controle and controle:
     os.makedirs(args.controle, exist_ok=True)
