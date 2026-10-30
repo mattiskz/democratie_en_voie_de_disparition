@@ -114,6 +114,21 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
 .empty{font-family:var(--mono);color:var(--muted);padding:20px 0;display:grid;gap:8px}
 .empty strong{font-family:var(--display);font-stretch:80%;font-size:20px;color:var(--ink)}
 
+.regles{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--ink);padding:18px 20px;display:grid;gap:14px}
+.regles-tete{display:grid;gap:6px}
+.regles h2{font-family:var(--display);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:24px;margin:0}
+.regles-tete p{margin:0;max-width:75ch;font-size:15px;color:var(--muted)}
+.arts{columns:3 260px;column-gap:8px}
+.art{border:1px solid var(--line);background:var(--bg);min-width:0;break-inside:avoid;margin:0 0 8px}
+.art summary{cursor:pointer;list-style:none;padding:10px 12px;display:grid;gap:2px}
+.art summary::-webkit-details-marker{display:none}
+.art summary b{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:15px;line-height:1.2}
+.art summary b::before{content:"+ ";color:var(--red)}
+.art[open] summary b::before{content:"– "}
+.art summary small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.art p{margin:0 12px 10px;font-size:14px;line-height:1.5}
+.art a{display:inline-block;margin:0 12px 12px;font-family:var(--mono);font-size:12px}
+.art:target,.art[open]{border-color:var(--ink)}
 footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);display:grid;gap:6px}
 
 @media (max-width:860px){
@@ -152,6 +167,66 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     </div>
     <section class="panel" id="panel" aria-live="polite"></section>
   </div>
+
+  <section class="regles" aria-labelledby="titre-regles">
+    <div class="regles-tete">
+      <h2 id="titre-regles">Rappel des règles d'intervention</h2>
+      <p>Les forces de l'ordre sont tenues par le Code de la sécurité intérieure, notamment les articles L211-1, L211-9 et R211-11 à R211-21, par le code de déontologie de la police et de la gendarmerie (articles R434-1 à R434-33) et par le Schéma national du maintien de l'ordre (2021). Cliquez sur une règle pour lire son contenu.</p>
+    </div>
+    <div class="arts">
+      <details class="art" id="regle-R211-13"><summary><b>Conditions d&#x27;emploi de la force lors du maintien de l&#x27;ordre</b><small>Code de la sécurité intérieure, art. R211-13</small></summary>
+        <p>L&#x27;emploi de la force par les représentants de la force publique n&#x27;est possible que si les circonstances le rendent absolument nécessaire au maintien de l&#x27;ordre public dans les conditions définies par l&#x27;article L. 211-9. La force déployée doit être proportionnée au trouble à faire cesser et son emploi doit prendre fin lorsque celui-ci a cessé.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285055" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-L211-9"><summary><b>Sommations et dispersion des attroupements</b><small>Code de la sécurité intérieure, art. L211-9</small></summary>
+        <p>Un attroupement, au sens de l&#x27;article 431-3 du code pénal, peut être dissipé par la force publique après deux sommations de se disperser demeurées sans effet, adressées, lorsqu&#x27;ils sont porteurs des insignes de leur fonction, par : 1° le représentant de l&#x27;État dans le département ou, à Paris, le préfet de police ; 2° sauf à Paris, le maire ou l&#x27;un de ses adjoints ; 3° tout officier de police judiciaire responsable de la sécurité publique, ou tout autre officier de police judiciaire.</p><p>Il est procédé à ces sommations suivant des modalités propres à informer les personnes participant à l&#x27;attroupement de l&#x27;obligation de se disperser sans délai.</p><p>Toutefois, les représentants de la force publique appelés en vue de dissiper un attroupement peuvent faire directement usage de la force si des violences ou voies de fait sont exercées contre eux ou s&#x27;ils ne peuvent défendre autrement le terrain qu&#x27;ils occupent.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000025505155" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R211-11"><summary><b>Procédure et formules des sommations</b><small>Code de la sécurité intérieure, art. R211-11</small></summary>
+        <p>L&#x27;autorité habilitée : 1° annonce sa présence par haut-parleur : « Attention ! Attention ! Vous participez à un attroupement. Obéissance à la loi. Vous devez vous disperser et quitter les lieux » ; 2° procède à une première sommation : « Première sommation : nous allons faire usage de la force. Quittez immédiatement les lieux » ; 3° procède à une deuxième et dernière sommation : « Dernière sommation : nous allons faire usage de la force. Quittez immédiatement les lieux ».</p><p>Si l&#x27;utilisation du haut-parleur est impossible ou manifestement inopérante, chaque annonce ou sommation peut être remplacée ou complétée par le lancement d&#x27;une fusée rouge. Si des armes mentionnées à l&#x27;article R. 211-16 doivent être utilisées, la dernière sommation doit être réitérée.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043483861" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R211-12"><summary><b>Insignes des autorités qui font les sommations</b><small>Code de la sécurité intérieure, art. R211-12</small></summary>
+        <p>Pour procéder aux sommations, le préfet ou un membre du corps préfectoral, le maire ou son adjoint et l&#x27;officier de police judiciaire de la police ou de la gendarmerie nationales doivent porter une écharpe tricolore ou un brassard tricolore.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043483867" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R211-14"><summary><b>Ordre exprès avant l&#x27;usage des armes à feu</b><small>Code de la sécurité intérieure, art. R211-14</small></summary>
+        <p>Hors les deux cas prévus au sixième alinéa de l&#x27;article L. 211-9, les représentants de la force publique ne peuvent faire usage d&#x27;armes à feu pour le maintien de l&#x27;ordre public que sur ordre exprès des autorités habilitées à décider de l&#x27;emploi de la force. Cet ordre est transmis par tout moyen permettant d&#x27;en assurer la matérialité et la traçabilité.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285057" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-10"><summary><b>Discernement</b><small>Code de déontologie (CSI), art. R434-10</small></summary>
+        <p>Le policier ou le gendarme fait, dans l&#x27;exercice de ses fonctions, preuve de discernement. Il tient compte en toutes circonstances de la nature des risques et menaces de chaque situation à laquelle il est confronté et des délais qu&#x27;il a pour agir, pour choisir la meilleure réponse légale à lui apporter.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285881" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-11"><summary><b>Impartialité</b><small>Code de déontologie (CSI), art. R434-11</small></summary>
+        <p>Le policier et le gendarme accomplissent leurs missions en toute impartialité. Ils accordent la même attention et le même respect à toute personne et n&#x27;établissent aucune distinction dans leurs actes et leurs propos de nature à constituer l&#x27;une des discriminations énoncées à l&#x27;article 225-1 du code pénal.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285883" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-14"><summary><b>Courtoisie, vouvoiement et exemplarité</b><small>Code de déontologie (CSI), art. R434-14</small></summary>
+        <p>Le policier ou le gendarme est au service de la population. Sa relation avec celle-ci est empreinte de courtoisie et requiert l&#x27;usage du vouvoiement. Respectueux de la dignité des personnes, il veille à se comporter en toute circonstance d&#x27;une manière exemplaire, propre à inspirer en retour respect et considération.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285893" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-15"><summary><b>Uniforme et identification individuelle</b><small>Code de déontologie (CSI), art. R434-15</small></summary>
+        <p>Le policier ou le gendarme exerce ses fonctions en uniforme. Il peut être dérogé à ce principe selon les règles propres à chaque force. Sauf exception justifiée par le service auquel il appartient ou la nature des missions qui lui sont confiées, il se conforme aux prescriptions relatives à son identification individuelle.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285895" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-17"><summary><b>Protection des personnes privées de liberté</b><small>Code de déontologie (CSI), art. R434-17</small></summary>
+        <p>Toute personne appréhendée est placée sous la protection des policiers ou des gendarmes et préservée de toute forme de violence et de tout traitement inhumain ou dégradant.</p><p>Le policier ou le gendarme ayant la garde d&#x27;une personne appréhendée est attentif à son état physique et psychologique et prend toutes les mesures possibles pour préserver la vie, la santé et la dignité de cette personne. Le port des menottes ou des entraves n&#x27;est justifié que si la personne est considérée comme dangereuse pour autrui ou pour elle-même, ou susceptible de tenter de s&#x27;enfuir.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285899" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-R434-18"><summary><b>Nécessité et proportionnalité de la force</b><small>Code de déontologie (CSI), art. R434-18</small></summary>
+        <p>Le policier ou le gendarme emploie la force dans le cadre fixé par la loi, seulement lorsque c&#x27;est nécessaire, et de façon proportionnée au but à atteindre ou à la gravité de la menace, selon le cas. Il ne fait usage des armes qu&#x27;en cas d&#x27;absolue nécessité et dans le cadre des dispositions législatives applicables à son propre statut.</p>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000028285901" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-2.1"><summary><b>Liaison et information</b><small>Schéma national du maintien de l&#x27;ordre, § 2.1</small></summary>
+        <p>La mission première des forces de l&#x27;ordre est de garantir le bon déroulement des manifestations et d&#x27;apaiser les éventuelles tensions. La communication avec les organisateurs et les manifestants constitue désormais une priorité dans la gestion de l&#x27;ordre public.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-2.2"><summary><b>Protection du droit d&#x27;informer</b><small>Schéma national du maintien de l&#x27;ordre, § 2.2 et 2.2.3.3</small></summary>
+        <p>La présence des journalistes lors des manifestations revêt une importance primordiale. Il est impératif de protéger le droit d&#x27;informer ; la sécurité physique des journalistes doit être garantie.</p><p>Les journalistes peuvent continuer d&#x27;exercer leur mission lors de la dispersion d&#x27;un attroupement sans être tenus de quitter les lieux, dès lors qu&#x27;ils ne peuvent être confondus avec les participants et ne font pas obstacle à l&#x27;action des forces de l&#x27;ordre, y compris pour une manifestation interdite ou non déclarée.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-2.7"><summary><b>Déontologie, port du RIO, interdiction de la cagoule</b><small>Schéma national du maintien de l&#x27;ordre, § 2.7 et 2.7.2</small></summary>
+        <p>L&#x27;ensemble des forces est soumis à une exigence de professionnalisme et d&#x27;exemplarité, notamment s&#x27;agissant de la maîtrise de la force.</p><p>Le port du RIO (numéro d&#x27;identification), y compris sur la tenue de maintien de l&#x27;ordre, est obligatoire. Le port de la cagoule est proscrit pour les personnels intervenant en maintien de l&#x27;ordre.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-3.1.4"><summary><b>Encadrement de la nasse</b><small>Schéma national du maintien de l&#x27;ordre, § 3.1.4</small></summary>
+        <p>L&#x27;encerclement d&#x27;un groupe de manifestants n&#x27;est possible que pour prévenir ou faire cesser des violences graves et imminentes. Il doit, dès que possible, ménager un point de sortie contrôlé, ne durer que le temps strictement nécessaire et être levé dès la fin de la manifestation. Les personnes encerclées doivent être régulièrement informées de la situation.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-3.3"><summary><b>Gradation de la force et armes intermédiaires</b><small>Schéma national du maintien de l&#x27;ordre, § 3.3 et 3.3.2</small></summary>
+        <p>L&#x27;emploi de la force doit être absolument nécessaire, strictement proportionné et gradué. Chaque usage des armes de force intermédiaire est tracé.</p><p>Pour le LBD 40 en maintien de l&#x27;ordre, hors légitime défense, un superviseur évalue la situation, s&#x27;assure de la compréhension des ordres par le tireur et désigne l&#x27;objectif. Les porteurs de LBD doivent, dans la mesure du possible, être équipés d&#x27;une caméra-piéton ou accompagnés d&#x27;un porteur de caméra.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+      <details class="art" id="regle-SNMO-3.6"><summary><b>Appui aux victimes tierces</b><small>Schéma national du maintien de l&#x27;ordre, § 3.6</small></summary>
+        <p>La responsabilité sans faute de l&#x27;État peut être engagée en cas de dommages subis par une personne qui n&#x27;a pas été impliquée dans les affrontements, n&#x27;a pas commis de faute ni concouru au préjudice (art. L. 211-10 CSI). Un référent est désigné dans chaque département pour faciliter les démarches.</p>
+        <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
+    </div>
+  </section>
 
   <footer>
     <span>Les infractions sont présumées : elles décrivent ce que montrent les images au regard du Code pénal, sans préjuger d'une décision de justice. Les agents ne sont pas nommés.</span>
