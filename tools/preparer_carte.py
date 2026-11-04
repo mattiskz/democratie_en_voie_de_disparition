@@ -20,7 +20,7 @@ VILLES = {"PARIS": "Paris", "LYON": "Lyon", "MARSEILLE": "Marseille", "STRASBOUR
           "TOULOUSE": "Toulouse", "AMIENS": "Amiens", "BORDEAUX": "Bordeaux", "CAEN": "Caen", "CHAMBÉRY": "Chambéry",
           "CLERMONT FERRAND": "Clermont-Ferrand", "LA ROCHELLE": "La Rochelle", "LILLE": "Lille", "LIMOGES": "Limoges",
           "METZ": "Metz", "NANCY": "Nancy", "ORLÉANS": "Orléans", "PAU": "Pau", "POITIERS": "Poitiers", "REIMS": "Reims",
-          "RENNES": "Rennes", "ROUEN": "Rouen", "AUTRES": None}
+          "RENNES": "Rennes", "ROUEN": "Rouen", "BAYONNE": "Bayonne", "AUTRES": None}
 
 # Préfixe du nom de fichier → nom de la voie tel qu'affiché (et cherché dans la Base Adresse Nationale)
 # Un triplet (nom, lat, lng) fixe l'emplacement quand ce n'est pas une adresse postale.
@@ -67,11 +67,37 @@ LIEUX = {
  "PASSAGE_SAINTE_CATHERINE": "Passage Sainte-Catherine", "QUAI_PÊCHEURS": "Quai des Pêcheurs", "RUE_ZURICH": "Rue de Zurich",
  "ALLÉE_PRÉSIDENT_FRANKLIN_ROOSEVELT": "Allée du Président-Franklin-Roosevelt",
  "AVENUE_ÉTIENNE_BILLIÈRES": "Avenue Étienne-Billières", "BOULEVARD_LASCROSSES": "Boulevard Lascrosses",
- "BOULEVARD_STRASBOURG": "Boulevard de Strasbourg", "RUE_CUGNAUX": "Rue de Cugnaux", "PLACE_ÉMILE_MALE": "Place Émile-Mâle",
+ "BOULEVARD_STRASBOURG": "Boulevard de Strasbourg",
+ "COURS_VICTOR_HUGO": "Cours Victor-Hugo", "AVENUE_JEAN_JAURÈS": "Avenue Jean-Jaurès", "PLACE_JEAN_JAURÈS": "Place Jean-Jaurès",
+ "RUE_TERRUSSE": "Rue Terrusse", "RUE_LÉON_MAÎTRE": "Rue Léon-Maître", "PLACE_TROCADÉRO": "Place du Trocadéro-et-du-11-Novembre",
+ "RUE_MEUNIERS": "Rue des Meuniers", "BOULEVARD_BONREPOS": "Boulevard Bonrepos", "PLACE_DUPUY": "Place Dupuy",
+ "BOULEVARD_PONIATOWSKI": "Boulevard Poniatowski", "MÉTRO_DAUSMENIL": ("Métro Daumesnil", 48.83943, 2.39595),
+ "RUE_FAUBOURG_SAINT_ANTOINE": "Rue du Faubourg-Saint-Antoine", "AVENUE_DAUSMENIL": "Avenue Daumesnil",
+ "AVENUE_GÉNÉRAL_DODDS": "Avenue du Général-Dodds", "RUE_ROQUETTE": "Rue de la Roquette",
+ "BOULEVARD_MARÉCHAUX": ("Boulevards des Maréchaux, Porte Dorée", 48.83580, 2.40630), "BOULEVARD_REUILLY": "Boulevard de Reuilly",
+ "PLACE_BASTILLE": "Place de la Bastille", "RUE_CLAUDE_DECAEN": "Rue Claude-Decaen", "RUE_CUGNAUX": "Rue de Cugnaux", "PLACE_ÉMILE_MALE": "Place Émile-Mâle",
 }
 
 # Fait → (libellé, catégories, infractions présumées, règles en cause). Les plus longs sont reconnus en premier.
 F = {
+ "GRENADES_GAZ_ENFANTS": ("grenades et gaz lacrymogène sur des enfants", ["Grenade", "Gaz lacrymogène", "Mise en danger"], ["222-13", "223-1"], ["R434-10", "R434-18"]),
+ "GAZ_ENFANT": ("gaz lacrymogène sur un enfant", ["Gaz lacrymogène", "Mise en danger"], ["222-13", "223-1"], ["R434-10", "R434-18"]),
+ "BLESSURE_GRAVE_GAZ": ("gaz lacrymogène, blessure grave", ["Gaz lacrymogène", "Blessure grave"], ["222-12"], ["R434-18"]),
+ "GRENADES_ABUSIVES": ("tirs de grenades disproportionnés", ["Grenade"], ["222-13"], ["R434-18"]),
+ "GRENADE_ABUSIVE": ("tir de grenade disproportionné", ["Grenade"], ["222-13"], ["R434-18"]),
+ "GRENADE_BLESSURE_JOURNALISTE": ("grenade, journaliste blessé", ["Grenade", "Blessure grave", "Atteinte à la presse"], ["222-12", "431-1"], ["SNMO-2.2", "R434-18"]),
+ "TIR_TENDU_JOURNALISTES": ("tir tendu sur des journalistes", ["LBD", "Atteinte à la presse"], ["222-13", "223-1", "431-1"], ["SNMO-2.2", "SNMO-3.3.2"]),
+ "CHARGE_PRESSE": ("charge contre des journalistes", ["Charge", "Atteinte à la presse"], ["431-1"], ["SNMO-2.2"]),
+ "COUPS_APRÈS_AIDE_POLICIER_EN_FEU": ("coups sur une personne venue en aide à un policier en feu", ["Coups"], ["222-13"], ["R434-10", "R434-18"]),
+ "ARRESTATION_SANS_IDENTIFICATION": ("arrestation par des agents sans identification", ["Arrestation abusive", "Identification absente"], ["432-4"], ["R434-15", "SNMO-2.7"]),
+ "DISSIMULATION": ("dissimulation", [], [], ["R434-15"]),
+ "POUSSETTE_DANGEREUSE_ENFANT": ("enfant en poussette mis en danger", ["Mise en danger"], ["223-1"], ["R434-10"]),
+ "INSULTES_PROPOS_RACISTES": ("insultes et propos racistes", ["Insultes", "Propos racistes"], ["injure"], ["R434-11", "R434-14"]),
+ "INTIMIDATION_ENTRAVE_LIBERTÉ_CIRCULATION_ÉLU": ("intimidation d'un élu, entrave à sa liberté de circuler", ["Intimidation, menaces"], ["431-1"], ["R434-14"]),
+ "INTIMIDATION_LIBERTÉ_DE_FILMER": ("intimidation d'une personne qui filmait", ["Intimidation, menaces", "Atteinte à la liberté de filmer"], [], ["R434-14", "SNMO-2.2"]),
+ "EMBUSCADE_INCITATION_VIOLENCE": ("embuscade et incitation à la violence", ["Intimidation, menaces"], [], ["R434-10", "R434-18"]),
+ "MAINTIEN_AU_SOL_ÉCRASEMENT": ("maintien au sol, personne écrasée", ["Plaquage, maintien au sol"], ["222-13"], ["R434-17", "R434-18"]),
+ "DESTRUCTION_EFFETS_PERSONNELS": ("destruction d'effets personnels", ["Destruction de biens"], ["322-1"], ["R434-14"]),
  "GAZ_MASSIF_SIT_IN": ("gaz lacrymogène en masse sur un sit-in", ["Gaz lacrymogène"], ["222-13"], ["R211-13", "R434-18"]),
  "GAZ_SANS_SOMMATION": ("gaz lacrymogène sans sommation", ["Gaz lacrymogène", "Sans sommation"], [], ["L211-9", "R211-11"]),
  "GAZ_MASSIF": ("gaz lacrymogène en masse", ["Gaz lacrymogène"], [], ["R211-13", "R434-18"]),
