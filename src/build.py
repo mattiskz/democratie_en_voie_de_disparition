@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Génère public/index.html (src/entries.json + src/template.html)
+"""Usage : python3 src/build.py DATE_DOSSIER [DATE_CARTE]   (ex. 30/10/2026 04/11/2026)
+Génère public/index.html (src/entries.json + src/template.html)
 et public/carte/index.html (src/carte.json + src/carte_template.html).
 Usage : python3 src/build.py JJ/MM/AAAA   (date de mise à jour affichée)
 Une vidéo est intégrée si public/v/<id>.mp4 existe (vignette : public/p/<id>.jpg)."""
@@ -58,7 +59,7 @@ for c in C:
         o['img'] = f"/carte/i/{c['id']}.jpg"
     cout.append(o)
 ct = open(os.path.join(SRC, 'carte_template.html')).read()
-ct = ct.replace('/*DATA*/[]', json.dumps(cout, ensure_ascii=False)).replace('/*UPDATED*/', sys.argv[1] if len(sys.argv) > 1 else '')
+ct = ct.replace('/*DATA*/[]', json.dumps(cout, ensure_ascii=False)).replace('/*UPDATED*/', sys.argv[2] if len(sys.argv) > 2 else (sys.argv[1] if len(sys.argv) > 1 else ''))
 chead = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
          '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
          '<meta name="description" content="Carte des violences policières filmées en France depuis le 17 octobre 2026 : lieu, type de violence, forces de l\'ordre et infractions présumées.">\n')
