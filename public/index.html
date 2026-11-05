@@ -25,7 +25,7 @@
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.wrap{max-width:900px;margin:0 auto;padding-block:40px 64px;display:grid;gap:32px}
+.wrap{max-width:900px;margin:0 auto;padding-block:40px 64px;display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
 a{color:var(--blue)}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,video:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 
@@ -60,11 +60,30 @@ h1 span{color:var(--red)}
 .reset{font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
 .count{font-family:var(--mono);font-size:13px;color:var(--muted);flex-basis:100%}
 .count:empty{display:none}
+.sort{font-family:var(--mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:7px 10px;cursor:pointer;white-space:nowrap}
+.sort:hover{border-color:var(--ink)}
+.frise{flex:1 1 100%;min-width:0;max-width:100%;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding-bottom:4px;scroll-snap-type:x proximity}
+.frise:empty{display:none}
+.frise a{flex:0 0 auto;scroll-snap-align:start;display:grid;justify-items:center;min-width:46px;padding:4px 6px 5px;border:1px solid var(--line);background:var(--paper);
+  color:var(--ink);text-decoration:none;font-family:var(--display);font-stretch:75%;line-height:1}
+.frise a b{font-size:20px;font-weight:800}
+.frise a span{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase}
+.frise a i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.frise a:hover{border-color:var(--ink)}
+.frise a[aria-current="true"]{background:var(--red);border-color:var(--red);color:var(--onred)}
+.frise a[aria-current="true"] span,.frise a[aria-current="true"] i{color:var(--onred)}
+.day{scroll-margin-top:calc(var(--fh,120px) + 12px)}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:6;
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.04em;
+  background:var(--ink);color:var(--bg);border:0;padding:12px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+@media (prefers-reduced-motion: reduce){.totop{transition:none}}
 
 .list{display:grid}
 .day{display:grid;grid-template-columns:100px 1fr;gap:20px;border-top:2px solid var(--ink);padding-top:14px;margin-top:26px}
 .day:first-child{margin-top:0}
-.dlabel{font-family:var(--display);font-stretch:70%;font-weight:800;text-transform:uppercase;line-height:1;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px)}
+.dlabel{font-family:var(--display);font-stretch:70%;font-weight:800;text-transform:uppercase;line-height:1;align-self:start;position:sticky;top:calc(var(--fh,110px) + 8px)}
 .dlabel b{display:block;font-size:46px;color:var(--red)}
 .dlabel small{display:block;margin-top:4px;font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.04em;text-transform:none}
 .entries{display:grid;gap:10px;min-width:0}
@@ -126,11 +145,14 @@ footer h3{font-family:var(--display);font-stretch:75%;font-weight:800;text-trans
   <nav class="filters" aria-label="Filtres">
     <select id="f-folder" aria-label="Média ou parti"></select>
     <input id="f-q" type="search" placeholder="Rechercher un nom, un lieu, un média…" aria-label="Rechercher">
+    <button class="sort" id="sort" type="button"></button>
     <button class="reset" id="reset" type="button">Tout afficher</button>
     <div class="count" id="count" aria-live="polite"></div>
+    <div class="frise" id="frise" aria-label="Aller au jour"></div>
   </nav>
 
   <main class="list" id="list"></main>
+  <button class="totop" id="totop" type="button" aria-label="Revenir en haut de la page">↑ Haut</button>
 
   <footer>
     <div class="cols">
@@ -166,7 +188,8 @@ const FOLDER_LABEL = f => ({"BFM/RMC":"BFM / RMC","M6/W9":"M6 / W9","RENAISSANCE
 const JOURS=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
 const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
-const state = {c:null, folder:"", q:""};
+let ORDRE=null; try{ORDRE=localStorage.getItem("ordre")}catch(_){}
+const state = {c:null, folder:"", q:"", desc: ORDRE!=="asc"};
 
 ENTRIES.forEach(e=>{ e.hay = norm([e.t,e.s,e.f,CATS[e.c],e.b||"",e.cote].join(" ")); });
 
@@ -184,6 +207,9 @@ function buildControls(){
     folders.map(f=>`<option value="${esc(f)}">${esc(FOLDER_LABEL(f))} (${ENTRIES.filter(e=>e.f===f).length})</option>`).join("");
   sel.onchange=()=>{state.folder=sel.value; render();};
   const q=document.getElementById("f-q"); q.oninput=()=>{state.q=norm(q.value.trim()); render();};
+  const sb=document.getElementById("sort");
+  const lbl=()=>{sb.textContent=state.desc?"↓ Plus récent d'abord":"↑ Plus ancien d'abord"; sb.setAttribute("aria-label","Ordre : "+(state.desc?"du plus récent au plus ancien":"du plus ancien au plus récent")+". Inverser");};
+  lbl(); sb.onclick=()=>{state.desc=!state.desc; try{localStorage.setItem("ordre",state.desc?"desc":"asc")}catch(_){}; lbl(); render(); window.scrollTo({top:document.getElementById("list").offsetTop-(parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fh"))||0)-20});};
   document.getElementById("reset").onclick=()=>{state.c=null;state.folder="";state.q="";sel.value="";q.value="";render();};
 }
 
@@ -216,16 +242,62 @@ function render(){
   document.querySelectorAll(".th").forEach(b=>b.setAttribute("aria-pressed", b.id==="th-"+state.c));
   const items=ENTRIES.filter(e=>(!state.c||e.c===state.c)&&(!state.folder||e.f===state.folder)&&(!state.q||e.hay.includes(state.q)));
   const key=e=>e.d?(e.m||10)*100+e.d:9999;
-  const days=[...new Set(items.map(key))].sort((a,b)=>a-b);
+  const days=[...new Set(items.map(key))].sort((a,b)=>state.desc?(a===9999?1:b===9999?-1:b-a):a-b);
+  const MOIS=m=>m===11?"nov.":m===12?"déc.":"oct.";
+  document.getElementById("frise").innerHTML = days.filter(k=>k<9999).map(k=>{const d=k%100,m=Math.floor(k/100),n=items.filter(e=>key(e)===k).length;
+    return `<a href="#j-${k}" data-k="${k}" aria-label="${d} ${MOIS(m)} : ${n} élément${n>1?"s":""}"><b>${d}</b><span>${MOIS(m)}</span><i>${n}</i></a>`;}).join("");
   document.getElementById("list").innerHTML = days.map(k=>{
     const its=items.filter(e=>key(e)===k);
     const d=k%100, m=Math.floor(k/100);
     const label = k<9999 ? `<b>${d}</b>${m===11?"nov.":m===12?"déc.":"oct."}<small>${JOURS[new Date(2026,m-1,d).getDay()]} · ${its.length}</small>` : `<b>?</b>date<small>non précisée</small>`;
-    return `<section class="day"><div class="dlabel">${label}</div><div class="entries">${its.map(card).join("")}</div></section>`;
+    return `<section class="day" id="j-${k}" data-k="${k}"><div class="dlabel">${label}</div><div class="entries">${its.map(card).join("")}</div></section>`;
   }).join("") || `<p class="empty">Aucun élément ne correspond à ces filtres.</p>`;
   document.getElementById("count").textContent = items.length===ENTRIES.length ? "" :
     items.length+" élément"+(items.length>1?"s":"")+" sur "+ENTRIES.length;
+  observeDays();
 }
+
+/* Frise : jour courant surligné, toujours visible dans la frise */
+let obs=null;
+function setCurrent(k){
+  const fr=document.getElementById("frise");
+  fr.querySelectorAll("a").forEach(a=>{
+    const on=a.dataset.k===String(k); a.setAttribute("aria-current",on);
+    if(on){ const l=a.offsetLeft-fr.offsetLeft, r=l+a.offsetWidth; if(l<fr.scrollLeft||r>fr.scrollLeft+fr.clientWidth) fr.scrollTo({left:l-fr.clientWidth/2+a.offsetWidth/2}); }
+  });
+}
+function observeDays(){
+  if(obs) obs.disconnect();
+  if(!("IntersectionObserver" in window)) return;
+  const fh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fh"))||120;
+  obs=new IntersectionObserver(es=>{
+    const vis=[...document.querySelectorAll(".day")].filter(d=>{const r=d.getBoundingClientRect(); return r.bottom>fh+20 && r.top<innerHeight;});
+    if(vis.length) setCurrent(vis[0].dataset.k);
+  },{rootMargin:`-${Math.round(fh)}px 0px 0px 0px`,threshold:[0,.01,.5,1]});
+  document.querySelectorAll(".day").forEach(d=>obs.observe(d));
+}
+document.getElementById("frise").addEventListener("click",ev=>{
+  const a=ev.target.closest("a"); if(!a) return; ev.preventDefault();
+  goDay(a.dataset.k);
+});
+
+/* Aller à un jour : saut direct, puis recalage si des images se sont chargées entre-temps */
+function goDay(k){
+  const el=document.getElementById("j-"+k); if(!el) return;
+  const fh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fh"))||0;
+  const go=()=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-fh-12});
+  go(); setCurrent(k); setTimeout(go,250); setTimeout(go,800);
+}
+
+/* Hauteur de la barre de filtres collante, pour caler les dates et les ancres */
+const filt=document.querySelector(".filters");
+const setFh=()=>{ document.documentElement.style.setProperty("--fh", filt.offsetHeight+"px"); };
+setFh(); if("ResizeObserver" in window) new ResizeObserver(()=>{setFh(); observeDays();}).observe(filt);
+
+/* Bouton haut de page */
+const tt=document.getElementById("totop");
+addEventListener("scroll",()=>tt.classList.toggle("on", scrollY>900),{passive:true});
+tt.onclick=()=>window.scrollTo({top:0});
 
 // Une seule vidéo joue à la fois
 document.addEventListener("play", ev=>{ document.querySelectorAll("video").forEach(v=>{ if(v!==ev.target) v.pause(); }); }, true);
