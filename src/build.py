@@ -28,10 +28,11 @@ for e in E:
     out.append(o)
 if changed:
     json.dump(E, open(os.path.join(SRC, 'entries.json'), 'w'), ensure_ascii=False, indent=0)
-days = [e['d'] for e in E if e['d']]
+MOIS = {10: 'octobre', 11: 'novembre', 12: 'décembre'}
+last = max(((e.get('m', 10), e['d']) for e in E if e['d']))
 t = open(os.path.join(SRC, 'template.html')).read()
 t = (t.replace('/*DATA*/[]', json.dumps(out, ensure_ascii=False))
-      .replace('/*RANGE*/', f"Du 17 au {max(days)} octobre 2026")
+      .replace('/*RANGE*/', f"Du 17 octobre au {last[1]}{'er' if last[1] == 1 else ''} {MOIS[last[0]]} 2026" if last[0] != 10 else f"Du 17 au {last[1]} octobre 2026")
       .replace('/*UPDATED*/', sys.argv[1] if len(sys.argv) > 1 else ''))
 t = t.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
 head = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'

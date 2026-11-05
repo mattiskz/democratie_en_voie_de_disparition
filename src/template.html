@@ -209,10 +209,12 @@ function render(){
   document.querySelectorAll("video").forEach(v=>{ try{v.pause()}catch(_){} });
   document.querySelectorAll(".th").forEach(b=>b.setAttribute("aria-pressed", b.id==="th-"+state.c));
   const items=ENTRIES.filter(e=>(!state.c||e.c===state.c)&&(!state.folder||e.f===state.folder)&&(!state.q||e.hay.includes(state.q)));
-  const days=[...new Set(items.map(e=>e.d))].sort((a,b)=>(a||99)-(b||99));
-  document.getElementById("list").innerHTML = days.map(d=>{
-    const its=items.filter(e=>e.d===d);
-    const label = d ? `<b>${d}</b>oct.<small>${JOURS[new Date(2026,9,d).getDay()]} · ${its.length}</small>` : `<b>?</b>date<small>non précisée</small>`;
+  const key=e=>e.d?(e.m||10)*100+e.d:9999;
+  const days=[...new Set(items.map(key))].sort((a,b)=>a-b);
+  document.getElementById("list").innerHTML = days.map(k=>{
+    const its=items.filter(e=>key(e)===k);
+    const d=k%100, m=Math.floor(k/100);
+    const label = k<9999 ? `<b>${d}</b>${m===11?"nov.":m===12?"déc.":"oct."}<small>${JOURS[new Date(2026,m-1,d).getDay()]} · ${its.length}</small>` : `<b>?</b>date<small>non précisée</small>`;
     return `<section class="day"><div class="dlabel">${label}</div><div class="entries">${its.map(card).join("")}</div></section>`;
   }).join("") || `<p class="empty">Aucun élément ne correspond à ces filtres.</p>`;
   document.getElementById("count").textContent = items.length===ENTRIES.length ? "" :
