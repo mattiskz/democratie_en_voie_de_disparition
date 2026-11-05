@@ -2674,7 +2674,7 @@
 },
 {
 "f": "POLICE ET PRÉFECTURES",
-"t": "MILITANT_EXTREME_DROITE_CONFIRMATION_COLLABORATION_POLICE",
+"t": "Un militant d’extrême-droite confirme sa collaboration avec la police durant les manifestations du 24 octobre",
 "s": "@MrPropagande (X)",
 "d": 28,
 "m": 10,
@@ -2883,6 +2883,20 @@
 "c": "RL",
 "b": "Visuel diffusé par la préfecture de police pour Halloween : « dissimuler son visage dans l'espace public est une infraction » (jusqu'à 150 € d'amende), et porter une arme, « même factice », peut valoir 3 ans de prison et 45 000 € d'amende. Le message est publié en pleine période de manifestations.",
 "k": "Capture"
+},
+{
+"f": "POLICE ET PRÉFECTURES",
+"t": "Nice : confirmation de la mansuétude des forces de l’ordre envers les militants d’extrême-droite",
+"s": "http://france3-regions.franceinfo.fr",
+"d": 26,
+"m": 10,
+"id": "1_wjaZRm6drLFAwYNRYeUA8GTSGns5hQb",
+"cote": "POL-63",
+"fn": "NICE_CONFIRMATION_MANSUÉTUDE_POLICE_MILITANTS_EXTRÊME_DROITE",
+"c": "ED",
+"b": "À Nice, le 24 octobre, une centaine de militants d'ultradroite masqués ont convergé vers le centre-ville, pourtant interdit à tout rassemblement, pour s'en prendre aux manifestants. Des images les montrent défiler avec une banderole devant des policiers décontractés. Un journaliste indépendant, agressé sur place, raconte qu'ils auraient assuré à la police municipale qu'elle « n'avait pas à s'inquiéter », et que celle-ci est partie.",
+"url": "https://france3-regions.franceinfo.fr/provence-alpes-cote-d-azur/alpes-maritimes/nice/c-etait-chaotique-et-la-police-n-etait-pas-la-les-forces-de-l-ordre-ont-elles-rempli-leur-mission-face-aux-violences-d-ultradroite-a-nice-3439194.html",
+"k": "Article (PDF)"
 },
 {
 "f": "RASSEMBLEMENT NATIONAL / UDR",
