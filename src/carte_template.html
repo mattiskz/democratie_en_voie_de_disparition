@@ -131,6 +131,11 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
 .art p{margin:0 12px 10px;font-size:14px;line-height:1.5}
 .art a{display:inline-block;margin:0 12px 12px;font-family:var(--mono);font-size:12px}
 .art:target,.art[open]{border-color:var(--ink)}
+.raccourcis{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:13px;align-items:baseline}
+.raccourcis span{color:var(--muted)}
+.raccourcis a{color:var(--red);font-weight:500}
+.billets,.regles{scroll-margin-top:16px}
+.billet{scroll-margin-top:16px}
 .billets{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--red);padding:18px 20px;display:grid;gap:14px}
 .billets h2{font-family:var(--display);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:24px;margin:0}
 .billet{border:1px solid var(--line);background:var(--bg);min-width:0}
@@ -167,13 +172,14 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
 <div class="wrap">
   <nav class="site" aria-label="Site">
     <a class="home" href="/">Démocratie en voie <span>de disparition</span></a>
-    <div class="tabs"><a href="/">Le dossier</a><a href="/carte/" aria-current="page">La carte</a></div>
+    <div class="tabs"><a href="/">Le dossier</a><a href="/carte/" aria-current="page">La carte</a><a href="#billets">Comprendre</a></div>
   </nav>
 
   <header>
     <h1>Carte des violences <span>policières</span></h1>
     <p class="lede">Chaque point est un fait filmé depuis le 17 octobre, placé à la rue où il s'est produit. Cliquez sur un point ou dans la liste pour voir la vidéo, le type de violence, les forces de l'ordre en cause et les infractions présumées.</p>
     <div class="meta"><span id="total"></span><span>Mis à jour le /*UPDATED*/</span><span>Visages des personnes autres que les agents floutés</span><span>Infractions et règles en cause présumées, à partir des images</span></div>
+    <nav class="raccourcis" aria-label="Billets"><span>À lire :</span><a href="#identifier-les-forces-de-l-ordre">Identifier les unités de police et de gendarmerie →</a><a href="#armes-des-forces-de-l-ordre">Les armes des forces de l'ordre →</a><a href="#titre-regles">Les règles d'intervention →</a></nav>
   </header>
 
   <nav class="filters" aria-label="Filtres">
@@ -253,7 +259,7 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     </div>
   </section>
 
-  <section class="billets" aria-labelledby="titre-billets">
+  <section class="billets" id="billets" aria-labelledby="titre-billets">
     <div class="regles-tete">
       <h2 id="titre-billets">Comprendre le maintien de l'ordre</h2>
       <p>Deux billets pour lire les images de la carte : qui sont les unités en cause, et quelles armes elles emploient. Cliquez sur un billet pour le déplier.</p>
@@ -481,6 +487,11 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
   </footer>
 </div>
 
+<script>
+/* Raccourcis : un lien vers un billet l'ouvre puis y fait défiler la page */
+(function(){function ouvre(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var el=document.getElementById(id);if(el&&el.tagName==="DETAILS"){el.open=true;el.scrollIntoView({block:"start"});}}
+window.addEventListener("hashchange",ouvre);if(document.readyState!=="loading")ouvre();else document.addEventListener("DOMContentLoaded",ouvre);})();
+</script>
 <script src="/carte/leaflet.js"></script>
 <script src="/carte/lib/maplibre-gl-csp.js"></script>
 <script src="/carte/lib/leaflet-maplibre-gl.js"></script>
