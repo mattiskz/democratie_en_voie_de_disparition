@@ -134,6 +134,29 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
 .art p{margin:0 12px 10px;font-size:14px;line-height:1.5}
 .art a{display:inline-block;margin:0 12px 12px;font-family:var(--mono);font-size:12px}
 .art:target,.art[open]{border-color:var(--ink)}
+.billets{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--red);padding:18px 20px;display:grid;gap:14px}
+.billets h2{font-family:var(--display);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:24px;margin:0}
+.billet{border:1px solid var(--line);background:var(--bg);min-width:0}
+.billet summary{cursor:pointer;list-style:none;padding:14px 16px;display:grid;gap:4px}
+.billet summary::-webkit-details-marker{display:none}
+.billet .kick{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.billet summary b{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:22px;line-height:1.15;text-wrap:balance}
+.billet summary b::before{content:"+ ";color:var(--red)}
+.billet[open] summary b::before{content:"– "}
+.billet summary small{font-size:15px;color:var(--muted)}
+.billet:target,.billet[open]{border-color:var(--ink)}
+.corps{padding:4px 16px 20px;max-width:75ch;display:grid;gap:10px}
+.corps p,.corps ul,.corps ol{margin:0;font-size:16px}
+.corps ul,.corps ol{padding-left:22px;display:grid;gap:4px}
+.corps h3{font-family:var(--display);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:20px;margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.corps h4{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:17px;margin:8px 0 0}
+.corps h4 a{color:var(--ink)}
+.corps .sources{font-family:var(--mono);font-size:12px}
+.corps .avert{font-size:13px;color:var(--muted);border-left:2px solid var(--line);padding-left:10px;margin-top:8px}
+.tablo{overflow-x:auto;max-width:100%}
+.tablo table{border-collapse:collapse;font-size:14px;min-width:560px;width:100%}
+.tablo th,.tablo td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.tablo th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);display:grid;gap:6px}
 
 @media (max-width:860px){
@@ -153,7 +176,7 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
   <header>
     <h1>Carte des violences <span>policières</span></h1>
     <p class="lede">Chaque point est un fait filmé depuis le 17 octobre, placé à la rue où il s'est produit. Cliquez sur un point ou dans la liste pour voir la vidéo, le type de violence, les forces de l'ordre en cause et les infractions présumées.</p>
-    <div class="meta"><span id="total"></span><span>Mis à jour le 04/11/2026</span><span>Visages des personnes autres que les agents floutés</span><span>Infractions et règles en cause présumées, à partir des images</span></div>
+    <div class="meta"><span id="total"></span><span>Mis à jour le 06/11/2026</span><span>Visages des personnes autres que les agents floutés</span><span>Infractions et règles en cause présumées, à partir des images</span></div>
   </header>
 
   <nav class="filters" aria-label="Filtres">
@@ -231,6 +254,227 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
         <p>La responsabilité sans faute de l&#x27;État peut être engagée en cas de dommages subis par une personne qui n&#x27;a pas été impliquée dans les affrontements, n&#x27;a pas commis de faute ni concouru au préjudice (art. L. 211-10 CSI). Un référent est désigné dans chaque département pour faciliter les démarches.</p>
         <a href="https://www.interieur.gouv.fr/sites/minint/files/medias/documents/2026-10/VF-SNMO-2021.pdf" target="_blank" rel="noopener">Lire le texte officiel ↗</a></details>
     </div>
+  </section>
+
+  <section class="billets" aria-labelledby="titre-billets">
+    <div class="regles-tete">
+      <h2 id="titre-billets">Comprendre le maintien de l'ordre</h2>
+      <p>Deux billets pour lire les images de la carte : qui sont les unités en cause, et quelles armes elles emploient. Cliquez sur un billet pour le déplier.</p>
+    </div>
+
+    <details class="billet" id="identifier-les-forces-de-l-ordre">
+      <summary><span class="kick">Billet · 6 novembre 2026</span><b>Comment identifier quel type d'unité de police ou de gendarmerie intervient ?</b><small>Casques, écussons, marquages et véhicules, unité par unité. Ce que la loi leur permet, et vos droits.</small></summary>
+      <div class="corps">
+        <p>En raison de dispositifs policiers de plus en plus massifs depuis le 17 octobre (à titre d'exemple, 70 000 forces de l'ordre ont été mobilisées durant les manifestations du 24 et du 31 octobre ainsi que du 5 novembre), il peut devenir de plus en plus difficile d'identifier quelles unités interviennent. Quelques informations pour mieux les reconnaître.</p>
+
+        <h3>Unités de la Police nationale</h3>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Compagnies_r%C3%A9publicaines_de_s%C3%A9curit%C3%A9" target="_blank" rel="noopener">Les compagnies républicaines de sécurité (CRS)</a></h4>
+        <p>Définis comme les spécialistes du maintien de l'ordre côté police, organisés en compagnies d'une centaine d'agents. Comment les reconnaître :</p>
+        <ul>
+          <li><strong>casque bleu foncé à deux bandes jaunes</strong>, signe distinctif adopté en 1968 pour ne plus les confondre avec les gendarmes mobiles ;</li>
+          <li><strong>écusson rouge</strong> marqué « CRS » en blanc, surmonté de « POLICE NATIONALE », sur la poitrine et le casque ;</li>
+          <li>dans le dos, un <strong>code de groupe tactique</strong> (« 1A », « 2B »… ; la lettre C désigne le commandement) ;</li>
+          <li><strong>fourgons blancs à bande horizontale bleue</strong>, écusson CRS sur les portières.</li>
+        </ul>
+        <p>Ils agissent en ligne, de façon très codifiée, et ne bougent que sur ordre. Leur rôle est d'encadrer et de contenir le cortège. Variante récente, la <strong>CRS 8</strong> et les unités apparentées se reconnaissent à leurs casques tactiques et à leurs boucliers carrés ; elles sont plus offensives.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Compagnie_d%27intervention" target="_blank" rel="noopener">Les compagnies d'intervention, de sécurité et d'intervention et départementales d'intervention (CI, CSI et CDI)</a></h4>
+        <p>CDI en province, CSI en Île-de-France, CI à Paris : elles renforcent les CRS. Équipement proche de celui des CRS (casque, plastron, bouclier), mais <strong>casque bleu marine à bandes bleues</strong> et inscription « POLICE » <strong>dans le dos</strong>. Elles sont moins exclusivement dédiées au maintien de l'ordre que les CRS.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Brigade_de_r%C3%A9pression_de_l%27action_violente_motoris%C3%A9e" target="_blank" rel="noopener">Les brigades de répression de l'action violente (BRAV-P, BRAV-M et BRAV-L)</a></h4>
+        <p>Spécificité parisienne créée en 2019. Les agents de la BRAV-M circulent en <strong>binômes à moto</strong> : un pilote, et un passager issu d'une compagnie d'intervention ou de la BAC, armé d'un bâton. <strong>Tenue de motard</strong> bleu foncé ou noire, <strong>casque blanc pour le pilote</strong>, <strong>bleu ou noir pour le passager</strong>. Leur mission est d'intervenir vite, de disperser et d'interpeller. Hors de Paris, des dispositifs équivalents à la BRAV-M existent sous le nom de <strong>DMPI</strong> (dispositifs mixtes de protection et d'interpellation).</p>
+        <ul>
+          <li>La <strong>BRAV-P</strong> agit à pied, en tenue de maintien de l'ordre classique, transportée en fourgon, pour les déplacements rapides dans le cortège.</li>
+          <li>La <strong>BRAV-L</strong> (« légère ») est projetée encore plus vite, dans des véhicules légers sérigraphiés (Peugeot 5008), pour des interventions ciblées et des interpellations.</li>
+        </ul>
+        <p>Chaque formation (BRAV, BRAV-L, BRAV-M) a son propre écusson. Leurs agents gardent les signes des compagnies d'intervention parisiennes : <strong>casque noir à bandes bleues</strong>, écusson de la préfecture de police et <strong>numéro dans le dos dont la couleur indique la compagnie</strong> (par exemple gris pour la 11e, bleu pour la 21e, blanc pour la 22e, orange pour la 31e, rouge pour la 32e, violet pour la 23e, de nuit). Le dossard peut aussi porter l'indicatif radio du grade : TK pour un commandant, TO pour un capitaine, TL pour un lieutenant.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Brigade_anti-criminalit%C3%A9" target="_blank" rel="noopener">La brigade anti-criminalité (BAC)</a></h4>
+        <p>Agents en civil (jean, sweat, baskets), reconnaissables au <strong>brassard orange « POLICE »</strong>, sur lequel doit figurer leur matricule. En manifestation, ils ajoutent souvent un casque de modèle variable, un plastron léger, un bouclier carré et parfois un LBD. Ils circulent en voitures banalisées. Ils ne sont pas formés spécifiquement au maintien de l'ordre et sont surtout chargés des interpellations.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/RAID_(unit%C3%A9_de_police)" target="_blank" rel="noopener">Le RAID</a> et <a href="https://fr.wikipedia.org/wiki/Brigade_de_recherche_et_d%27intervention" target="_blank" rel="noopener">la brigade de recherche et d'intervention (BRI)</a></h4>
+        <p>Ce sont des unités d'intervention, pas de maintien de l'ordre :</p>
+        <ul>
+          <li>le <strong>RAID</strong> (Recherche, assistance, intervention, dissuasion) compte plus de 450 agents, basés en Essonne et dans 13 antennes. Il dépend de la direction générale de la police nationale et lutte contre le terrorisme et le grand banditisme ;</li>
+          <li>la <strong>BRI</strong> est une unité de police judiciaire, avec 17 brigades et antennes. La BRI de Paris peut passer à plus de 300 agents en formation antiterroriste.</li>
+        </ul>
+        <p>Leurs agents ne sont pas formés au maintien de l'ordre. Ils ont pourtant été engagés pendant les Gilets jaunes (BRI à Paris en 2018 et à Montpellier en 2019), lors des émeutes de juin 2023, et à nouveau, avec le GIGN, pour les mobilisations des 24 et 31 octobre 2026 selon les annonces du ministre de l'Intérieur. En violences urbaines, ils ont utilisé leur propre armement, notamment des fusils de calibre 12 tirant des projectiles « bean bag ».</p>
+        <p>Comment les reconnaître, en général : <strong>tenue d'intervention sombre, casque balistique, gilet porte-plaques, souvent une cagoule, écusson</strong> « RAID » ou « BRI » et marquage « POLICE ». Ils se déplacent en véhicules blindés ou en convois banalisés. Leurs agents font partie des services dont <strong>l'anonymat est protégé</strong> : on peut les filmer, mais pas diffuser d'images permettant de les identifier.</p>
+
+        <h3>Unités de la Gendarmerie nationale</h3>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Gendarmerie_mobile" target="_blank" rel="noopener">Les escadrons de gendarmerie mobile (EGM)</a></h4>
+        <p>Équivalent des CRS côté gendarmerie, c'est la seule force de la gendarmerie spécialisée dans le maintien de l'ordre. Comment les reconnaître :</p>
+        <ul>
+          <li>casque <strong>bleu « gendarmerie » uni, sans bande</strong>, à visière : c'est le premier signe pour les distinguer des CRS ;</li>
+          <li>inscription « GENDARMERIE » <strong>dans le dos et écusson</strong> à la grenade enflammée ;</li>
+          <li><strong>fourgons entièrement bleus</strong>, parfois appuyés par des blindés.</li>
+        </ul>
+        <p>Comme les CRS, ils agissent en formation et sur ordre.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Peloton_de_surveillance_et_d%27intervention_de_la_Gendarmerie" target="_blank" rel="noopener">Les pelotons de surveillance et d'intervention de la gendarmerie (PSIG)</a></h4>
+        <p>Ce sont les unités d'intervention de la gendarmerie départementale, une par compagnie de gendarmerie. Ils ne sont pas une force de maintien de l'ordre, mais peuvent intervenir en urgence dans l'attente des gendarmes mobiles, avec des protections et des armes de force intermédiaire. On les voit surtout dans les manifestations rurales ou périurbaines. Depuis 2016, une partie d'entre eux sont des <strong>PSIG Sabre</strong>, renforcés pour répondre à une attaque terroriste et dotés d'armes longues.</p>
+        <p>Comment les reconnaître : <strong>tenue de gendarme bleu marine</strong> et marquage « GENDARMERIE », <strong>écusson</strong> « PSIG », <strong>casque et plastron de protection</strong> mais sans l'équipement complet des escadrons mobiles. Ils circulent en voitures et fourgons sérigraphiés « Gendarmerie ».</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Escadron_motocycliste_de_la_Garde_r%C3%A9publicaine" target="_blank" rel="noopener">L'escadron motocycliste de la Garde républicaine</a></h4>
+        <p>Ce sont des gendarmes de l'escadron motocycliste de la Garde républicaine. À Paris, ils sont venus en renfort de la BRAV-M, pour la première fois le 1er mai 2019, et certains pilotes de la BRAV-M en sont issus. Comment les reconnaître :</p>
+        <ul>
+          <li><strong>casque blanc avec une flamme jaune sur l'avant</strong> et l'inscription « escorte présidentielle » à l'arrière ; c'est ce qui les distingue du casque blanc, sans flamme, des pilotes de police de la BRAV-M ;</li>
+          <li><strong>galons dorés</strong>, là où les autres motards de la gendarmerie les ont blancs ;</li>
+          <li><strong>tenue de motard bleue</strong> de la gendarmerie, avec marquage « GENDARMERIE », et non « POLICE ».</li>
+        </ul>
+        <p>Ce sont des militaires : en renfort d'une BRAV-M, ils conduisent mais restent soumis à leur propre chaîne de commandement et à l'IGGN, et non à l'IGPN, en cas de plainte. La Garde républicaine dispose aussi d'une cavalerie, parfois engagée en maintien de l'ordre à Paris.</p>
+
+        <h4><a href="https://fr.wikipedia.org/wiki/Groupe_d%27intervention_de_la_Gendarmerie_nationale" target="_blank" rel="noopener">Le groupe d'intervention de la gendarmerie nationale (GIGN)</a></h4>
+        <p>C'est l'équivalent du RAID côté gendarmerie : une unité d'élite militaire. Il n'est pas formé au maintien de l'ordre, mais il a été annoncé en renfort pour les mobilisations d'octobre 2026, avec le RAID et la BRI.</p>
+        <p>Comment le reconnaître, en général : <strong>tenue d'intervention sombre, casque balistique, gilet porte-plaques</strong>, <strong>écusson</strong> « GIGN » et marquage « GENDARMERIE ». Ses agents bénéficient eux aussi d'une <strong>protection de leur anonymat</strong>. En cas de plainte, c'est l'IGGN qui est compétente.</p>
+
+        <h3>Ce que la loi leur permet</h3>
+        <h4>Contrôler et fouiller aux abords</h4>
+        <p>Sur réquisition du procureur, la police peut contrôler les identités, inspecter ou fouiller les sacs et visiter les véhicules aux abords ou au sein d'une manifestation, pour chercher des armes (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037399447" target="_blank" rel="noopener">articles 78-2</a> et <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038311907" target="_blank" rel="noopener">78-2-2</a> du code de procédure pénale). Sur place, vous ne pouvez pas savoir si cette réquisition existe : notez le lieu, l'heure et le matricule de l'agent. Sans papiers, vous pouvez être retenu pour vérification d'identité, au maximum 4 heures (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049052313" target="_blank" rel="noopener">article 78-3</a>).</p>
+        <h4>Disperser</h4>
+        <p>Après les deux sommations, les forces de l'ordre peuvent employer la force pour disperser l'attroupement. Rester sur place volontairement après des sommations audibles devient un délit (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000025543347" target="_blank" rel="noopener">articles 431-3</a> et <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000021926085" target="_blank" rel="noopener">431-4</a> du code pénal).</p>
+        <h4>Interpeller et placer en garde à vue</h4>
+        <p>Uniquement en cas de délit, notamment pour les motifs suivants :</p>
+        <ul>
+          <li><strong>maintien dans un attroupement après 2 sommations</strong> (431-3 et 431-4 du code pénal) ;</li>
+          <li><strong>dissimulation du visage faisant craindre des troubles</strong> (431-9-1 du code pénal) ;</li>
+          <li><strong>participation à un groupement en vue de violences</strong> (222-14-2 du code pénal) ;</li>
+          <li><strong>port d'arme en manifestation</strong> (431-10 du code pénal) ;</li>
+          <li><strong>rébellion</strong>, c'est-à-dire une résistance active (433-6 du code pénal) ;</li>
+          <li><strong>outrage à agent</strong> (433-5 du code pénal).</li>
+        </ul>
+        <h4>Verbaliser</h4>
+        <p>Participer à une manifestation interdite par arrêté est une simple contravention de 4e classe (135 € en amende forfaitaire), sans interpellation possible. Participer à une manifestation non déclarée n'est pas une infraction (Cour de cassation, 8 juin 2022).</p>
+
+        <h3>Vos droits face aux forces de l'ordre</h3>
+        <h4>Filmer</h4>
+        <p>Vous pouvez photographier et filmer les forces de l'ordre dans l'espace public, y compris lorsqu'elles font usage de la force. Elles ne peuvent ni vous l'interdire, ni vous interpeller pour ce motif, ni confisquer votre matériel, ni exiger que vous effaciez vos images. Limites : ne pas diffuser d'images visant à exposer un agent à un risque, ne pas constituer de fichier de photos d'agents, respecter l'anonymat des unités protégées.</p>
+        <h4>Vous protéger</h4>
+        <p>Lunettes, masque ou écharpe contre les gaz lacrymogènes sont autorisés tant qu'ils ne servent pas à dissimuler votre visage. Aucune loi n'interdit le matériel de protection en tant que tel.</p>
+        <h4>En garde à vue</h4>
+        <p>Vous avez le droit d'être informé du motif, de garder le silence, d'être assisté d'un avocat, de voir un médecin et de faire prévenir un proche.</p>
+        <h4>Après avoir subi des violences : les recours</h4>
+        <ol>
+          <li>Faire constater vos blessures et porter plainte, idéalement auprès de l'IGPN (police, à Paris), de l'IGGN (gendarmerie) ou du procureur de la République, pour obtenir un examen en unité médico-judiciaire.</li>
+          <li>Signaler les faits sur les plateformes en ligne de l'IGPN ou de l'IGGN (un signalement n'est pas une plainte).</li>
+          <li>Saisir le Défenseur des droits, gratuitement, par courrier (Libre réponse 71120, 75342 Paris Cedex 07) ou sur <a href="https://www.defenseurdesdroits.fr" target="_blank" rel="noopener">defenseurdesdroits.fr</a>.</li>
+          <li>Rassembler les preuves : vidéos, témoignages, matricule ou unité de l'agent. C'est là que savoir reconnaître les unités devient utile.</li>
+        </ol>
+        <h4>Attention aux arrêtés préfectoraux</h4>
+        <p>Plusieurs de ces droits peuvent être restreints localement, pour une manifestation ou une période donnée, par un arrêté du préfet :</p>
+        <ul>
+          <li><strong>interdiction de la manifestation</strong> elle-même : y participer devient une contravention de 4e classe (135 € d'amende forfaitaire) ;</li>
+          <li><strong>interdiction du port d'équipements de protection</strong> (casques, masques, lunettes) dans un périmètre donné ; les forces de l'ordre peuvent alors les confisquer ;</li>
+          <li><strong>périmètres</strong> où l'accès est filtré, avec fouilles et contrôles sur réquisition.</li>
+        </ul>
+        <p>La légalité de ces arrêtés peut être contestée. Pour les équipements de protection, le Conseil d'État a rappelé qu'aucune loi ne les interdit (décision n° 444849), et le tribunal administratif de Paris a annulé un arrêté de ce type le 29 novembre 2024. Mais tant qu'un arrêté n'est pas suspendu ou annulé par un juge, il s'applique. Avant de partir, consultez le site de la préfecture concernée et le recueil des actes administratifs : les arrêtés sont souvent publiés la veille, voire le matin même. Un référé-liberté devant le tribunal administratif permet de les contester en urgence.</p>
+
+        <h3>Sources</h3>
+        <ul class="sources">
+          <li><a href="https://conseil-etat.fr/site/actualites/identification-individuelle-des-policiers-et-gendarmes-le-conseil-d-etat-enjoint-au-ministre-de-l-interieur-d-achever-avant-fin-2026-la-mise-en-ae" target="_blank" rel="noopener">Conseil d'État – Identification individuelle des policiers et gendarmes, 29 avril 2026</a></li>
+          <li><a href="https://conseil-etat.fr/publications-colloques/rapports-d-activite/bilan-d-activite-2023/securite-le-juste-equilibre-avec-les-libertes" target="_blank" rel="noopener">Conseil d'État – Bilan d'activité 2023 : sécurité et libertés</a></li>
+          <li><a href="https://www.ldh-france.org/wp-content/uploads/2026/05/Fiche-triptique-A4_Nosdroits_manif_Avril-2026.pdf" target="_blank" rel="noopener">LDH – Fiche « Nos droits en manifestation », 2026</a></li>
+          <li><a href="https://www.amnesty.fr/nos-droits-en-manifestation/" target="_blank" rel="noopener">Amnesty International France – Nos droits en manifestation</a></li>
+          <li><a href="https://www.intercommunalites.fr/app/uploads/2022/10/ministere-interieur-nouvelle-doctrine-maintien-ordre.pdf" target="_blank" rel="noopener">Ministère de l'Intérieur – Nouvelle doctrine du maintien de l'ordre</a></li>
+          <li><a href="https://www.gendarmerie.interieur.gouv.fr/musee/content/download/50529/file/LA%20GENDARMERIE%20MOBILE%20EN%20BREF.pdf" target="_blank" rel="noopener">Musée de la Gendarmerie – La gendarmerie mobile en bref</a></li>
+          <li><a href="https://www.europe1.fr/node/758358" target="_blank" rel="noopener">Europe 1 – La dissolution de la BRAV-M « pas à l'ordre du jour »</a></li>
+          <li><a href="https://medicaction.org/wiki/flics/" target="_blank" rel="noopener">Médic'Action – Les flics (repères visuels des unités)</a></li>
+          <li><a href="https://www.police-nationale.net/compagnies-republicaines-securite/" target="_blank" rel="noopener">police-nationale.net – Les compagnies républicaines de sécurité</a></li>
+          <li><a href="https://zestedesavoir.com/articles/2715/les-differentes-forces-de-lordre-francaises/" target="_blank" rel="noopener">Zeste de Savoir – Les différentes forces de l'ordre françaises</a></li>
+          <li><a href="https://www.rtbf.be/article/france-la-brav-m-une-brigade-motorisee-concue-pour-intervenir-plus-rapidement-10321162" target="_blank" rel="noopener">RTBF – La BRAV-M, une brigade motorisée</a></li>
+          <li><a href="https://www.topito.com/top-trucs-savoir-brav-m-police" target="_blank" rel="noopener">Topito – Ce qu'il faut savoir sur la BRAV-M</a></li>
+          <li><a href="https://maintiendelordre.fr/ci-compagnies-dintervention-brav/" target="_blank" rel="noopener">maintiendelordre.fr – Compagnies d'intervention et BRAV</a></li>
+          <li><a href="https://fr.wikipedia.org/wiki/Escadron_motocycliste_de_la_Garde_r%C3%A9publicaine" target="_blank" rel="noopener">Wikipédia – Escadron motocycliste de la Garde républicaine</a></li>
+          <li><a href="https://site.ldh-france.org/paris/files/2023/04/Rapport-BRAV-M-complet-12.04.2023.pdf" target="_blank" rel="noopener">LDH Paris – Rapport d'observation sur la BRAV-M, avril 2023</a></li>
+          <li><a href="https://maintiendelordre.fr/bri-raid/" target="_blank" rel="noopener">maintiendelordre.fr – BRI et RAID</a></li>
+          <li><a href="https://questions.assemblee-nationale.fr/dyn/14/questions/QANR5L14QE88304.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 88304 sur le maintien de l'ordre (PSIG, BAC)</a></li>
+          <li><a href="https://www.gendarmerie.interieur.gouv.fr/gendinfo/actualites/2016/creation-des-50-premiers-psig-sabre" target="_blank" rel="noopener">Gendarmerie – Création des 50 premiers PSIG Sabre</a></li>
+          <li><a href="https://www.titrespresse.com/26243312603/raid-gign-bri" target="_blank" rel="noopener">Titres Presse (L'Humanité) – RAID, GIGN et BRI mobilisés pour le 24 octobre 2026</a></li>
+        </ul>
+
+        <p class="avert"><strong>Avertissement.</strong> Ce billet a une vocation purement informative et pédagogique. Il présente l'état du droit et des pratiques tel que l'auteur a pu le documenter à la date de publication, à partir des sources publiques citées ci-dessus. Il ne constitue ni un conseil juridique, ni une incitation à commettre une quelconque infraction, ni un appel à s'opposer aux forces de l'ordre. Les règles, les équipements et les arrêtés applicables évoluent et varient selon les lieux : vérifiez toujours la situation locale avant de manifester. L'auteur ne saurait être tenu responsable de l'usage fait de ces informations, ni d'éventuelles erreurs ou omissions. Pour toute situation personnelle, consultez un avocat ou une association de défense des droits.</p>
+      </div>
+    </details>
+
+    <details class="billet" id="armes-des-forces-de-l-ordre">
+      <summary><span class="kick">Billet · 6 novembre 2026</span><b>Les armes des forces de l'ordre en manifestation</b><small>Grenades, LBD, canon à eau : ce qu'elles font, qui les utilise, dans quel cadre, et les bons réflexes.</small></summary>
+      <div class="corps">
+        <p><strong>Grenades, LBD, canon à eau : en manifestation, policiers et gendarmes disposent d'un arsenal dit « de force intermédiaire », entre la matraque et l'arme à feu.</strong> Ces armes sont présentées comme non létales. Elles peuvent pourtant mutiler : en octobre 2026, un lycéen de 15 ans a eu la main arrachée à Lens, et le ministre de l'Intérieur a suspendu l'usage des grenades assourdissantes, mais uniquement pour le mouvement lycéen (<a href="https://www.publicsenat.fr/actualites/politique/blocus-des-lycees-dix-huit-enquetes-igpn-ouvertes-lusage-des-grenades-assourdissantes-suspendu" target="_blank" rel="noopener">Public Sénat</a>). Ce billet recense ces armes, ce qu'elles font, qui les utilise et dans quel cadre.</p>
+
+        <h3>Le cadre légal</h3>
+        <p><strong>Une liste fermée.</strong> Les armes utilisables pour disperser un attroupement sont fixées limitativement par le code de la sécurité intérieure (articles R.211-11, R.211-16 et D.211-17). Plusieurs grenades sont classées armes de catégorie A2, c'est-à-dire matériels de guerre.</p>
+        <p><strong>Après sommations, sauf exceptions.</strong> Ces armes ne peuvent servir à disperser qu'après deux sommations (article L.211-9). Sans sommation, elles ne sont permises que si les agents subissent des violences ou ne peuvent défendre autrement le terrain qu'ils occupent (articles R.211-18 et D.211-19).</p>
+        <p><strong>Nécessité et proportionnalité.</strong> Tout usage doit être absolument nécessaire et strictement proportionné (article L.435-1). Les grenades à lanceur et le LBD exigent une habilitation individuelle et une formation continue.</p>
+
+        <h3>Les grenades</h3>
+        <p>C'est la famille la plus utilisée et la plus variée. On les distingue par leur effet.</p>
+        <p><strong>Les grenades lacrymogènes (CM6, MP7…).</strong> Tirées au lanceur, elles libèrent plusieurs palets qui diffusent du gaz CS. Effets : larmes, brûlures des yeux et de la gorge, toux, parfois nausées. Les palets brûlants peuvent blesser s'ils touchent directement une personne. Ce sont les plus courantes pour disperser une foule.</p>
+        <p><strong>La GM2L (grenade lacrymogène et assourdissante).</strong> Elle combine gaz CS et détonation très forte : environ 160 décibels à 5 mètres, bien au-delà du seuil de lésion auditive. Elle remplace depuis 2020 la GLI-F4, retirée après plusieurs mains arrachées. Depuis 2021, elle doit être tirée en cloche au lanceur et non plus lancée à la main. Elle a été mise en cause dans les blessures graves de Sainte-Soline en 2023.</p>
+        <p><strong>La grenade assourdissante.</strong> Effet sonore et lumineux, sans gaz, pour désorienter. C'est elle qui est soupçonnée dans la blessure du lycéen de Lens le 5 octobre 2026 ; son usage est suspendu pour le seul mouvement lycéen depuis le 7 octobre (<a href="https://lcp.fr/actualites/mouvement-lyceen-laurent-nunez-annonce-suspendre-l-usage-des-grenades-assourdissantes" target="_blank" rel="noopener">LCP</a>).</p>
+        <p><strong>La grenade à main de désencerclement (GENL).</strong> Lancée à la main, elle projette des plots en caoutchouc dans toutes les directions avec une forte détonation. Elle sert en principe à se dégager quand les agents sont encerclés. Projectiles non dirigés : elle peut toucher le visage ou les yeux de n'importe qui à proximité.</p>
+
+        <h3>Le LBD 40 et les lance-grenades</h3>
+        <p><strong>Le LBD 40 (lanceur de balles de défense).</strong> Arme d'épaule avec viseur, qui tire des projectiles en mousse dure de 40 mm. Selon le ministère, ce n'est pas une arme de dispersion mais un moyen de se défendre contre une personne violente ; son emploi est encadré par une instruction commune police-gendarmerie de 2014 et réservé aux agents habilités. Le tir à la tête est proscrit. En 2023, Mediapart a révélé que la distance minimale de tir recommandée pour les policiers serait passée de 10 à 3 mètres, quand les gendarmes restent à 10 mètres. Pendant les Gilets jaunes, des députés recensaient déjà 14 personnes ayant perdu un œil par LBD. Le LBD n'a pas été suspendu lors du mouvement lycéen de 2026.</p>
+        <p><strong>Les lance-grenades (Cougar, Chouka).</strong> Ils projettent en cloche les grenades lacrymogènes et la GM2L, de quelques dizaines à plus de 200 mètres. Un tir tendu, à l'horizontale, transforme la grenade en projectile direct.</p>
+
+        <h3>Les autres moyens</h3>
+        <p><strong>Le canon à eau.</strong> Monté sur un véhicule, il disperse ou repousse par un jet puissant, parfois mêlé de produit lacrymogène ou colorant. Un jet direct à courte distance peut renverser et blesser. Il a fait partie des armes mises en cause à Sainte-Soline.</p>
+        <p><strong>Les aérosols lacrymogènes.</strong> Bombes individuelles (gaz CS ou poivre) projetées à courte distance, au visage. Usage fréquent pour repousser une personne ou un petit groupe.</p>
+        <p><strong>Les bâtons.</strong> Matraque classique, tonfa ou bâton télescopique, pour repousser ou frapper. Les coups à la tête sont proscrits.</p>
+        <p><strong>Le pistolet à impulsion électrique (Taser).</strong> Il envoie deux électrodes reliées par des fils qui paralysent quelques secondes. Utilisé surtout lors d'interpellations.</p>
+        <p><strong>L'arme de service.</strong> Policiers et gendarmes portent leur pistolet, mais il ne fait pas partie des moyens de maintien de l'ordre. Son usage relève de la légitime défense et des cas stricts de l'article L.435-1.</p>
+
+        <h3>Récapitulatif</h3>
+        <div class="tablo"><table>
+          <thead><tr><th>Arme</th><th>Effet recherché</th><th>Mode d'emploi</th><th>Principaux risques</th></tr></thead>
+          <tbody>
+            <tr><td>Grenade lacrymogène (CM6, MP7)</td><td>Disperser</td><td>Lanceur, en cloche</td><td>Irritations, brûlures par les palets</td></tr>
+            <tr><td>GM2L</td><td>Disperser, impressionner</td><td>Lanceur, en cloche</td><td>Lésions auditives, mains et membres arrachés, traumatismes</td></tr>
+            <tr><td>Grenade assourdissante</td><td>Désorienter</td><td>Main ou lanceur</td><td>Lésions auditives, mutilations (Lens, 2026)</td></tr>
+            <tr><td>Grenade de désencerclement (GENL)</td><td>Se dégager d'un encerclement</td><td>Main, au sol</td><td>Blessures aux yeux et au visage</td></tr>
+            <tr><td>LBD 40</td><td>Neutraliser une personne violente</td><td>Tir tendu visé</td><td>Perte d'un œil, fractures</td></tr>
+            <tr><td>Canon à eau</td><td>Repousser, disperser</td><td>Véhicule</td><td>Chutes, blessures à courte distance</td></tr>
+            <tr><td>Aérosol lacrymogène</td><td>Repousser</td><td>Jet au visage</td><td>Irritations</td></tr>
+            <tr><td>Bâton, tonfa</td><td>Repousser, frapper</td><td>Contact</td><td>Fractures, plaies à la tête</td></tr>
+            <tr><td>Taser</td><td>Immobiliser</td><td>Tir à courte distance</td><td>Chute, risque cardiaque</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Que faire face à ces armes ?</h3>
+        <h4>Pendant la manifestation</h4>
+        <ul>
+          <li>ne jamais ramasser ni renvoyer une grenade, même apparemment éteinte : certaines explosent avec retard ;</li>
+          <li>après des sommations, s'éloigner par les rues dégagées plutôt que rester au contact ;</li>
+          <li>se protéger des gaz avec lunettes et masque, autorisés tant qu'ils ne dissimulent pas le visage, sauf arrêté préfectoral les interdisant pour la manifestation (à vérifier sur le site de la préfecture avant de partir) ;</li>
+          <li>prévoir des bouchons d'oreille contre les détonations ;</li>
+          <li>en cas de gaz, ne pas se frotter les yeux ; rincer à l'eau ou au sérum physiologique.</li>
+        </ul>
+        <h4>Après une blessure</h4>
+        <ol>
+          <li>Se faire soigner et photographier la blessure.</li>
+          <li>Conserver les éclats, palets ou vêtements touchés.</li>
+          <li>Recueillir vidéos et témoignages, noter l'heure, le lieu et l'unité.</li>
+          <li>Porter plainte pour obtenir un examen en unité médico-judiciaire, et saisir l'IGPN, l'IGGN ou le Défenseur des droits.</li>
+        </ol>
+
+        <h3>Sources</h3>
+        <ul class="sources">
+          <li><a href="https://www.publicsenat.fr/actualites/politique/blocus-des-lycees-dix-huit-enquetes-igpn-ouvertes-lusage-des-grenades-assourdissantes-suspendu" target="_blank" rel="noopener">Public Sénat – Blocus des lycées : l'usage des grenades assourdissantes suspendu, octobre 2026</a></li>
+          <li><a href="https://lcp.fr/actualites/mouvement-lyceen-laurent-nunez-annonce-suspendre-l-usage-des-grenades-assourdissantes" target="_blank" rel="noopener">LCP – Laurent Nuñez suspend l'usage des grenades assourdissantes, 7 octobre 2026</a></li>
+          <li><a href="https://fr.wikipedia.org/wiki/Grenade_GM2L" target="_blank" rel="noopener">Wikipédia – Grenade GM2L</a></li>
+          <li><a href="https://questions.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE15743.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 15743 sur le LBD 40</a></li>
+          <li><a href="https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE16844.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 16844 sur les armes de maintien de l'ordre</a></li>
+          <li><a href="https://www.assemblee-nationale.fr/dyn/16/questions/QANR5L16QE12722.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 12722 sur la distance de tir du LBD</a></li>
+          <li><a href="https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE16070.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 16070 sur les blessés</a></li>
+          <li><a href="https://questions.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE10933.pdf" target="_blank" rel="noopener">Assemblée nationale – Question écrite n° 10933 sur Sainte-Soline</a></li>
+          <li><a href="https://www.ldh-france.org/wp-content/uploads/2026/05/Fiche-triptique-A4_Nosdroits_manif_Avril-2026.pdf" target="_blank" rel="noopener">LDH – Fiche « Nos droits en manifestation », 2026</a></li>
+        </ul>
+
+        <p class="avert"><strong>Avertissement.</strong> Ce billet a une vocation purement informative et pédagogique. Il décrit, à partir des sources publiques citées ci-dessus, les équipements employés par les forces de l'ordre et leur cadre légal, tels que l'auteur a pu les documenter à la date de publication. Il ne constitue ni un conseil juridique ou médical, ni une incitation à commettre une quelconque infraction, ni un appel à s'opposer aux forces de l'ordre. Les armes en dotation, leurs règles d'emploi et les arrêtés applicables évoluent et varient selon les lieux. L'auteur ne saurait être tenu responsable de l'usage fait de ces informations, ni d'éventuelles erreurs ou omissions. En cas de blessure, consultez un médecin ; pour toute situation personnelle, un avocat ou une association de défense des droits.</p>
+      </div>
+    </details>
   </section>
 
   <footer>
