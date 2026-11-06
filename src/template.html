@@ -81,6 +81,11 @@ h1 span{color:var(--red)}
   opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
 .totop.on{opacity:1;transform:none;pointer-events:auto}
 @media (prefers-reduced-motion: reduce){.totop{transition:none}}
+.contact{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:1001;
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.04em;text-decoration:none;
+  background:var(--red);color:var(--onred);padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.contact:hover{background:var(--ink);color:var(--paper)}
+.totop{bottom:calc(max(16px,env(safe-area-inset-bottom,0px)) + 54px)}
 
 .list{display:grid}
 .day{display:grid;grid-template-columns:100px 1fr;gap:20px;border-top:2px solid var(--ink);padding-top:14px;margin-top:26px}
@@ -166,6 +171,7 @@ footer h3{font-family:var(--display);font-stretch:75%;font-weight:800;text-trans
   </nav>
 
   <main class="list" id="list"></main>
+  <a class="contact" id="contact" href="mailto:contact.devdd@proton.me" aria-label="Nous écrire : signalement, demande de modification ou autre">✉ Contact</a>
   <button class="totop" id="totop" type="button" aria-label="Revenir en haut de la page">↑ Haut</button>
 
   <footer>
@@ -309,6 +315,12 @@ const filt=document.querySelector(".filters");
 const setFh=()=>{ document.documentElement.style.setProperty("--fh", filt.offsetHeight+"px"); };
 setFh(); if("ResizeObserver" in window) new ResizeObserver(()=>{setFh(); observeDays();}).observe(filt);
 
+/* Bouton contact : ouvre la messagerie avec l'adresse de la page en cours */
+function mailContact(objet, intro){
+  const corps=(intro||"Votre message (signalement, demande de modification, autre) :\n\n\n")+"\n—\nPage : "+location.href;
+  return "mailto:contact.devdd@proton.me?subject="+encodeURIComponent(objet)+"&body="+encodeURIComponent(corps);
+}
+document.getElementById("contact").addEventListener("click",function(){this.href=mailContact("Démocratie en voie de disparition : contact");});
 /* Bouton haut de page */
 const tt=document.getElementById("totop");
 addEventListener("scroll",()=>tt.classList.toggle("on", scrollY>900),{passive:true});

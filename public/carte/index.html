@@ -67,6 +67,7 @@ h1 span{color:var(--red)}
 .filters input{flex:1 1 200px}
 .sort{flex:none;font-family:var(--mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:7px 10px;cursor:pointer;white-space:nowrap}
 .sort:hover{border-color:var(--ink)}
+.links .signal{color:var(--red)}
 .reset{font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
 .count{font-family:var(--mono);font-size:13px;color:var(--muted);flex-basis:100%}
 .count:empty{display:none}
@@ -184,6 +185,11 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
   opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
 .totop.on{opacity:1;transform:none;pointer-events:auto}
 @media (prefers-reduced-motion: reduce){.totop{transition:none}}
+.contact{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:1001;
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.04em;text-decoration:none;
+  background:var(--red);color:var(--onred);padding:12px 14px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.contact:hover{background:var(--ink);color:var(--paper)}
+.totop{bottom:calc(max(16px,env(safe-area-inset-bottom,0px)) + 54px)}
 footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);display:grid;gap:6px}
 
 @media (max-width:860px){
@@ -511,10 +517,17 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     <span>Fond de carte © contributeurs OpenStreetMap · Adresses : Base Adresse Nationale.</span>
     <span><a href="/mentions-legales/">Mentions légales</a></span>
   </footer>
+  <a class="contact" id="contact" href="mailto:contact.devdd@proton.me" aria-label="Nous écrire : signalement, demande de modification ou autre">✉ Contact</a>
   <button class="totop" id="totop" type="button" aria-label="Revenir en haut de la page">↑ Haut</button>
 </div>
 
 <script>
+/* Bouton contact : ouvre la messagerie avec l'adresse de la page en cours */
+function mailContact(objet, intro){
+  const corps=(intro||"Votre message (signalement, demande de modification, autre) :\n\n\n")+"\n—\nPage : "+location.href;
+  return "mailto:contact.devdd@proton.me?subject="+encodeURIComponent(objet)+"&body="+encodeURIComponent(corps);
+}
+document.getElementById("contact").addEventListener("click",function(){this.href=mailContact("Démocratie en voie de disparition : contact");});
 /* Bouton haut de page */
 (function(){var tt=document.getElementById("totop");addEventListener("scroll",function(){tt.classList.toggle("on",scrollY>900)},{passive:true});tt.onclick=function(){window.scrollTo({top:0})};})();
 /* Raccourcis : un lien vers un billet l'ouvre puis y fait défiler la page */
@@ -798,7 +811,7 @@ function fiche(c){
     </div>
     ${c.b?`<p>${esc(c.b)}</p>`:""}
     ${c.approx?`<p class="note">Emplacement approximatif : l'adresse exacte n'a pas pu être localisée.</p>`:""}
-    <div class="links">${c.s?`<span class="src">Source : ${esc(c.s)}</span>`:""}${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">Article ↗</a>`:""}${c.k==="Article (PDF)"?`<a href="https://drive.google.com/file/d/${encodeURIComponent(c.id)}/view" target="_blank" rel="noopener">Article archivé (PDF) ↗</a>`:""}</div>
+    <div class="links">${c.s?`<span class="src">Source : ${esc(c.s)}</span>`:""}${c.url?`<a href="${esc(c.url)}" target="_blank" rel="noopener">Article ↗</a>`:""}${c.k==="Article (PDF)"?`<a href="https://drive.google.com/file/d/${encodeURIComponent(c.id)}/view" target="_blank" rel="noopener">Article archivé (PDF) ↗</a>`:""}<a class="signal" href="${esc(mailContact("["+c.cote+"] Signalement ou demande de modification","Fait "+c.cote+" : "+c.t+"\n\nCe qui est à corriger ou à compléter (lieu, date, unité, vidéo, autre) :\n\n\n"))}">✉ Signaler une erreur sur ce fait</a></div>
   </article>`;
 }
 function render(recadre){
