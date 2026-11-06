@@ -199,6 +199,28 @@
 "cote": "VP-009"
 },
 {
+"id": "1G9sGGL56oy535s4fSeiKri7f_szVz-ce",
+"fn": "RUE_PARIS_GAZAGE_GRATUIT",
+"ville": "Le Havre",
+"adresse": "Rue de Paris",
+"sem": 1,
+"t": "Gaz lacrymogène sans raison apparente",
+"violences": [
+"Gaz lacrymogène"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@plsalg (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-247"
+},
+{
 "id": "1qt60MMtIabAfPWgCcCkQFXKoVlyGiHjT",
 "fn": "INCONNU_TRAÎNAGE",
 "ville": "Le Mans",
@@ -4178,6 +4200,29 @@
 "cote": "VP-189"
 },
 {
+"id": "1M4Cy06OemZG5IJRf1n5sIICUtTyJBXpo",
+"fn": "TW_COURS_VINCENNES_BLESSURE_MAIN_LBD_2",
+"ville": "Paris",
+"adresse": "Cours de Vincennes",
+"sem": 2,
+"t": "LBD, blessure à la main",
+"violences": [
+"LBD",
+"Blessure grave"
+],
+"infractions": [
+"222-12"
+],
+"regles": [
+"SNMO-3.3.2"
+],
+"forces": [],
+"s": "@julien_mattia (Instagram)",
+"tw": true,
+"k": "Vidéo",
+"cote": "VP-248"
+},
+{
 "id": "1d1S_ksatYGYALbseJhNdNnt_-wPc2dlH",
 "fn": "TW_INCONNU_BLESSURE_MAIN_LBD",
 "ville": "Paris",
@@ -4632,6 +4677,77 @@
 "cote": "VP-209"
 },
 {
+"id": "1PVHxsFS7h-36Jg11Ho3q2PEmwtmF0FN0",
+"fn": "AVENUE_LAVOISIER_VÉHICULE",
+"ville": "Antony",
+"adresse": "Avenue Lavoisier",
+"sem": 3,
+"t": "Véhicule de police dans la foule",
+"violences": [
+"Mise en danger"
+],
+"infractions": [
+"223-1"
+],
+"regles": [
+"R434-10"
+],
+"forces": [],
+"s": "@LFIAntony (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-249"
+},
+{
+"id": "10GhA5CdkytqvanayrTLUsaiSEvsSG0gK",
+"fn": "RUE_LÉOPOLD_RECHOSSIÈRE_MATRAQUE_LYCÉENS",
+"ville": "Aubervilliers",
+"adresse": "Rue Léopold-Réchossière",
+"sem": 3,
+"t": "Coups de matraque sur des lycéens",
+"violences": [
+"Coups",
+"Lycéens"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-250"
+},
+{
+"id": "143MhHyFL6HXPg4_zEFVxQA6jqgRB_GV6",
+"fn": "ROUTE_MITRY_ARRESTATION_ABUSIVE_DÉSHABILLAGE_TRAÎNAGE_AU_SOL_LYCÉEN",
+"ville": "Aulnay-sous-Bois",
+"adresse": "Route de Mitry",
+"sem": 3,
+"t": "Arrestation abusive, personne déshabillée et lycéen traîné au sol",
+"violences": [
+"Arrestation abusive",
+"Traitement dégradant",
+"Personne traînée",
+"Lycéens"
+],
+"infractions": [
+"432-4",
+"222-13"
+],
+"regles": [
+"R434-17"
+],
+"forces": [],
+"s": "@abomangoli (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-251"
+},
+{
 "id": "1qez8wg7jPLw98ZQ0gKJdgrnb8IuwazKE",
 "fn": "INCONNU_TRAÎNAGE_JET_AU_SOL",
 "ville": "Bayonne",
@@ -4698,6 +4814,29 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-212"
+},
+{
+"id": "1zJfvx72kvAorps280BNBU_34rdqvf9QA",
+"fn": "INCONNU_JET_AU_SOL_LYCÉEN",
+"ville": "Caen",
+"adresse": null,
+"sem": 3,
+"t": "Lycéen jeté au sol",
+"violences": [
+"Plaquage, maintien au sol",
+"Lycéens"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@emma_frr (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-252"
 },
 {
 "id": "1ZVw61e7N9SiUxFM52znFIuZ7vBV0EiQ8",
@@ -4813,6 +4952,52 @@
 "cote": "VP-217"
 },
 {
+"id": "13gGyUBSWLCNE_DnBt4VSqgLXRnGCAIZz",
+"fn": "AVENUE_GEORGES_CLÉMENCEAU_ARRESTATION_ABUSIVE_ASSISTANTE_SCOLAIRE",
+"ville": "Les Lilas",
+"adresse": "Avenue Georges-Clemenceau",
+"sem": 3,
+"t": "Arrestation abusive d'une assistante scolaire",
+"violences": [
+"Arrestation abusive"
+],
+"infractions": [
+"432-4"
+],
+"regles": [
+"R434-17"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-253"
+},
+{
+"id": "1w2arMLYZMI4LQrZEn86RocwUNX2-CAhc",
+"fn": "INCONNU_ATTACHAGE_ARBRE_MAINTIEN_AU_SOL_LYCÉEN",
+"ville": "Lille",
+"adresse": null,
+"sem": 3,
+"t": "Personne attachée à un arbre et maintien au sol d'un lycéen",
+"violences": [
+"Traitement dégradant",
+"Plaquage, maintien au sol",
+"Lycéens"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17"
+],
+"forces": [],
+"s": "@L_insoumission (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-254"
+},
+{
 "id": "1LM_lNmyHkfUQ00Sm1or2LlRifRnd7zDv",
 "fn": "INCONNU_INSULTES_PROPOS_RACISTES",
 "ville": "Lille",
@@ -4837,6 +5022,73 @@
 "cote": "VP-218"
 },
 {
+"id": "1r2cPbCC_crj27HwR_iLR-9V9110pQMrU",
+"fn": "CHEMIN_FONTENELLES_MAINTIEN_AU_SOL_ÉCRASEMENT",
+"ville": "Louviers",
+"adresse": "Chemin des Fontenelles",
+"sem": 3,
+"t": "Maintien au sol, personne écrasée",
+"violences": [
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@L_insoumission (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-255"
+},
+{
+"id": "16jukQ1tKjYgpQz9U4Pcw67zpEl9bULr2",
+"fn": "AVENUE_BERTHELOT_COUPS_PERSONNE_EN_FAUTEUIL_ROULANT",
+"ville": "Lyon",
+"adresse": "Avenue Berthelot",
+"sem": 3,
+"t": "Coups sur une personne en fauteuil roulant",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@lyonmag (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-256"
+},
+{
+"id": "14KudmT-t0zDJ8na25QPQR8chivRTIS8K",
+"fn": "AVENUE_BERTHELOT_TABASSAGE",
+"ville": "Lyon",
+"adresse": "Avenue Berthelot",
+"sem": 3,
+"t": "Passage à tabac",
+"violences": [
+"Passage à tabac"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@lyonmag (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-257"
+},
+{
 "id": "1Y6o0J3ZE3zXr0cgHkWbFdslxk6w3E4xt",
 "fn": "AVENUE_JEAN_JAURÈS_GRENADE_TABASSAGE_MISE_EN_JOUE_IRRÉGULIÈRE",
 "ville": "Lyon",
@@ -4859,6 +5111,145 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-219"
+},
+{
+"id": "1aa2q0Vb5VdgfCCV-rv7SzWbyXv4fOE-Z",
+"fn": "COURS_GAMBETTA_TABASSAGE",
+"ville": "Lyon",
+"adresse": "Cours Gambetta",
+"sem": 3,
+"t": "Passage à tabac",
+"violences": [
+"Passage à tabac"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@lyonmag (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-258"
+},
+{
+"id": "1BhrwlHRk5VLBaC3TksRJv8A-US1pBwGw",
+"fn": "INCONNU_JET_AU_SOL",
+"ville": "Lyon",
+"adresse": null,
+"sem": 3,
+"t": "Personne jetée au sol",
+"violences": [
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@onvapassforcer (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-259"
+},
+{
+"id": "13InemoxVbuwJuk3rHi9_w2kEU7JZ5qCf",
+"fn": "TW_AVENUE_JEAN_JAURÈS_BLESSURE_GRAVE",
+"ville": "Lyon",
+"adresse": "Avenue Jean-Jaurès",
+"sem": 3,
+"t": "Blessure grave",
+"violences": [
+"Blessure grave"
+],
+"infractions": [
+"222-12"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@al3rie (X)",
+"tw": true,
+"k": "Vidéo",
+"cote": "VP-260"
+},
+{
+"id": "1WgIWy80dNAdX2OYUd1g0Oc9Rex9w5tph",
+"fn": "TW_RUE_SAINT_MICHEL_MATRAQUE_BLESSURE_GRAVE_POUSSETTE_DANGEREUSE",
+"ville": "Lyon",
+"adresse": "Rue Saint-Michel",
+"sem": 3,
+"t": "Coups de matraque, blessure grave et poussette mise en danger",
+"violences": [
+"Coups",
+"Blessure grave",
+"Mise en danger"
+],
+"infractions": [
+"222-12",
+"223-1"
+],
+"regles": [
+"R434-18",
+"R434-10"
+],
+"forces": [],
+"s": "@TribunePop23 (X)",
+"tw": true,
+"k": "Vidéo",
+"cote": "VP-261"
+},
+{
+"id": "1LYpNYfs-Bxqvuy-bxd62QApmDwetIXkw",
+"fn": "BOULEVARD_EUGÈNE_PIERRE_MAINTIEN_AU_SOL_ÉCRASEMENT",
+"ville": "Marseille",
+"adresse": "Boulevard Eugène-Pierre",
+"sem": 3,
+"t": "Maintien au sol, personne écrasée",
+"violences": [
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@skheifi (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-262"
+},
+{
+"id": "1lvxmPetEqzipoGT92eg_QV7QOCfzFFoo",
+"fn": "INCONNU_MAINTIEN_AU_SOL_ÉCRASEMENT_DISSIMULATION",
+"ville": "Marseille",
+"adresse": null,
+"sem": 3,
+"t": "Maintien au sol, personne écrasée et dissimulation",
+"violences": [
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18",
+"R434-15"
+],
+"forces": [],
+"s": "@skheifi (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-263"
 },
 {
 "id": "12s0fXeOrWWltmYHaxPxRF7dXfFyEp3sc",
@@ -4905,6 +5296,29 @@
 "cote": "VP-221"
 },
 {
+"id": "1bYgZbdd55QcFo4_gtJa5UuFuvNy5bdWU",
+"fn": "RUE_LOISIR_GAZ_PROXIMITÉ_ÉCOLE_MATERNELLE",
+"ville": "Marseille",
+"adresse": "Rue du Loisir",
+"sem": 3,
+"t": "Gaz lacrymogène près d'une école maternelle",
+"violences": [
+"Gaz lacrymogène",
+"Mise en danger"
+],
+"infractions": [
+"223-1"
+],
+"regles": [
+"R434-10"
+],
+"forces": [],
+"s": "@skheifi (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-264"
+},
+{
 "id": "1SI0JZ1Sv6bHG2ay6saASu9knta42zXV7",
 "fn": "RUE_TERRUSSE_INTIMIDATION_PRESSE",
 "ville": "Marseille",
@@ -4926,6 +5340,28 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-222"
+},
+{
+"id": "1wVWeUwzJPjGdCaGjYfFzAcI3b48IP28s",
+"fn": "TW_BOULEVARD_CHAVE_TABASSAGE",
+"ville": "Marseille",
+"adresse": "Boulevard Chave",
+"sem": 3,
+"t": "Passage à tabac",
+"violences": [
+"Passage à tabac"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "France 3 Régions (franceinfo)",
+"tw": true,
+"k": "Article (PDF)",
+"cote": "VP-265"
 },
 {
 "id": "1jo0JtXqjKBkKf-HQZ7FnAJqjEHNVFukE",
@@ -5004,6 +5440,103 @@
 "cote": "VP-225"
 },
 {
+"id": "12t25kD7Zj0dqQn_vM3nohOjWeqwa-v6k",
+"fn": "RUE_MALBOSC_ARRESTATION_ABUSIVE_MAINTIEN_AU_SOL_INFIRMIÈRE_LYCÉE",
+"ville": "Montpellier",
+"adresse": "Rue de Malbosc",
+"sem": 3,
+"t": "Arrestation abusive et maintien au sol d'une infirmière scolaire",
+"violences": [
+"Arrestation abusive",
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"432-4",
+"222-13"
+],
+"regles": [
+"R434-17"
+],
+"forces": [],
+"s": "@NathalieOziol (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-266"
+},
+{
+"id": "1is806us4sEvxaaChvIWrwaxev08iGZK4",
+"fn": "ALLÉE_TREMPERIE_GAZ_MASSIF_ABUSIF",
+"ville": "Nantes",
+"adresse": "Allée de la Tremperie",
+"sem": 3,
+"t": "Gaz lacrymogène en masse et disproportionné",
+"violences": [
+"Gaz lacrymogène"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R211-13",
+"R434-18"
+],
+"forces": [],
+"s": "@Ab7Media (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-267"
+},
+{
+"id": "1Q8WZWjV9-GO6SH5ZDzjxve4lfKiYoC0o",
+"fn": "INCONNU_MAINTIEN_AU_SOL_ÉCRASEMENT_ÉTRANGLEMENT",
+"ville": "Nantes",
+"adresse": null,
+"sem": 3,
+"t": "Maintien au sol, personne écrasée et étranglement",
+"violences": [
+"Plaquage, maintien au sol",
+"Étranglement"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@L_insoumission (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-268"
+},
+{
+"id": "1qZn4hW5cwQmQmH2beoGct33GIb8hluGl",
+"fn": "PLACE_PILORI_VÉHICULE_GRENADES_GAZ_ABUSIFS",
+"ville": "Nantes",
+"adresse": "Place du Pilori",
+"sem": 3,
+"t": "Véhicule de police dans la foule et grenades et gaz lacrymogène disproportionnés",
+"violences": [
+"Mise en danger",
+"Grenade",
+"Gaz lacrymogène"
+],
+"infractions": [
+"223-1",
+"222-13"
+],
+"regles": [
+"R434-10",
+"R434-18"
+],
+"forces": [],
+"s": "@ContreAttaque_ (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-269"
+},
+{
 "id": "1JPZLsWJVjRZ9DzIU2_dotJINUCkY-yzq",
 "fn": "RUE_LÉON_MAÎTRE_COUPS_MAINTIEN_AU_SOL",
 "ville": "Nantes",
@@ -5026,6 +5559,56 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-226"
+},
+{
+"id": "1y684JM7SxDxRFHkRdChG2sv44s6xcG8b",
+"fn": "INCONNU_COUP_CASQUE_PROPOS_RACISTES",
+"ville": "Nîmes",
+"adresse": null,
+"sem": 3,
+"t": "Coup de casque et propos racistes",
+"violences": [
+"Coups",
+"Propos racistes"
+],
+"infractions": [
+"222-13",
+"injure"
+],
+"regles": [
+"R434-18",
+"R434-11",
+"R434-14"
+],
+"forces": [],
+"s": "@juju369369 (Instagram)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-270"
+},
+{
+"id": "1yBU-s-HBHQbhYIu--0b0o0PdVJB-5OwR",
+"fn": "AVENUE_BOUVINES_INTIMIDATION_DESTRUCTIONS_EFFETS_PERSONNELS_DISSIMULATION",
+"ville": "Paris",
+"adresse": "Avenue de Bouvines",
+"sem": 3,
+"t": "Intimidation, destruction d'effets personnels et dissimulation",
+"violences": [
+"Intimidation, menaces",
+"Destruction de biens"
+],
+"infractions": [
+"322-1"
+],
+"regles": [
+"R434-14",
+"R434-15"
+],
+"forces": [],
+"s": "@lolafleurw (Instagram)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-271"
 },
 {
 "id": "1JYD7WTBDYPRj4Se3Oeh6zrvob4c2giTH",
@@ -5072,6 +5655,30 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-228"
+},
+{
+"id": "1_sDrm-42W1RkoXmBdI9xOx7NmNRQUfkF",
+"fn": "BOULEVARD_INVALIDES_ÉTRANGLEMENT_MINEUR",
+"ville": "Paris",
+"adresse": "Boulevard des Invalides",
+"sem": 3,
+"t": "Étranglement d'un mineur",
+"violences": [
+"Étranglement",
+"Mineurs"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@FcFlocko (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-272"
 },
 {
 "id": "1jVWOwZbSQ22c27pT5SQOOK3WonjL0D6T",
@@ -5222,6 +5829,261 @@
 "cote": "VP-234"
 },
 {
+"id": "128TiQxynoWVVcjoJc8dvhPRt4ISE0k7P",
+"fn": "BOULEVARD_VOLTAIRE_CHARGE_NASSE",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Charge et nasse",
+"violences": [
+"Charge",
+"Nasse"
+],
+"infractions": [],
+"regles": [
+"R434-18",
+"SNMO-3.1.4"
+],
+"forces": [],
+"s": "@MrPropagande (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-273"
+},
+{
+"id": "14XaAQXeqtnLbtGV7RxPq9gij9GNChhSK",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_1",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@LibreQg (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-274"
+},
+{
+"id": "1rCGA0omw_4NYDlQMw7LIynwD5q9neFT1",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_2",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@LucAuffret (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-275"
+},
+{
+"id": "1OQB-WlGG1-kIqdYGtXfQHMHIFNga28HA",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_3",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@CLPRESSFR (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-276"
+},
+{
+"id": "1-6WnqiaXdHOtX6UzCe4wuVSSM89zcB_H",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_COUP_PRESSE",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque et coup porté à un journaliste",
+"violences": [
+"Coups",
+"Atteinte à la presse"
+],
+"infractions": [
+"222-13",
+"431-1"
+],
+"regles": [
+"R434-18",
+"SNMO-2.2"
+],
+"forces": [],
+"s": "@enzorabouyy (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-277"
+},
+{
+"id": "1yO5jb5RyNc3-roRprsRo5XScbNbjbpOx",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_GRENADE",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque et grenade",
+"violences": [
+"Coups",
+"Grenade"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@enzorabouyy (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-278"
+},
+{
+"id": "1tGhDGDEgko6GNl12qPiXieDah_5j-WRS",
+"fn": "BOULEVARD_VOLTAIRE_MATRAQUE_ÉCRASEMENT_MINEUR",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Coups de matraque et mineur écrasé au sol",
+"violences": [
+"Coups",
+"Plaquage, maintien au sol",
+"Mineurs"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18",
+"R434-17"
+],
+"forces": [],
+"s": "@Portes_Thomas (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-279"
+},
+{
+"id": "1IOaXJ32HMfms-xxBNyZZOcVraOHKsyw5",
+"fn": "BOULEVARD_VOLTAIRE_POUSSETTE_DANGEREUSE_BLESSURE_GRAVE_1",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Poussette mise en danger et blessure grave",
+"violences": [
+"Mise en danger",
+"Blessure grave"
+],
+"infractions": [
+"223-1",
+"222-12"
+],
+"regles": [
+"R434-10",
+"R434-18"
+],
+"forces": [],
+"s": "@Ab7Media (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-280"
+},
+{
+"id": "1d0SOaQcfZMDzHQFVUgFPx_MIU8htmOXV",
+"fn": "BOULEVARD_VOLTAIRE_TABASSAGE_GÉNÉRAL",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Passages à tabac généralisés",
+"violences": [
+"Passage à tabac"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@TribunePop23 (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-281"
+},
+{
+"id": "178jqnafylGehJyfjGEIexT1bBGbulL5p",
+"fn": "INCONNU_ARRESTATION_ABUSIVE_LYCÉEN",
+"ville": "Paris",
+"adresse": null,
+"sem": 3,
+"t": "Arrestation abusive d'un lycéen",
+"violences": [
+"Arrestation abusive",
+"Lycéens"
+],
+"infractions": [
+"432-4"
+],
+"regles": [
+"R434-17"
+],
+"forces": [],
+"s": "@Panthere_rosee (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-282"
+},
+{
+"id": "1yBzMpXX6wntWfdzT6M4pG0zJbrZivocQ",
+"fn": "METRO_NATION_COUPS_MATRAQUE",
+"ville": "Paris",
+"adresse": "Métro Nation",
+"sem": 3,
+"t": "Coups et coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@MrPropagande (X)",
+"tw": false,
+"k": "Vidéo",
+"lat": 48.8484,
+"lng": 2.3957,
+"cote": "VP-283"
+},
+{
 "id": "166nSZbdtZpMhl5xUJoGtjrV_Est-MipJ",
 "fn": "MÉTRO_DAUSMENIL_INTIMIDATION_GAZ",
 "ville": "Paris",
@@ -5269,6 +6131,126 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-236"
+},
+{
+"id": "1PmvMLaMsAQ9F5N_Z87z4w3tBgDRCdSnF",
+"fn": "PLACE_BASTILLE_MAINTIEN_AU_SOL_ÉCRASEMENT_2",
+"ville": "Paris",
+"adresse": "Place de la Bastille",
+"sem": 3,
+"t": "Maintien au sol, personne écrasée",
+"violences": [
+"Plaquage, maintien au sol"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@BardouxThomas (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-284"
+},
+{
+"id": "112evm79i-8J_GCGYA4znCbKmLq-iMGl3",
+"fn": "PLACE_NATION_ARRESTATION_ABUSIVE_TABASSAGE",
+"ville": "Paris",
+"adresse": "Place de la Nation",
+"sem": 3,
+"t": "Arrestation abusive et passage à tabac",
+"violences": [
+"Arrestation abusive",
+"Passage à tabac"
+],
+"infractions": [
+"432-4",
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@Bob30031583 (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-285"
+},
+{
+"id": "1VqHuNmeKnaVYMI7I3l-ASluw_vLZZVwF",
+"fn": "PLACE_NATION_GAZ_MASSIF_MATRAQUE",
+"ville": "Paris",
+"adresse": "Place de la Nation",
+"sem": 3,
+"t": "Gaz lacrymogène en masse et coups de matraque",
+"violences": [
+"Gaz lacrymogène",
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R211-13",
+"R434-18"
+],
+"forces": [],
+"s": "@CLPRESSFR (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-286"
+},
+{
+"id": "1jY1zFHibUiOfpvcLJy9hI-Rv-Ifv_CK2",
+"fn": "PLACE_NATION_INTIMIDATION_COUPS_PRESSE",
+"ville": "Paris",
+"adresse": "Place de la Nation",
+"sem": 3,
+"t": "Intimidation et coups contre la presse",
+"violences": [
+"Intimidation, menaces",
+"Coups",
+"Atteinte à la presse"
+],
+"infractions": [
+"222-13",
+"431-1"
+],
+"regles": [
+"SNMO-2.2"
+],
+"forces": [],
+"s": "@leomarchegay (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-287"
+},
+{
+"id": "1dnBpswTWk1YT2FCZLki0mNi3m4sAXgKx",
+"fn": "PLACE_RÉPUBLIQUE_MATRAQUE_BLESSURE_GRAVE",
+"ville": "Paris",
+"adresse": "Place de la République",
+"sem": 3,
+"t": "Coups de matraque, blessure grave",
+"violences": [
+"Coups",
+"Blessure grave"
+],
+"infractions": [
+"222-12"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-288"
 },
 {
 "id": "1uay9onWgGk3ZeDYPf_HOPWB6W1tz5Nw1",
@@ -5404,6 +6386,77 @@
 "cote": "VP-242"
 },
 {
+"id": "1irPPz2iZ5b0DwkRzpHsUY0DhrT_H46r0",
+"fn": "RUE_VICTOR_MASSÉ_BALAYETTE_MAINTIEN_AU_SOL_LYCÉEN",
+"ville": "Paris",
+"adresse": "Rue Victor-Massé",
+"sem": 3,
+"t": "Balayette et maintien au sol d'un lycéen",
+"violences": [
+"Plaquage, maintien au sol",
+"Lycéens"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18",
+"R434-17"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-289"
+},
+{
+"id": "1KfNPLxQruUh_zNTpprEX3kQmLzpXaTeO",
+"fn": "TW_BOULEVARD_VOLTAIRE_POUSSETTE_DANGEREUSE_BLESSURE_GRAVE_2",
+"ville": "Paris",
+"adresse": "Boulevard Voltaire",
+"sem": 3,
+"t": "Poussette mise en danger et blessure grave",
+"violences": [
+"Mise en danger",
+"Blessure grave"
+],
+"infractions": [
+"223-1",
+"222-12"
+],
+"regles": [
+"R434-10",
+"R434-18"
+],
+"forces": [],
+"s": "@ChronoPolo (X)",
+"tw": true,
+"k": "Vidéo",
+"cote": "VP-290"
+},
+{
+"id": "1lhnawvupzgaG8rctzyYnsp64pWMkukVw",
+"fn": "AVENUE_GEORGES_GRAFF_GAZ_ABUSIF",
+"ville": "Rennes",
+"adresse": "Avenue Georges-Graff",
+"sem": 3,
+"t": "Gaz lacrymogène disproportionné",
+"violences": [
+"Gaz lacrymogène"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-291"
+},
+{
 "id": "10Pdww9Iy0r2MdRsJNi2-O66trPQsikoi",
 "fn": "AVENUE_JEAN_JANVIER_MATRAQUE",
 "ville": "Rennes",
@@ -5424,6 +6477,119 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-243"
+},
+{
+"id": "1V7DdKZTfsbWOt8tiz5EpJwskGFN5RUHT",
+"fn": "AVENUE_JEAN_JANVIER_NASSE_TABASSAGE",
+"ville": "Rennes",
+"adresse": "Avenue Jean-Janvier",
+"sem": 3,
+"t": "Nasse et passage à tabac",
+"violences": [
+"Nasse",
+"Passage à tabac"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"SNMO-3.1.4",
+"R434-18"
+],
+"forces": [],
+"s": "@Esquimautage (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-292"
+},
+{
+"id": "12s3Wf4DnG_wwwRZi2yTQWwDxNpdib5rY",
+"fn": "ALLÉE_CHARLES_FITTE_GAZ_MASSIF",
+"ville": "Toulouse",
+"adresse": "Allées Charles-de-Fitte",
+"sem": 3,
+"t": "Gaz lacrymogène en masse",
+"violences": [
+"Gaz lacrymogène"
+],
+"infractions": [],
+"regles": [
+"R211-13",
+"R434-18"
+],
+"forces": [],
+"s": "@ChristopheBex (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-293"
+},
+{
+"id": "1yAFutSKm8d52xZzlubt3SqBdd0qda0io",
+"fn": "ALLÉE_CHARLES_FITTE_MATRAQUE_1",
+"ville": "Toulouse",
+"adresse": "Allées Charles-de-Fitte",
+"sem": 3,
+"t": "Coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@alice_celk (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-294"
+},
+{
+"id": "1JorjlUM-RrbM-UxXSm3IG0BA4uT2rhrq",
+"fn": "ALLÉE_CHARLES_FITTE_MATRAQUE_2",
+"ville": "Toulouse",
+"adresse": "Allées Charles-de-Fitte",
+"sem": 3,
+"t": "Coups de matraque",
+"violences": [
+"Coups"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@ladepechedumidi (Instagram)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-295"
+},
+{
+"id": "1-nPazge1hmAwsQlkDes90RrqBR7AnpOE",
+"fn": "ALLÉE_CHARLES_FITTE_POUSSETTE_PRESSE",
+"ville": "Toulouse",
+"adresse": "Allées Charles-de-Fitte",
+"sem": 3,
+"t": "Poussette et journalistes pris dans l'intervention",
+"violences": [
+"Mise en danger",
+"Atteinte à la presse"
+],
+"infractions": [
+"223-1"
+],
+"regles": [
+"R434-10",
+"SNMO-2.2"
+],
+"forces": [],
+"s": "@Khadija_Toufik (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-296"
 },
 {
 "id": "1gsApdBrvf8ewpQPll_opEOSc2glKU8uq",
@@ -5450,6 +6616,30 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-244"
+},
+{
+"id": "1MIbiSC3TScK-7fBej2NlkXM9dRVLFReB",
+"fn": "INCONNU_INTIMIDATION_VÉHICULE",
+"ville": "Toulouse",
+"adresse": null,
+"sem": 3,
+"t": "Intimidation et véhicule de police dans la foule",
+"violences": [
+"Intimidation, menaces",
+"Mise en danger"
+],
+"infractions": [
+"223-1"
+],
+"regles": [
+"R434-14",
+"R434-10"
+],
+"forces": [],
+"s": "@ScofieldParo (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-297"
 },
 {
 "id": "1yzVcT5U2UyH19Y6weFvWhGJ4-VIVsWp-",
@@ -5497,5 +6687,54 @@
 "tw": false,
 "k": "Vidéo",
 "cote": "VP-246"
+},
+{
+"id": "16MZLCie6nh6NSqs63fmQIp0TJDDUu1F4",
+"fn": "INCONNU_ARRESTATION_ABUSIVE_COUP_GENOU_LYCÉEN",
+"ville": "Vitry-sur-Seine",
+"adresse": null,
+"sem": 3,
+"t": "Arrestation abusive et coup de genou sur un lycéen",
+"violences": [
+"Arrestation abusive",
+"Coups",
+"Lycéens"
+],
+"infractions": [
+"432-4",
+"222-13"
+],
+"regles": [
+"R434-17",
+"R434-18"
+],
+"forces": [],
+"s": "@RevPermanente (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-298"
+},
+{
+"id": "1Qf7QU9_zYufyf3TCrWzIURhFTQBh0Orl",
+"fn": "RUE_PIERRE_SEMARD_MULTIPLES_VIOLENCES_LYCÉENS",
+"ville": "Évreux",
+"adresse": "Rue Pierre-Semard",
+"sem": 3,
+"t": "Violences multiples sur des lycéens",
+"violences": [
+"Coups",
+"Lycéens"
+],
+"infractions": [
+"222-13"
+],
+"regles": [
+"R434-18"
+],
+"forces": [],
+"s": "@lfieure (X)",
+"tw": false,
+"k": "Vidéo",
+"cote": "VP-299"
 }
 ]

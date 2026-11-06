@@ -20,7 +20,9 @@ VILLES = {"PARIS": "Paris", "LYON": "Lyon", "MARSEILLE": "Marseille", "STRASBOUR
           "TOULOUSE": "Toulouse", "AMIENS": "Amiens", "BORDEAUX": "Bordeaux", "CAEN": "Caen", "CHAMBÉRY": "Chambéry",
           "CLERMONT FERRAND": "Clermont-Ferrand", "LA ROCHELLE": "La Rochelle", "LILLE": "Lille", "LIMOGES": "Limoges",
           "METZ": "Metz", "NANCY": "Nancy", "ORLÉANS": "Orléans", "PAU": "Pau", "POITIERS": "Poitiers", "REIMS": "Reims",
-          "RENNES": "Rennes", "ROUEN": "Rouen", "BAYONNE": "Bayonne", "AUTRES": None}
+          "RENNES": "Rennes", "ROUEN": "Rouen", "BAYONNE": "Bayonne", "LOUVIERS": "Louviers",
+          "AULNAY-SOUS-BOIS": "Aulnay-sous-Bois", "LES LILAS": "Les Lilas", "NÎMES": "Nîmes", "VITRY-SUR-SEINE": "Vitry-sur-Seine",
+          "LE HAVRE": "Le Havre", "ÉVREUX": "Évreux", "AUBERVILLIERS": "Aubervilliers", "ANTONY": "Antony", "AUTRES": None}
 
 # Préfixe du nom de fichier → nom de la voie tel qu'affiché (et cherché dans la Base Adresse Nationale)
 # Un triplet (nom, lat, lng) fixe l'emplacement quand ce n'est pas une adresse postale.
@@ -75,11 +77,46 @@ LIEUX = {
  "RUE_FAUBOURG_SAINT_ANTOINE": "Rue du Faubourg-Saint-Antoine", "AVENUE_DAUSMENIL": "Avenue Daumesnil",
  "AVENUE_GÉNÉRAL_DODDS": "Avenue du Général-Dodds", "RUE_ROQUETTE": "Rue de la Roquette",
  "BOULEVARD_MARÉCHAUX": ("Boulevards des Maréchaux, Porte Dorée", 48.83580, 2.40630), "BOULEVARD_REUILLY": "Boulevard de Reuilly",
- "PLACE_BASTILLE": "Place de la Bastille", "RUE_CLAUDE_DECAEN": "Rue Claude-Decaen", "RUE_CUGNAUX": "Rue de Cugnaux", "PLACE_ÉMILE_MALE": "Place Émile-Mâle",
+ "PLACE_BASTILLE": "Place de la Bastille", "RUE_CLAUDE_DECAEN": "Rue Claude-Decaen",
+ "ALLÉE_CHARLES_FITTE": "Allées Charles-de-Fitte", "ALLÉE_TREMPERIE": "Allée de la Tremperie", "AVENUE_BERTHELOT": "Avenue Berthelot",
+ "AVENUE_BOUVINES": "Avenue de Bouvines", "AVENUE_GEORGES_CLÉMENCEAU": "Avenue Georges-Clemenceau", "AVENUE_GEORGES_GRAFF": "Avenue Georges-Graff",
+ "AVENUE_LAVOISIER": "Avenue Lavoisier", "BOULEVARD_EUGÈNE_PIERRE": "Boulevard Eugène-Pierre", "BOULEVARD_INVALIDES": "Boulevard des Invalides",
+ "BOULEVARD_VOLTAIRE": "Boulevard Voltaire", "CHEMIN_FONTENELLES": "Chemin des Fontenelles", "COURS_GAMBETTA": "Cours Gambetta",
+ "METRO_NATION": ("Métro Nation", 48.84840, 2.39570), "PLACE_PILORI": "Place du Pilori", "ROUTE_MITRY": "Route de Mitry",
+ "RUE_LOISIR": "Rue du Loisir", "RUE_LÉOPOLD_RECHOSSIÈRE": "Rue Léopold-Réchossière", "RUE_MALBOSC": "Rue de Malbosc",
+ "RUE_PARIS": "Rue de Paris", "RUE_PIERRE_SEMARD": "Rue Pierre-Semard", "RUE_VICTOR_MASSÉ": "Rue Victor-Massé",
+ "BOULEVARD_CHAVE": "Boulevard Chave", "RUE_SAINT_MICHEL": "Rue Saint-Michel", "RUE_CUGNAUX": "Rue de Cugnaux", "PLACE_ÉMILE_MALE": "Place Émile-Mâle",
 }
 
 # Fait → (libellé, catégories, infractions présumées, règles en cause). Les plus longs sont reconnus en premier.
 F = {
+ "JET_AU_SOL_LYCÉEN": ("lycéen jeté au sol", ["Plaquage, maintien au sol", "Lycéens"], ["222-13"], ["R434-18"]),
+ "ARRESTATION_ABUSIVE_LYCÉEN": ("arrestation abusive d'un lycéen", ["Arrestation abusive", "Lycéens"], ["432-4"], ["R434-17"]),
+ "MATRAQUE_LYCÉENS": ("coups de matraque sur des lycéens", ["Coups", "Lycéens"], ["222-13"], ["R434-18"]),
+ "MULTIPLES_VIOLENCES_LYCÉENS": ("violences multiples sur des lycéens", ["Coups", "Lycéens"], ["222-13"], ["R434-18"]),
+ "MAINTIEN_AU_SOL_LYCÉEN": ("maintien au sol d'un lycéen", ["Plaquage, maintien au sol", "Lycéens"], ["222-13"], ["R434-17"]),
+ "ATTACHAGE_ARBRE": ("personne attachée à un arbre", ["Traitement dégradant"], ["222-13"], ["R434-17"]),
+ "DÉSHABILLAGE": ("personne déshabillée", ["Traitement dégradant"], [], ["R434-17"]),
+ "TRAÎNAGE_AU_SOL_LYCÉEN": ("lycéen traîné au sol", ["Personne traînée", "Lycéens"], ["222-13"], ["R434-17"]),
+ "COUP_GENOU_LYCÉEN": ("coup de genou sur un lycéen", ["Coups", "Lycéens"], ["222-13"], ["R434-18"]),
+ "ARRESTATION_ABUSIVE_ASSISTANTE_SCOLAIRE": ("arrestation abusive d'une assistante scolaire", ["Arrestation abusive"], ["432-4"], ["R434-17"]),
+ "MAINTIEN_AU_SOL_INFIRMIÈRE_LYCÉE": ("maintien au sol d'une infirmière scolaire", ["Plaquage, maintien au sol"], ["222-13"], ["R434-17"]),
+ "BLESSURE_GRAVE": ("blessure grave", ["Blessure grave"], ["222-12"], ["R434-18"]),
+ "TABASSAGE_GÉNÉRAL": ("passages à tabac généralisés", ["Passage à tabac"], ["222-13"], ["R434-18"]),
+ "CHARGE": ("charge", ["Charge"], [], ["R434-18"]),
+ "ÉTRANGLEMENT_MINEUR": ("étranglement d'un mineur", ["Étranglement", "Mineurs"], ["222-13"], ["R434-17", "R434-18"]),
+ "ÉCRASEMENT_MINEUR": ("mineur écrasé au sol", ["Plaquage, maintien au sol", "Mineurs"], ["222-13"], ["R434-17"]),
+ "COUP_PRESSE": ("coup porté à un journaliste", ["Coups", "Atteinte à la presse"], ["222-13", "431-1"], ["SNMO-2.2"]),
+ "INTIMIDATION_COUPS_PRESSE": ("intimidation et coups contre la presse", ["Intimidation, menaces", "Coups", "Atteinte à la presse"], ["222-13", "431-1"], ["SNMO-2.2"]),
+ "POUSSETTE_PRESSE": ("poussette et journalistes pris dans l'intervention", ["Mise en danger", "Atteinte à la presse"], ["223-1"], ["R434-10", "SNMO-2.2"]),
+ "GAZ_MASSIF_ABUSIF": ("gaz lacrymogène en masse et disproportionné", ["Gaz lacrymogène"], ["222-13"], ["R211-13", "R434-18"]),
+ "GRENADES_GAZ_ABUSIFS": ("grenades et gaz lacrymogène disproportionnés", ["Grenade", "Gaz lacrymogène"], ["222-13"], ["R434-18"]),
+ "DESTRUCTIONS_EFFETS_PERSONNELS": ("destruction d'effets personnels", ["Destruction de biens"], ["322-1"], ["R434-14"]),
+ "COUPS_PERSONNE_EN_FAUTEUIL_ROULANT": ("coups sur une personne en fauteuil roulant", ["Coups"], ["222-13"], ["R434-18"]),
+ "GAZ_PROXIMITÉ_ÉCOLE_MATERNELLE": ("gaz lacrymogène près d'une école maternelle", ["Gaz lacrymogène", "Mise en danger"], ["223-1"], ["R434-10"]),
+ "GAZAGE_GRATUIT": ("gaz lacrymogène sans raison apparente", ["Gaz lacrymogène"], ["222-13"], ["R434-18"]),
+ "COUP_CASQUE": ("coup de casque", ["Coups"], ["222-13"], ["R434-18"]),
+ "PROPOS_RACISTES": ("propos racistes", ["Propos racistes"], ["injure"], ["R434-11", "R434-14"]),
  "GRENADES_GAZ_ENFANTS": ("grenades et gaz lacrymogène sur des enfants", ["Grenade", "Gaz lacrymogène", "Mise en danger"], ["222-13", "223-1"], ["R434-10", "R434-18"]),
  "GAZ_ENFANT": ("gaz lacrymogène sur un enfant", ["Gaz lacrymogène", "Mise en danger"], ["222-13", "223-1"], ["R434-10", "R434-18"]),
  "BLESSURE_GRAVE_GAZ": ("gaz lacrymogène, blessure grave", ["Gaz lacrymogène", "Blessure grave"], ["222-12"], ["R434-18"]),
@@ -250,8 +287,15 @@ for x in inv:
     out.append(c)
 
 # cotes : VP- puis numéro, dans l'ordre semaine / ville / nom
+# Une cote attribuée ne change plus : les nouveaux faits prennent les numéros suivants.
+anciens = {}
+if os.path.exists(os.path.join(SRC, 'carte.json')):
+    anciens = {c['id']: c['cote'] for c in json.load(open(os.path.join(SRC, 'carte.json'))) if c.get('cote')}
 out.sort(key=lambda c: (c['sem'], c['ville'] or "~", c['fn']))
-for i, c in enumerate(out, 1): c['cote'] = f"VP-{i:03d}"
+suivant = max([int(v[3:]) for v in anciens.values()] or [0]) + 1
+for c in out:
+    if c['id'] in anciens: c['cote'] = anciens[c['id']]
+    else: c['cote'] = f"VP-{suivant:03d}"; suivant += 1
 json.dump(out, open(os.path.join(SRC, 'carte.json'), 'w'), ensure_ascii=False, indent=0)
 print(len(out), "faits ;", sum(1 for c in out if c['adresse']), "avec un lieu ;", sum(1 for c in out if c['tw']), "avec avertissement")
 for r in a_revoir: print("À REVOIR —", r)
