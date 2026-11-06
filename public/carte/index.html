@@ -165,6 +165,12 @@ h2{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:20px;li
 .tablo table{border-collapse:collapse;font-size:14px;min-width:560px;width:100%}
 .tablo th,.tablo td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
 .tablo th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:1001;
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.04em;
+  background:var(--ink);color:var(--bg);border:0;padding:12px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+@media (prefers-reduced-motion: reduce){.totop{transition:none}}
 footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);font-size:13px;color:var(--muted);display:grid;gap:6px}
 
 @media (max-width:860px){
@@ -491,9 +497,12 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     <span>Fond de carte © contributeurs OpenStreetMap · Adresses : Base Adresse Nationale.</span>
     <span><a href="/mentions-legales/">Mentions légales</a></span>
   </footer>
+  <button class="totop" id="totop" type="button" aria-label="Revenir en haut de la page">↑ Haut</button>
 </div>
 
 <script>
+/* Bouton haut de page */
+(function(){var tt=document.getElementById("totop");addEventListener("scroll",function(){tt.classList.toggle("on",scrollY>900)},{passive:true});tt.onclick=function(){window.scrollTo({top:0})};})();
 /* Raccourcis : un lien vers un billet l'ouvre puis y fait défiler la page */
 (function(){function ouvre(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var el=document.getElementById(id);if(el&&el.tagName==="DETAILS"){el.open=true;el.scrollIntoView({block:"start"});}}
 window.addEventListener("hashchange",ouvre);if(document.readyState!=="loading")ouvre();else document.addEventListener("DOMContentLoaded",ouvre);})();
