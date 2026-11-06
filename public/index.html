@@ -101,6 +101,15 @@ blockquote{margin:0;border-left:3px solid var(--red);padding-left:12px;font-styl
 .media{margin:0;background:var(--screen);display:flex;justify-content:center;max-width:100%}
 .media video{display:block;width:100%;height:auto;max-height:min(72vh,620px);object-fit:contain;background:var(--screen)}
 .media.portrait video{width:auto;max-width:100%}
+.play{all:unset;box-sizing:border-box;position:relative;display:block;width:100%;cursor:pointer;background:var(--screen)}
+.media.portrait .play{width:auto;max-width:100%}
+.play img{display:block;width:100%;height:auto;max-height:min(72vh,620px);object-fit:contain}
+.media.portrait .play img{width:auto;max-width:100%}
+.play span{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(0,0,0,.62);
+  box-shadow:0 0 0 2px rgba(255,255,255,.85) inset;display:grid;place-items:center}
+.play span::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.play:hover span,.play:focus-visible span{background:var(--red)}
+.play:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .offline{background:var(--screen);color:#e8ebf1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;
   padding:16px 18px;font-family:var(--mono);font-size:13px}
 .offline a{color:#ffd1d7}
@@ -218,7 +227,8 @@ function media(e){
   if(e.k!=="Vidéo") return "";
   if(!e.v) return `<div class="offline"><span>Vidéo momentanément indisponible</span></div>`;
   const portrait = e.h>e.w;
-  return `<figure class="media${portrait?" portrait":""}"><video controls preload="none" playsinline width="${e.w}" height="${e.h}" poster="${esc(e.p)}" src="${esc(e.v)}" aria-label="${esc(e.t)}"></video></figure>`;
+  // Vignette légère : la vraie vidéo n'est créée qu'au clic (la vignette ne se charge qu'à l'approche de l'écran)
+  return `<figure class="media${portrait?" portrait":""}"><button class="play" type="button" data-v="${esc(e.v)}" data-w="${e.w}" data-h="${e.h}" aria-label="Lire la vidéo : ${esc(e.t)}"><img loading="lazy" decoding="async" src="${esc(e.p)}" width="${e.w}" height="${e.h}" alt=""><span aria-hidden="true"></span></button></figure>`;
 }
 
 function card(e){
@@ -298,6 +308,14 @@ setFh(); if("ResizeObserver" in window) new ResizeObserver(()=>{setFh(); observe
 const tt=document.getElementById("totop");
 addEventListener("scroll",()=>tt.classList.toggle("on", scrollY>900),{passive:true});
 tt.onclick=()=>window.scrollTo({top:0});
+
+document.getElementById("list").addEventListener("click",ev=>{
+  const b=ev.target.closest(".play"); if(!b) return;
+  const v=document.createElement("video");
+  v.controls=true; v.playsInline=true; v.preload="auto"; v.width=+b.dataset.w; v.height=+b.dataset.h;
+  v.poster=b.querySelector("img").src; v.src=b.dataset.v; v.setAttribute("aria-label",b.getAttribute("aria-label").replace(/^Lire la vidéo : /,""));
+  b.replaceWith(v); v.focus(); const pr=v.play(); if(pr&&pr.catch) pr.catch(()=>{});
+});
 
 // Une seule vidéo joue à la fois
 document.addEventListener("play", ev=>{ document.querySelectorAll("video").forEach(v=>{ if(v!==ev.target) v.pause(); }); }, true);

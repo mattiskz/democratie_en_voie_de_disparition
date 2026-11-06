@@ -16,3 +16,5 @@
   Cache-Control: public, max-age=604800
 /f/*
   Cache-Control: public, max-age=31536000
+/d/*
+  Cache-Control: public, max-age=604800
