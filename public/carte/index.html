@@ -54,6 +54,8 @@ h1 span{color:var(--red)}
 .filters select,.filters input{font-family:var(--display);font-stretch:85%;font-size:15px;background:var(--paper);color:var(--ink);
   border:1px solid var(--line);padding:7px 10px;min-width:0;max-width:100%}
 .filters input{flex:1 1 200px}
+.sort{flex:none;font-family:var(--mono);font-size:12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:7px 10px;cursor:pointer;white-space:nowrap}
+.sort:hover{border-color:var(--ink)}
 .reset{font-family:var(--mono);font-size:12px;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
 .count{font-family:var(--mono);font-size:13px;color:var(--muted);flex-basis:100%}
 .count:empty{display:none}
@@ -200,6 +202,7 @@ footer{border-top:2px solid var(--ink);padding-top:14px;font-family:var(--mono);
     <select id="f-violence" aria-label="Type de violence"></select>
     <select id="f-force" aria-label="Force de l'ordre"></select>
     <input id="f-q" type="search" placeholder="Rechercher une rue, une ville…" aria-label="Rechercher">
+    <button class="sort" id="sort" type="button"></button>
     <button class="reset" id="reset" type="button">Tout afficher</button>
     <div class="count" id="count" aria-live="polite"></div>
   </nav>
@@ -570,7 +573,8 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 const dateTxt = c => c.d ? `${JOURS[new Date(2026,9,c.d).getDay()]} ${c.d>31?c.d-31:c.d} ${c.d>31?"nov.":"oct."}${c.h?" · "+esc(c.h):""}` : (SEMAINES[c.sem]||"Date à préciser");
 const lieuTxt = c => [c.adresse, c.ville].filter(Boolean).join(", ") || "Lieu à préciser";
 const surCarte = c => Number.isFinite(c.lat) && Number.isFinite(c.lng);
-const state = {sem:"", ville:"", violence:"", force:"", q:"", ouvert:null, vus:new Set()};
+const state = {sem:"", ville:"", violence:"", force:"", q:"", ouvert:null, vus:new Set(), desc:true};
+try{ if(localStorage.getItem("ordre")==="asc") state.desc=false; }catch(_){}
 
 CAS.forEach(c=>{ c.violences=c.violences||[]; c.forces=(c.forces&&c.forces.length)?c.forces:["Non précisée"]; c.infractions=c.infractions||[]; c.regles=c.regles||[];
   c.hay=norm([c.cote,c.t,c.adresse,c.ville,c.b,c.violences.join(" "),c.forces.join(" ")].join(" ")); });
@@ -736,13 +740,16 @@ $("f-ville").onchange=e=>{state.ville=e.target.value;state.ouvert=null;render(tr
 $("f-violence").onchange=e=>{state.violence=e.target.value;state.ouvert=null;render(true);};
 $("f-force").onchange=e=>{state.force=e.target.value;state.ouvert=null;render(true);};
 $("f-q").oninput=e=>{state.q=norm(e.target.value.trim());state.ouvert=null;render();};
+{const sb=$("sort");
+  const lbl=()=>{sb.textContent=state.desc?"↓ Plus récent d'abord":"↑ Plus ancien d'abord"; sb.setAttribute("aria-label","Ordre : "+(state.desc?"du plus récent au plus ancien":"du plus ancien au plus récent")+". Inverser");};
+  lbl(); sb.onclick=()=>{state.desc=!state.desc; try{localStorage.setItem("ordre",state.desc?"desc":"asc")}catch(_){}; lbl(); state.ouvert=null; render(); $("panel").scrollTop=0;};}
 $("reset").onclick=()=>{Object.assign(state,{sem:"",ville:"",violence:"",force:"",q:"",ouvert:null});
   ["f-sem","f-ville","f-violence","f-force","f-q"].forEach(i=>$(i).value=""); render(true);};
 
 function filtres(){
   return CAS.filter(c=>(!state.sem||String(c.sem)===state.sem)&&(!state.ville||c.ville===state.ville)&&(!state.violence||c.violences.includes(state.violence))
     &&(!state.force||c.forces.includes(state.force))&&(!state.q||c.hay.includes(state.q)))
-    .sort((a,b)=>(b.sem||0)-(a.sem||0)||(b.d||0)-(a.d||0)||String(a.ville||"~").localeCompare(String(b.ville||"~"),"fr")||String(a.cote).localeCompare(String(b.cote)));
+    .sort((a,b)=>(state.desc?1:-1)*((b.sem||0)-(a.sem||0)||(b.d||0)-(a.d||0))||String(a.ville||"~").localeCompare(String(b.ville||"~"),"fr")||String(a.cote).localeCompare(String(b.cote)));
 }
 
 /* ---------- Rendu ---------- */
