@@ -37,7 +37,18 @@ t = (t.replace('/*DATA*/[]', json.dumps(out, ensure_ascii=False))
 t = t.replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
 head = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        '<meta name="description" content="Violences policières, mesures antidémocratiques et déclarations haineuses depuis le 17 octobre 2026 : tous les éléments répertoriés et sourcés.">\n')
+        '<meta name="description" content="Violences policières, mesures antidémocratiques et déclarations haineuses depuis le 17 octobre 2026 : tous les éléments répertoriés et sourcés.">\n'
+        '<meta property="og:type" content="website">\n'
+        '<meta property="og:site_name" content="Démocratie en voie de disparition">\n'
+        '<meta property="og:locale" content="fr_FR">\n'
+        '<meta property="og:title" content="Démocratie en voie de disparition">\n'
+        '<meta property="og:description" content="Violences policières, mesures antidémocratiques et déclarations haineuses depuis le 17 octobre 2026 : tous les éléments répertoriés et sourcés.">\n'
+        '<meta property="og:url" content="https://democratie-en-voie-de-disparition.fr/">\n'
+        '<meta property="og:image" content="https://democratie-en-voie-de-disparition.fr/og/dossier.png">\n'
+        '<meta property="og:image:width" content="1200">\n'
+        '<meta property="og:image:height" content="630">\n'
+        '<meta property="og:image:alt" content="Démocratie en voie de disparition">\n'
+        '<meta name="twitter:card" content="summary_large_image">\n')
 open(os.path.join(PUB, 'index.html'), 'w').write(head + t + '\n</html>\n')
 print(len(out), 'éléments,', sum('v' in o for o in out), 'vidéos intégrées')
 
@@ -63,6 +74,17 @@ ct = open(os.path.join(SRC, 'carte_template.html')).read()
 ct = ct.replace('/*DATA*/[]', json.dumps(cout, ensure_ascii=False)).replace('/*UPDATED*/', sys.argv[2] if len(sys.argv) > 2 else (sys.argv[1] if len(sys.argv) > 1 else ''))
 chead = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n'
          '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-         '<meta name="description" content="Carte des violences policières filmées en France depuis le 17 octobre 2026 : lieu, type de violence, forces de l\'ordre et infractions présumées.">\n')
+         '<meta name="description" content="Carte des violences policières filmées en France depuis le 17 octobre 2026 : lieu, type de violence, forces de l\'ordre et infractions présumées.">\n'
+        '<meta property="og:type" content="website">\n'
+        '<meta property="og:site_name" content="Démocratie en voie de disparition">\n'
+        '<meta property="og:locale" content="fr_FR">\n'
+        '<meta property="og:title" content="Carte des violences policières">\n'
+        '<meta property="og:description" content="Carte des violences policières filmées en France depuis le 17 octobre 2026 : lieu, type de violence, forces de l\'ordre et infractions présumées.">\n'
+        '<meta property="og:url" content="https://democratie-en-voie-de-disparition.fr/carte/">\n'
+        '<meta property="og:image" content="https://democratie-en-voie-de-disparition.fr/og/carte.png">\n'
+        '<meta property="og:image:width" content="1200">\n'
+        '<meta property="og:image:height" content="630">\n'
+        '<meta property="og:image:alt" content="Carte des violences policières">\n'
+        '<meta name="twitter:card" content="summary_large_image">\n')
 open(os.path.join(PUB, 'carte', 'index.html'), 'w').write(chead + ct + '\n</html>\n')
 print(len(cout), 'faits sur la carte,', sum('v' in o for o in cout), 'vidéos floutées intégrées')
